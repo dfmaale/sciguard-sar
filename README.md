@@ -1,6 +1,6 @@
 # Statistical Assurance Regions
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23228566.svg)](https://doi.org/10.5281/zenodo.23228566)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23228565.svg)](https://doi.org/10.5281/zenodo.23228565)
 
 Statistical Assurance Regions (SARs) identify the prespecified deployment environments in
 which a frozen predictive pipeline remains below a risk tolerance. **SciGuard** is the
@@ -111,8 +111,10 @@ adjust that path on other systems. Manuscript compilation requires LaTeX and lat
 
 ## Citation
 
-Please use the metadata in [`CITATION.cff`](CITATION.cff). The archived software record is
-available at [Zenodo](https://doi.org/10.5281/zenodo.23228566).
+Please use the metadata in [`CITATION.cff`](CITATION.cff). The authoritative Revision 4
+release (`v1.0.1`) is archived at [Zenodo](https://doi.org/10.5281/zenodo.23241355).
+The [concept DOI](https://doi.org/10.5281/zenodo.23228565) resolves to the latest archived
+version.
 
 ## License
 

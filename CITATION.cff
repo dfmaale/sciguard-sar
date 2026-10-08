@@ -7,12 +7,12 @@ authors:
     given-names: Faustus Domebale
   - family-names: Yi
     given-names: Hui
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-10-08
 license: MIT
 repository-code: "https://github.com/dfmaale/sciguard-sar"
-doi: 10.5281/zenodo.23228566
-url: "https://doi.org/10.5281/zenodo.23228566"
+doi: 10.5281/zenodo.23241355
+url: "https://doi.org/10.5281/zenodo.23241355"
 keywords:
   - statistical assurance regions
   - distribution shift
