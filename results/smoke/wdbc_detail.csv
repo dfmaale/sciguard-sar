@@ -1,0 +1,1041 @@
+Model,design,method,Missingness,Shift,risk,upper,certified_008,certified_010
+Logistic regression,primary,multiplier,0.0,0.0,0.01,0.029220726767947097,True,True
+Logistic regression,primary,multiplier,0.0,0.1,0.01,0.029220726767947097,True,True
+Logistic regression,primary,multiplier,0.0,0.2,0.02,0.047044580133972516,True,True
+Logistic regression,primary,multiplier,0.0,0.3,0.025,0.05515952657217574,True,True
+Logistic regression,primary,multiplier,0.0,0.4,0.04,0.07785452664916763,True,True
+Logistic regression,primary,multiplier,0.0,0.5,0.045,0.08504609289199325,False,True
+Logistic regression,primary,multiplier,0.05,0.0,0.01,0.029220726767947097,True,True
+Logistic regression,primary,multiplier,0.05,0.1,0.015,0.038480965612589915,True,True
+Logistic regression,primary,multiplier,0.05,0.2,0.02,0.047044580133972516,True,True
+Logistic regression,primary,multiplier,0.05,0.3,0.03,0.06295328407616371,True,True
+Logistic regression,primary,multiplier,0.05,0.4,0.035,0.07050176023329838,True,True
+Logistic regression,primary,multiplier,0.05,0.5,0.045,0.08504609289199326,False,True
+Logistic regression,primary,multiplier,0.1,0.0,0.015,0.038480965612589915,True,True
+Logistic regression,primary,multiplier,0.1,0.1,0.025,0.055159526572175634,True,True
+Logistic regression,primary,multiplier,0.1,0.2,0.025,0.055159526572175634,True,True
+Logistic regression,primary,multiplier,0.1,0.3,0.03,0.06295328407616371,True,True
+Logistic regression,primary,multiplier,0.1,0.4,0.04,0.07785452664916763,True,True
+Logistic regression,primary,multiplier,0.1,0.5,0.05,0.09210163991945501,False,True
+Logistic regression,primary,multiplier,0.2,0.0,0.02,0.047044580133972516,True,True
+Logistic regression,primary,multiplier,0.2,0.1,0.02,0.047044580133972516,True,True
+Logistic regression,primary,multiplier,0.2,0.2,0.02,0.047044580133972516,True,True
+Logistic regression,primary,multiplier,0.2,0.3,0.03,0.06295328407616378,True,True
+Logistic regression,primary,multiplier,0.2,0.4,0.045,0.08504609289199325,False,True
+Logistic regression,primary,multiplier,0.2,0.5,0.055,0.0990402176630907,False,True
+Logistic regression,primary,multiplier,0.3,0.0,0.025,0.05515952657217566,True,True
+Logistic regression,primary,multiplier,0.3,0.1,0.025,0.05515952657217563,True,True
+Logistic regression,primary,multiplier,0.3,0.2,0.035,0.07050176023329838,True,True
+Logistic regression,primary,multiplier,0.3,0.3,0.045,0.08504609289199325,False,True
+Logistic regression,primary,multiplier,0.3,0.4,0.06,0.10587665658729994,False,False
+Logistic regression,primary,multiplier,0.3,0.5,0.07,0.11928817094392279,False,False
+Logistic regression,primary,multiplier,0.4,0.0,0.04,0.07785452664916764,True,True
+Logistic regression,primary,multiplier,0.4,0.1,0.05,0.09210163991945497,False,True
+Logistic regression,primary,multiplier,0.4,0.2,0.06,0.10587665658729997,False,False
+Logistic regression,primary,multiplier,0.4,0.3,0.065,0.11262277425095443,False,False
+Logistic regression,primary,multiplier,0.4,0.4,0.07,0.11928817094392279,False,False
+Logistic regression,primary,multiplier,0.4,0.5,0.085,0.1388731311266331,False,False
+Logistic regression,primary,normal_bonferroni,0.0,0.0,0.01,0.0310457743739077,True,True
+Logistic regression,primary,normal_bonferroni,0.0,0.1,0.01,0.0310457743739077,True,True
+Logistic regression,primary,normal_bonferroni,0.0,0.2,0.02,0.04961251873606669,True,True
+Logistic regression,primary,normal_bonferroni,0.0,0.3,0.025,0.05802323575612006,True,True
+Logistic regression,primary,normal_bonferroni,0.0,0.4,0.04,0.08144889194398286,False,True
+Logistic regression,primary,normal_bonferroni,0.0,0.5,0.045,0.08884855191672109,False,True
+Logistic regression,primary,normal_bonferroni,0.05,0.0,0.01,0.0310457743739077,True,True
+Logistic regression,primary,normal_bonferroni,0.05,0.1,0.015,0.040710531673971345,True,True
+Logistic regression,primary,normal_bonferroni,0.05,0.2,0.02,0.049612518736066695,True,True
+Logistic regression,primary,normal_bonferroni,0.05,0.3,0.03,0.06608226629092759,True,True
+Logistic regression,primary,normal_bonferroni,0.05,0.4,0.035,0.0738727255096592,True,True
+Logistic regression,primary,normal_bonferroni,0.05,0.5,0.045,0.08884855191672109,False,True
+Logistic regression,primary,normal_bonferroni,0.1,0.0,0.015,0.04071053167397135,True,True
+Logistic regression,primary,normal_bonferroni,0.1,0.1,0.025,0.058023235756119944,True,True
+Logistic regression,primary,normal_bonferroni,0.1,0.2,0.025,0.058023235756119944,True,True
+Logistic regression,primary,normal_bonferroni,0.1,0.3,0.03,0.06608226629092759,True,True
+Logistic regression,primary,normal_bonferroni,0.1,0.4,0.04,0.08144889194398286,False,True
+Logistic regression,primary,normal_bonferroni,0.1,0.5,0.05,0.09609927736936417,False,True
+Logistic regression,primary,normal_bonferroni,0.2,0.0,0.02,0.04961251873606669,True,True
+Logistic regression,primary,normal_bonferroni,0.2,0.1,0.02,0.049612518736066695,True,True
+Logistic regression,primary,normal_bonferroni,0.2,0.2,0.02,0.049612518736066695,True,True
+Logistic regression,primary,normal_bonferroni,0.2,0.3,0.03,0.06608226629092766,True,True
+Logistic regression,primary,normal_bonferroni,0.2,0.4,0.045,0.08884855191672109,False,True
+Logistic regression,primary,normal_bonferroni,0.2,0.5,0.055,0.1032219270636969,False,False
+Logistic regression,primary,normal_bonferroni,0.3,0.0,0.025,0.05802323575611998,True,True
+Logistic regression,primary,normal_bonferroni,0.3,0.1,0.025,0.05802323575611994,True,True
+Logistic regression,primary,normal_bonferroni,0.3,0.2,0.035,0.0738727255096592,True,True
+Logistic regression,primary,normal_bonferroni,0.3,0.3,0.045,0.08884855191672109,False,True
+Logistic regression,primary,normal_bonferroni,0.3,0.4,0.06,0.11023273964726797,False,False
+Logistic regression,primary,normal_bonferroni,0.3,0.5,0.07,0.12396818432059652,False,False
+Logistic regression,primary,normal_bonferroni,0.4,0.0,0.04,0.08144889194398286,False,True
+Logistic regression,primary,normal_bonferroni,0.4,0.1,0.05,0.09609927736936413,False,True
+Logistic regression,primary,normal_bonferroni,0.4,0.2,0.06,0.11023273964726801,False,False
+Logistic regression,primary,normal_bonferroni,0.4,0.3,0.065,0.11714465478051099,False,False
+Logistic regression,primary,normal_bonferroni,0.4,0.4,0.07,0.12396818432059652,False,False
+Logistic regression,primary,normal_bonferroni,0.4,0.5,0.085,0.14398849591878163,False,False
+Logistic regression,primary,exact_bonferroni,0.0,0.0,0.01,0.05299508201334093,True,True
+Logistic regression,primary,exact_bonferroni,0.0,0.1,0.01,0.05299508201334093,True,True
+Logistic regression,primary,exact_bonferroni,0.0,0.2,0.02,0.06993630608770185,True,True
+Logistic regression,primary,exact_bonferroni,0.0,0.3,0.025,0.07780296386421583,True,True
+Logistic regression,primary,exact_bonferroni,0.0,0.4,0.04,0.09999556176287655,False,True
+Logistic regression,primary,exact_bonferroni,0.0,0.5,0.045,0.10705767314035276,False,False
+Logistic regression,primary,exact_bonferroni,0.05,0.0,0.01,0.05299508201334093,True,True
+Logistic regression,primary,exact_bonferroni,0.05,0.1,0.015,0.06171569805784471,True,True
+Logistic regression,primary,exact_bonferroni,0.05,0.2,0.02,0.06993630608770185,True,True
+Logistic regression,primary,exact_bonferroni,0.05,0.3,0.03,0.08540111205014421,False,True
+Logistic regression,primary,exact_bonferroni,0.05,0.4,0.035,0.09278593407505425,False,True
+Logistic regression,primary,exact_bonferroni,0.05,0.5,0.045,0.10705767314035276,False,False
+Logistic regression,primary,exact_bonferroni,0.1,0.0,0.015,0.06171569805784471,True,True
+Logistic regression,primary,exact_bonferroni,0.1,0.1,0.025,0.07780296386421583,True,True
+Logistic regression,primary,exact_bonferroni,0.1,0.2,0.025,0.07780296386421583,True,True
+Logistic regression,primary,exact_bonferroni,0.1,0.3,0.03,0.08540111205014421,False,True
+Logistic regression,primary,exact_bonferroni,0.1,0.4,0.04,0.09999556176287655,False,True
+Logistic regression,primary,exact_bonferroni,0.1,0.5,0.05,0.11399312628529294,False,False
+Logistic regression,primary,exact_bonferroni,0.2,0.0,0.02,0.06993630608770185,True,True
+Logistic regression,primary,exact_bonferroni,0.2,0.1,0.02,0.06993630608770185,True,True
+Logistic regression,primary,exact_bonferroni,0.2,0.2,0.02,0.06993630608770185,True,True
+Logistic regression,primary,exact_bonferroni,0.2,0.3,0.03,0.08540111205014421,False,True
+Logistic regression,primary,exact_bonferroni,0.2,0.4,0.045,0.10705767314035276,False,False
+Logistic regression,primary,exact_bonferroni,0.2,0.5,0.055,0.12081811167698266,False,False
+Logistic regression,primary,exact_bonferroni,0.3,0.0,0.025,0.07780296386421583,True,True
+Logistic regression,primary,exact_bonferroni,0.3,0.1,0.025,0.07780296386421583,True,True
+Logistic regression,primary,exact_bonferroni,0.3,0.2,0.035,0.09278593407505425,False,True
+Logistic regression,primary,exact_bonferroni,0.3,0.3,0.045,0.10705767314035276,False,False
+Logistic regression,primary,exact_bonferroni,0.3,0.4,0.06,0.1275455011756748,False,False
+Logistic regression,primary,exact_bonferroni,0.3,0.5,0.07,0.14074741211379882,False,False
+Logistic regression,primary,exact_bonferroni,0.4,0.0,0.04,0.09999556176287655,False,True
+Logistic regression,primary,exact_bonferroni,0.4,0.1,0.05,0.11399312628529294,False,False
+Logistic regression,primary,exact_bonferroni,0.4,0.2,0.06,0.1275455011756748,False,False
+Logistic regression,primary,exact_bonferroni,0.4,0.3,0.065,0.13418573266006745,False,False
+Logistic regression,primary,exact_bonferroni,0.4,0.4,0.07,0.14074741211379882,False,False
+Logistic regression,primary,exact_bonferroni,0.4,0.5,0.085,0.16002780843079303,False,False
+Logistic regression,primary,holm,0.0,0.0,0.01,,True,True
+Logistic regression,primary,holm,0.0,0.1,0.01,,True,True
+Logistic regression,primary,holm,0.0,0.2,0.02,,True,True
+Logistic regression,primary,holm,0.0,0.3,0.025,,True,True
+Logistic regression,primary,holm,0.0,0.4,0.04,,False,True
+Logistic regression,primary,holm,0.0,0.5,0.045,,False,True
+Logistic regression,primary,holm,0.05,0.0,0.01,,True,True
+Logistic regression,primary,holm,0.05,0.1,0.015,,True,True
+Logistic regression,primary,holm,0.05,0.2,0.02,,True,True
+Logistic regression,primary,holm,0.05,0.3,0.03,,False,True
+Logistic regression,primary,holm,0.05,0.4,0.035,,False,True
+Logistic regression,primary,holm,0.05,0.5,0.045,,False,True
+Logistic regression,primary,holm,0.1,0.0,0.015,,True,True
+Logistic regression,primary,holm,0.1,0.1,0.025,,True,True
+Logistic regression,primary,holm,0.1,0.2,0.025,,True,True
+Logistic regression,primary,holm,0.1,0.3,0.03,,False,True
+Logistic regression,primary,holm,0.1,0.4,0.04,,False,True
+Logistic regression,primary,holm,0.1,0.5,0.05,,False,False
+Logistic regression,primary,holm,0.2,0.0,0.02,,True,True
+Logistic regression,primary,holm,0.2,0.1,0.02,,True,True
+Logistic regression,primary,holm,0.2,0.2,0.02,,True,True
+Logistic regression,primary,holm,0.2,0.3,0.03,,False,True
+Logistic regression,primary,holm,0.2,0.4,0.045,,False,True
+Logistic regression,primary,holm,0.2,0.5,0.055,,False,False
+Logistic regression,primary,holm,0.3,0.0,0.025,,True,True
+Logistic regression,primary,holm,0.3,0.1,0.025,,True,True
+Logistic regression,primary,holm,0.3,0.2,0.035,,False,True
+Logistic regression,primary,holm,0.3,0.3,0.045,,False,True
+Logistic regression,primary,holm,0.3,0.4,0.06,,False,False
+Logistic regression,primary,holm,0.3,0.5,0.07,,False,False
+Logistic regression,primary,holm,0.4,0.0,0.04,,False,True
+Logistic regression,primary,holm,0.4,0.1,0.05,,False,False
+Logistic regression,primary,holm,0.4,0.2,0.06,,False,False
+Logistic regression,primary,holm,0.4,0.3,0.065,,False,False
+Logistic regression,primary,holm,0.4,0.4,0.07,,False,False
+Logistic regression,primary,holm,0.4,0.5,0.085,,False,False
+Logistic regression,4x4,multiplier,0.0,0.0,0.01,0.027773747264740044,True,True
+Logistic regression,4x4,multiplier,0.0,0.16666666666666666,0.015,0.03671326575570484,True,True
+Logistic regression,4x4,multiplier,0.0,0.3333333333333333,0.025,0.05288904963843449,True,True
+Logistic regression,4x4,multiplier,0.0,0.5,0.045,0.08203133302896498,False,True
+Logistic regression,4x4,multiplier,0.13333333333333333,0.0,0.02,0.04500860336789321,True,True
+Logistic regression,4x4,multiplier,0.13333333333333333,0.16666666666666666,0.03,0.06047248679949241,True,True
+Logistic regression,4x4,multiplier,0.13333333333333333,0.3333333333333333,0.035,0.06782910794467524,True,True
+Logistic regression,4x4,multiplier,0.13333333333333333,0.5,0.045,0.08203133302896498,False,True
+Logistic regression,4x4,multiplier,0.26666666666666666,0.0,0.025,0.052889049638434424,True,True
+Logistic regression,4x4,multiplier,0.26666666666666666,0.16666666666666666,0.025,0.052889049638434396,True,True
+Logistic regression,4x4,multiplier,0.26666666666666666,0.3333333333333333,0.04,0.075004752817707,True,True
+Logistic regression,4x4,multiplier,0.26666666666666666,0.5,0.07,0.11557764667668463,False,False
+Logistic regression,4x4,multiplier,0.4,0.0,0.04,0.075004752817707,True,True
+Logistic regression,4x4,multiplier,0.4,0.16666666666666666,0.055,0.09572477111184272,False,True
+Logistic regression,4x4,multiplier,0.4,0.3333333333333333,0.07,0.11557764667668463,False,False
+Logistic regression,4x4,multiplier,0.4,0.5,0.085,0.13481744075368526,False,False
+Logistic regression,4x4,normal_bonferroni,0.0,0.0,0.01,0.029237989674286716,True,True
+Logistic regression,4x4,normal_bonferroni,0.0,0.16666666666666666,0.015,0.03850205481046613,True,True
+Logistic regression,4x4,normal_bonferroni,0.0,0.3333333333333333,0.025,0.05518661405376519,True,True
+Logistic regression,4x4,normal_bonferroni,0.0,0.5,0.045,0.08508205989569755,False,True
+Logistic regression,4x4,normal_bonferroni,0.13333333333333333,0.0,0.02,0.04706886995711414,True,True
+Logistic regression,4x4,normal_bonferroni,0.13333333333333333,0.16666666666666666,0.03,0.06298288074352493,True,True
+Logistic regression,4x4,normal_bonferroni,0.13333333333333333,0.3333333333333333,0.035,0.07053364578940655,True,True
+Logistic regression,4x4,normal_bonferroni,0.13333333333333333,0.5,0.045,0.08508205989569755,False,True
+Logistic regression,4x4,normal_bonferroni,0.26666666666666666,0.0,0.025,0.05518661405376511,True,True
+Logistic regression,4x4,normal_bonferroni,0.26666666666666666,0.16666666666666666,0.025,0.055186614053765085,True,True
+Logistic regression,4x4,normal_bonferroni,0.26666666666666666,0.3333333333333333,0.04,0.07788852531924731,True,True
+Logistic regression,4x4,normal_bonferroni,0.26666666666666666,0.5,0.07,0.11933243862895512,False,False
+Logistic regression,4x4,normal_bonferroni,0.4,0.0,0.04,0.07788852531924731,True,True
+Logistic regression,4x4,normal_bonferroni,0.4,0.16666666666666666,0.055,0.09907977195059878,False,True
+Logistic regression,4x4,normal_bonferroni,0.4,0.3333333333333333,0.07,0.11933243862895512,False,False
+Logistic regression,4x4,normal_bonferroni,0.4,0.5,0.085,0.13892151674847192,False,False
+Logistic regression,4x4,exact_bonferroni,0.0,0.0,0.01,0.04830530943860629,True,True
+Logistic regression,4x4,exact_bonferroni,0.0,0.16666666666666666,0.015,0.05675001138135566,True,True
+Logistic regression,4x4,exact_bonferroni,0.0,0.3333333333333333,0.025,0.07238127147116015,True,True
+Logistic regression,4x4,exact_bonferroni,0.0,0.5,0.045,0.10094006974183571,False,False
+Logistic regression,4x4,exact_bonferroni,0.13333333333333333,0.0,0.02,0.06472982687884216,True,True
+Logistic regression,4x4,exact_bonferroni,0.13333333333333333,0.16666666666666666,0.03,0.07978400667793899,True,True
+Logistic regression,4x4,exact_bonferroni,0.13333333333333333,0.3333333333333333,0.035,0.08698938678779837,False,True
+Logistic regression,4x4,exact_bonferroni,0.13333333333333333,0.5,0.045,0.10094006974183571,False,False
+Logistic regression,4x4,exact_bonferroni,0.26666666666666666,0.0,0.025,0.07238127147116015,True,True
+Logistic regression,4x4,exact_bonferroni,0.26666666666666666,0.16666666666666666,0.025,0.07238127147116015,True,True
+Logistic regression,4x4,exact_bonferroni,0.26666666666666666,0.3333333333333333,0.04,0.09403284505573195,False,True
+Logistic regression,4x4,exact_bonferroni,0.26666666666666666,0.5,0.07,0.13398118642570414,False,False
+Logistic regression,4x4,exact_bonferroni,0.4,0.0,0.04,0.09403284505573195,False,True
+Logistic regression,4x4,exact_bonferroni,0.4,0.16666666666666666,0.055,0.11441883474493028,False,False
+Logistic regression,4x4,exact_bonferroni,0.4,0.3333333333333333,0.07,0.13398118642570414,False,False
+Logistic regression,4x4,exact_bonferroni,0.4,0.5,0.085,0.15294588930692934,False,False
+Logistic regression,4x4,holm,0.0,0.0,0.01,,True,True
+Logistic regression,4x4,holm,0.0,0.16666666666666666,0.015,,True,True
+Logistic regression,4x4,holm,0.0,0.3333333333333333,0.025,,True,True
+Logistic regression,4x4,holm,0.0,0.5,0.045,,False,True
+Logistic regression,4x4,holm,0.13333333333333333,0.0,0.02,,True,True
+Logistic regression,4x4,holm,0.13333333333333333,0.16666666666666666,0.03,,True,True
+Logistic regression,4x4,holm,0.13333333333333333,0.3333333333333333,0.035,,False,True
+Logistic regression,4x4,holm,0.13333333333333333,0.5,0.045,,False,True
+Logistic regression,4x4,holm,0.26666666666666666,0.0,0.025,,True,True
+Logistic regression,4x4,holm,0.26666666666666666,0.16666666666666666,0.025,,True,True
+Logistic regression,4x4,holm,0.26666666666666666,0.3333333333333333,0.04,,False,True
+Logistic regression,4x4,holm,0.26666666666666666,0.5,0.07,,False,False
+Logistic regression,4x4,holm,0.4,0.0,0.04,,False,True
+Logistic regression,4x4,holm,0.4,0.16666666666666666,0.055,,False,False
+Logistic regression,4x4,holm,0.4,0.3333333333333333,0.07,,False,False
+Logistic regression,4x4,holm,0.4,0.5,0.085,,False,False
+Logistic regression,6x6,multiplier,0.0,0.0,0.01,0.028892143345836965,True,True
+Logistic regression,6x6,multiplier,0.0,0.1,0.01,0.028892143345836965,True,True
+Logistic regression,6x6,multiplier,0.0,0.2,0.02,0.04658224586340937,True,True
+Logistic regression,6x6,multiplier,0.0,0.30000000000000004,0.025,0.05464394146605828,True,True
+Logistic regression,6x6,multiplier,0.0,0.4,0.04,0.07720739347574959,True,True
+Logistic regression,6x6,multiplier,0.0,0.5,0.045,0.08436149431237375,False,True
+Logistic regression,6x6,multiplier,0.08,0.0,0.01,0.028892143345836965,True,True
+Logistic regression,6x6,multiplier,0.08,0.1,0.015,0.038079552277465595,True,True
+Logistic regression,6x6,multiplier,0.08,0.2,0.02,0.04658224586340938,True,True
+Logistic regression,6x6,multiplier,0.08,0.30000000000000004,0.025,0.054643941466058166,True,True
+Logistic regression,6x6,multiplier,0.08,0.4,0.03,0.062389938944512925,True,True
+Logistic regression,6x6,multiplier,0.08,0.5,0.055,0.09828733846112694,False,True
+Logistic regression,6x6,multiplier,0.16,0.0,0.015,0.038079552277465595,True,True
+Logistic regression,6x6,multiplier,0.16,0.1,0.03,0.06238993894451302,True,True
+Logistic regression,6x6,multiplier,0.16,0.2,0.03,0.06238993894451302,True,True
+Logistic regression,6x6,multiplier,0.16,0.30000000000000004,0.035,0.06989484822579596,True,True
+Logistic regression,6x6,multiplier,0.16,0.4,0.035,0.06989484822579596,True,True
+Logistic regression,6x6,multiplier,0.16,0.5,0.045,0.08436149431237375,False,True
+Logistic regression,6x6,multiplier,0.24,0.0,0.015,0.038079552277465595,True,True
+Logistic regression,6x6,multiplier,0.24,0.1,0.02,0.04658224586340938,True,True
+Logistic regression,6x6,multiplier,0.24,0.2,0.03,0.062389938944512925,True,True
+Logistic regression,6x6,multiplier,0.24,0.30000000000000004,0.035,0.06989484822579595,True,True
+Logistic regression,6x6,multiplier,0.24,0.4,0.055,0.09828733846112706,False,True
+Logistic regression,6x6,multiplier,0.24,0.5,0.065,0.11180865029390137,False,False
+Logistic regression,6x6,multiplier,0.32,0.0,0.035,0.06989484822579596,True,True
+Logistic regression,6x6,multiplier,0.32,0.1,0.03,0.06238993894451302,True,True
+Logistic regression,6x6,multiplier,0.32,0.2,0.035,0.06989484822579596,True,True
+Logistic regression,6x6,multiplier,0.32,0.30000000000000004,0.045,0.08436149431237375,False,True
+Logistic regression,6x6,multiplier,0.32,0.4,0.055,0.09828733846112706,False,True
+Logistic regression,6x6,multiplier,0.32,0.5,0.07,0.11844557658868171,False,False
+Logistic regression,6x6,multiplier,0.4,0.0,0.04,0.0772073934757496,True,True
+Logistic regression,6x6,multiplier,0.4,0.1,0.05,0.09138190121819773,False,True
+Logistic regression,6x6,multiplier,0.4,0.2,0.06,0.10509238297483885,False,False
+Logistic regression,6x6,multiplier,0.4,0.30000000000000004,0.065,0.11180865029390137,False,False
+Logistic regression,6x6,multiplier,0.4,0.4,0.07,0.11844557658868171,False,False
+Logistic regression,6x6,multiplier,0.4,0.5,0.085,0.13795215566097607,False,False
+Logistic regression,6x6,normal_bonferroni,0.0,0.0,0.01,0.0310457743739077,True,True
+Logistic regression,6x6,normal_bonferroni,0.0,0.1,0.01,0.0310457743739077,True,True
+Logistic regression,6x6,normal_bonferroni,0.0,0.2,0.02,0.04961251873606669,True,True
+Logistic regression,6x6,normal_bonferroni,0.0,0.30000000000000004,0.025,0.05802323575612006,True,True
+Logistic regression,6x6,normal_bonferroni,0.0,0.4,0.04,0.08144889194398286,False,True
+Logistic regression,6x6,normal_bonferroni,0.0,0.5,0.045,0.08884855191672109,False,True
+Logistic regression,6x6,normal_bonferroni,0.08,0.0,0.01,0.0310457743739077,True,True
+Logistic regression,6x6,normal_bonferroni,0.08,0.1,0.015,0.040710531673971345,True,True
+Logistic regression,6x6,normal_bonferroni,0.08,0.2,0.02,0.049612518736066695,True,True
+Logistic regression,6x6,normal_bonferroni,0.08,0.30000000000000004,0.025,0.058023235756119944,True,True
+Logistic regression,6x6,normal_bonferroni,0.08,0.4,0.03,0.06608226629092759,True,True
+Logistic regression,6x6,normal_bonferroni,0.08,0.5,0.055,0.10322192706369676,False,False
+Logistic regression,6x6,normal_bonferroni,0.16,0.0,0.015,0.04071053167397135,True,True
+Logistic regression,6x6,normal_bonferroni,0.16,0.1,0.03,0.0660822662909277,True,True
+Logistic regression,6x6,normal_bonferroni,0.16,0.2,0.03,0.0660822662909277,True,True
+Logistic regression,6x6,normal_bonferroni,0.16,0.30000000000000004,0.035,0.0738727255096592,True,True
+Logistic regression,6x6,normal_bonferroni,0.16,0.4,0.035,0.0738727255096592,True,True
+Logistic regression,6x6,normal_bonferroni,0.16,0.5,0.045,0.08884855191672109,False,True
+Logistic regression,6x6,normal_bonferroni,0.24,0.0,0.015,0.040710531673971345,True,True
+Logistic regression,6x6,normal_bonferroni,0.24,0.1,0.02,0.049612518736066695,True,True
+Logistic regression,6x6,normal_bonferroni,0.24,0.2,0.03,0.06608226629092759,True,True
+Logistic regression,6x6,normal_bonferroni,0.24,0.30000000000000004,0.035,0.0738727255096592,True,True
+Logistic regression,6x6,normal_bonferroni,0.24,0.4,0.055,0.1032219270636969,False,False
+Logistic regression,6x6,normal_bonferroni,0.24,0.5,0.065,0.11714465478051099,False,False
+Logistic regression,6x6,normal_bonferroni,0.32,0.0,0.035,0.0738727255096592,True,True
+Logistic regression,6x6,normal_bonferroni,0.32,0.1,0.03,0.0660822662909277,True,True
+Logistic regression,6x6,normal_bonferroni,0.32,0.2,0.035,0.0738727255096592,True,True
+Logistic regression,6x6,normal_bonferroni,0.32,0.30000000000000004,0.045,0.08884855191672109,False,True
+Logistic regression,6x6,normal_bonferroni,0.32,0.4,0.055,0.1032219270636969,False,False
+Logistic regression,6x6,normal_bonferroni,0.32,0.5,0.07,0.12396818432059652,False,False
+Logistic regression,6x6,normal_bonferroni,0.4,0.0,0.04,0.08144889194398286,False,True
+Logistic regression,6x6,normal_bonferroni,0.4,0.1,0.05,0.09609927736936413,False,True
+Logistic regression,6x6,normal_bonferroni,0.4,0.2,0.06,0.11023273964726801,False,False
+Logistic regression,6x6,normal_bonferroni,0.4,0.30000000000000004,0.065,0.11714465478051099,False,False
+Logistic regression,6x6,normal_bonferroni,0.4,0.4,0.07,0.12396818432059652,False,False
+Logistic regression,6x6,normal_bonferroni,0.4,0.5,0.085,0.14398849591878163,False,False
+Logistic regression,6x6,exact_bonferroni,0.0,0.0,0.01,0.05299508201334093,True,True
+Logistic regression,6x6,exact_bonferroni,0.0,0.1,0.01,0.05299508201334093,True,True
+Logistic regression,6x6,exact_bonferroni,0.0,0.2,0.02,0.06993630608770185,True,True
+Logistic regression,6x6,exact_bonferroni,0.0,0.30000000000000004,0.025,0.07780296386421583,True,True
+Logistic regression,6x6,exact_bonferroni,0.0,0.4,0.04,0.09999556176287655,False,True
+Logistic regression,6x6,exact_bonferroni,0.0,0.5,0.045,0.10705767314035276,False,False
+Logistic regression,6x6,exact_bonferroni,0.08,0.0,0.01,0.05299508201334093,True,True
+Logistic regression,6x6,exact_bonferroni,0.08,0.1,0.015,0.06171569805784471,True,True
+Logistic regression,6x6,exact_bonferroni,0.08,0.2,0.02,0.06993630608770185,True,True
+Logistic regression,6x6,exact_bonferroni,0.08,0.30000000000000004,0.025,0.07780296386421583,True,True
+Logistic regression,6x6,exact_bonferroni,0.08,0.4,0.03,0.08540111205014421,False,True
+Logistic regression,6x6,exact_bonferroni,0.08,0.5,0.055,0.12081811167698266,False,False
+Logistic regression,6x6,exact_bonferroni,0.16,0.0,0.015,0.06171569805784471,True,True
+Logistic regression,6x6,exact_bonferroni,0.16,0.1,0.03,0.08540111205014421,False,True
+Logistic regression,6x6,exact_bonferroni,0.16,0.2,0.03,0.08540111205014421,False,True
+Logistic regression,6x6,exact_bonferroni,0.16,0.30000000000000004,0.035,0.09278593407505425,False,True
+Logistic regression,6x6,exact_bonferroni,0.16,0.4,0.035,0.09278593407505425,False,True
+Logistic regression,6x6,exact_bonferroni,0.16,0.5,0.045,0.10705767314035276,False,False
+Logistic regression,6x6,exact_bonferroni,0.24,0.0,0.015,0.06171569805784471,True,True
+Logistic regression,6x6,exact_bonferroni,0.24,0.1,0.02,0.06993630608770185,True,True
+Logistic regression,6x6,exact_bonferroni,0.24,0.2,0.03,0.08540111205014421,False,True
+Logistic regression,6x6,exact_bonferroni,0.24,0.30000000000000004,0.035,0.09278593407505425,False,True
+Logistic regression,6x6,exact_bonferroni,0.24,0.4,0.055,0.12081811167698266,False,False
+Logistic regression,6x6,exact_bonferroni,0.24,0.5,0.065,0.13418573266006745,False,False
+Logistic regression,6x6,exact_bonferroni,0.32,0.0,0.035,0.09278593407505425,False,True
+Logistic regression,6x6,exact_bonferroni,0.32,0.1,0.03,0.08540111205014421,False,True
+Logistic regression,6x6,exact_bonferroni,0.32,0.2,0.035,0.09278593407505425,False,True
+Logistic regression,6x6,exact_bonferroni,0.32,0.30000000000000004,0.045,0.10705767314035276,False,False
+Logistic regression,6x6,exact_bonferroni,0.32,0.4,0.055,0.12081811167698266,False,False
+Logistic regression,6x6,exact_bonferroni,0.32,0.5,0.07,0.14074741211379882,False,False
+Logistic regression,6x6,exact_bonferroni,0.4,0.0,0.04,0.09999556176287655,False,True
+Logistic regression,6x6,exact_bonferroni,0.4,0.1,0.05,0.11399312628529294,False,False
+Logistic regression,6x6,exact_bonferroni,0.4,0.2,0.06,0.1275455011756748,False,False
+Logistic regression,6x6,exact_bonferroni,0.4,0.30000000000000004,0.065,0.13418573266006745,False,False
+Logistic regression,6x6,exact_bonferroni,0.4,0.4,0.07,0.14074741211379882,False,False
+Logistic regression,6x6,exact_bonferroni,0.4,0.5,0.085,0.16002780843079303,False,False
+Logistic regression,6x6,holm,0.0,0.0,0.01,,True,True
+Logistic regression,6x6,holm,0.0,0.1,0.01,,True,True
+Logistic regression,6x6,holm,0.0,0.2,0.02,,True,True
+Logistic regression,6x6,holm,0.0,0.30000000000000004,0.025,,True,True
+Logistic regression,6x6,holm,0.0,0.4,0.04,,False,True
+Logistic regression,6x6,holm,0.0,0.5,0.045,,False,True
+Logistic regression,6x6,holm,0.08,0.0,0.01,,True,True
+Logistic regression,6x6,holm,0.08,0.1,0.015,,True,True
+Logistic regression,6x6,holm,0.08,0.2,0.02,,True,True
+Logistic regression,6x6,holm,0.08,0.30000000000000004,0.025,,True,True
+Logistic regression,6x6,holm,0.08,0.4,0.03,,False,True
+Logistic regression,6x6,holm,0.08,0.5,0.055,,False,False
+Logistic regression,6x6,holm,0.16,0.0,0.015,,True,True
+Logistic regression,6x6,holm,0.16,0.1,0.03,,False,True
+Logistic regression,6x6,holm,0.16,0.2,0.03,,False,True
+Logistic regression,6x6,holm,0.16,0.30000000000000004,0.035,,False,True
+Logistic regression,6x6,holm,0.16,0.4,0.035,,False,True
+Logistic regression,6x6,holm,0.16,0.5,0.045,,False,True
+Logistic regression,6x6,holm,0.24,0.0,0.015,,True,True
+Logistic regression,6x6,holm,0.24,0.1,0.02,,True,True
+Logistic regression,6x6,holm,0.24,0.2,0.03,,False,True
+Logistic regression,6x6,holm,0.24,0.30000000000000004,0.035,,False,True
+Logistic regression,6x6,holm,0.24,0.4,0.055,,False,False
+Logistic regression,6x6,holm,0.24,0.5,0.065,,False,False
+Logistic regression,6x6,holm,0.32,0.0,0.035,,False,True
+Logistic regression,6x6,holm,0.32,0.1,0.03,,False,True
+Logistic regression,6x6,holm,0.32,0.2,0.035,,False,True
+Logistic regression,6x6,holm,0.32,0.30000000000000004,0.045,,False,True
+Logistic regression,6x6,holm,0.32,0.4,0.055,,False,False
+Logistic regression,6x6,holm,0.32,0.5,0.07,,False,False
+Logistic regression,6x6,holm,0.4,0.0,0.04,,False,True
+Logistic regression,6x6,holm,0.4,0.1,0.05,,False,False
+Logistic regression,6x6,holm,0.4,0.2,0.06,,False,False
+Logistic regression,6x6,holm,0.4,0.30000000000000004,0.065,,False,False
+Logistic regression,6x6,holm,0.4,0.4,0.07,,False,False
+Logistic regression,6x6,holm,0.4,0.5,0.085,,False,False
+Logistic regression,10x10,multiplier,0.0,0.0,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.0,0.05555555555555555,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.0,0.1111111111111111,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.0,0.16666666666666666,0.015,0.03807113293656343,True,True
+Logistic regression,10x10,multiplier,0.0,0.2222222222222222,0.025,0.054633127458668274,True,True
+Logistic regression,10x10,multiplier,0.0,0.2777777777777778,0.025,0.054633127458668274,True,True
+Logistic regression,10x10,multiplier,0.0,0.3333333333333333,0.025,0.054633127458668274,True,True
+Logistic regression,10x10,multiplier,0.0,0.38888888888888884,0.035,0.06988211870576844,True,True
+Logistic regression,10x10,multiplier,0.0,0.4444444444444444,0.045,0.08434713537529169,False,True
+Logistic regression,10x10,multiplier,0.0,0.5,0.045,0.08434713537529169,False,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.0,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.05555555555555555,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.1111111111111111,0.015,0.03807113293656343,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.16666666666666666,0.015,0.03807113293656343,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.2222222222222222,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.2777777777777778,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.3333333333333333,0.03,0.06237812320673364,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.38888888888888884,0.035,0.06988211870576844,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.4444444444444444,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.044444444444444446,0.5,0.045,0.0843471353752917,False,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.0,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.05555555555555555,0.01,0.028885251557240345,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.1111111111111111,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.16666666666666666,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.2222222222222222,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.2777777777777778,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.3333333333333333,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.38888888888888884,0.03,0.06237812320673372,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.4444444444444444,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.08888888888888889,0.5,0.05,0.09136680524365948,False,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.0,0.02,0.046572548751993244,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.05555555555555555,0.015,0.03807113293656344,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.1111111111111111,0.03,0.062378123206733735,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.16666666666666666,0.03,0.062378123206733735,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.2222222222222222,0.03,0.062378123206733735,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.2777777777777778,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.3333333333333333,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.38888888888888884,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.4444444444444444,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.13333333333333333,0.5,0.045,0.08434713537529169,False,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.0,0.015,0.03807113293656344,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.05555555555555555,0.015,0.03807113293656344,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.1111111111111111,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.16666666666666666,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.2222222222222222,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.2777777777777778,0.03,0.062378123206733714,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.3333333333333333,0.03,0.062378123206733714,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.38888888888888884,0.03,0.062378123206733714,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.4444444444444444,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.17777777777777778,0.5,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.0,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.05555555555555555,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.1111111111111111,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.16666666666666666,0.02,0.04657254875199325,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.2222222222222222,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.2777777777777778,0.035,0.06988211870576844,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.3333333333333333,0.035,0.06988211870576844,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.38888888888888884,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.4444444444444444,0.045,0.0843471353752917,False,True
+Logistic regression,10x10,multiplier,0.22222222222222224,0.5,0.06,0.10507593342938008,False,False
+Logistic regression,10x10,multiplier,0.26666666666666666,0.0,0.025,0.054633127458668204,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.05555555555555555,0.03,0.06237812320673371,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.1111111111111111,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.16666666666666666,0.025,0.054633127458668176,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.2222222222222222,0.035,0.06988211870576844,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.2777777777777778,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.3333333333333333,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.26666666666666666,0.38888888888888884,0.06,0.10507593342938007,False,False
+Logistic regression,10x10,multiplier,0.26666666666666666,0.4444444444444444,0.065,0.11179157466005647,False,False
+Logistic regression,10x10,multiplier,0.26666666666666666,0.5,0.07,0.1184279038097821,False,False
+Logistic regression,10x10,multiplier,0.3111111111111111,0.0,0.03,0.06237812320673371,True,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.05555555555555555,0.035,0.06988211870576845,True,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.1111111111111111,0.03,0.062378123206733735,True,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.16666666666666666,0.03,0.062378123206733735,True,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.2222222222222222,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.2777777777777778,0.04,0.07719382034720763,True,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.3333333333333333,0.045,0.08434713537529169,False,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.38888888888888884,0.055,0.09827154738966823,False,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.4444444444444444,0.055,0.09827154738966823,False,True
+Logistic regression,10x10,multiplier,0.3111111111111111,0.5,0.07,0.1184279038097821,False,False
+Logistic regression,10x10,multiplier,0.35555555555555557,0.0,0.045,0.08434713537529172,False,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.05555555555555555,0.045,0.08434713537529173,False,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.1111111111111111,0.04,0.07719382034720765,True,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.16666666666666666,0.045,0.0843471353752917,False,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.2222222222222222,0.055,0.09827154738966817,False,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.2777777777777778,0.05,0.0913668052436595,False,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.3333333333333333,0.055,0.09827154738966823,False,True
+Logistic regression,10x10,multiplier,0.35555555555555557,0.38888888888888884,0.06,0.10507593342938007,False,False
+Logistic regression,10x10,multiplier,0.35555555555555557,0.4444444444444444,0.06,0.10507593342938007,False,False
+Logistic regression,10x10,multiplier,0.35555555555555557,0.5,0.07,0.1184279038097821,False,False
+Logistic regression,10x10,multiplier,0.4,0.0,0.04,0.07719382034720765,True,True
+Logistic regression,10x10,multiplier,0.4,0.05555555555555555,0.04,0.07719382034720765,True,True
+Logistic regression,10x10,multiplier,0.4,0.1111111111111111,0.05,0.09136680524365945,False,True
+Logistic regression,10x10,multiplier,0.4,0.16666666666666666,0.055,0.0982715473896682,False,True
+Logistic regression,10x10,multiplier,0.4,0.2222222222222222,0.06,0.1050759334293801,False,False
+Logistic regression,10x10,multiplier,0.4,0.2777777777777778,0.06,0.1050759334293801,False,False
+Logistic regression,10x10,multiplier,0.4,0.3333333333333333,0.07,0.1184279038097821,False,False
+Logistic regression,10x10,multiplier,0.4,0.38888888888888884,0.07,0.1184279038097821,False,False
+Logistic regression,10x10,multiplier,0.4,0.4444444444444444,0.075,0.1249927094610358,False,False
+Logistic regression,10x10,multiplier,0.4,0.5,0.085,0.13793283889760674,False,False
+Logistic regression,10x10,normal_bonferroni,0.0,0.0,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.05555555555555555,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.1111111111111111,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.16666666666666666,0.015,0.043282263892017586,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.2222222222222222,0.025,0.061326431520995206,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.2777777777777778,0.025,0.061326431520995206,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.3333333333333333,0.025,0.061326431520995206,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.38888888888888884,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.4444444444444444,0.045,0.09323456520920645,False,True
+Logistic regression,10x10,normal_bonferroni,0.0,0.5,0.045,0.09323456520920645,False,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.0,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.05555555555555555,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.1111111111111111,0.015,0.043282263892017586,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.16666666666666666,0.015,0.043282263892017586,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.2222222222222222,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.2777777777777778,0.025,0.06132643152099508,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.3333333333333333,0.03,0.06969144590250459,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.38888888888888884,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.4444444444444444,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.044444444444444446,0.5,0.045,0.09323456520920648,False,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.0,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.05555555555555555,0.01,0.033150907659265004,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.1111111111111111,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.16666666666666666,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.2222222222222222,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.2777777777777778,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.3333333333333333,0.025,0.06132643152099508,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.38888888888888884,0.03,0.06969144590250467,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.4444444444444444,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.08888888888888889,0.5,0.05,0.10071042265188143,False,False
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.0,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.05555555555555555,0.015,0.043282263892017586,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.1111111111111111,0.03,0.0696914459025047,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.16666666666666666,0.03,0.0696914459025047,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.2222222222222222,0.03,0.0696914459025047,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.2777777777777778,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.3333333333333333,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.38888888888888884,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.4444444444444444,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.13333333333333333,0.5,0.045,0.09323456520920645,False,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.0,0.015,0.043282263892017586,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.05555555555555555,0.015,0.043282263892017586,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.1111111111111111,0.025,0.06132643152099508,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.16666666666666666,0.025,0.06132643152099508,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.2222222222222222,0.025,0.06132643152099508,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.2777777777777778,0.03,0.06969144590250467,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.3333333333333333,0.03,0.06969144590250467,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.38888888888888884,0.03,0.06969144590250467,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.4444444444444444,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.17777777777777778,0.5,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.0,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.05555555555555555,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.1111111111111111,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.16666666666666666,0.02,0.052574552717189624,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.2222222222222222,0.025,0.06132643152099508,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.2777777777777778,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.3333333333333333,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.38888888888888884,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.4444444444444444,0.045,0.09323456520920646,False,True
+Logistic regression,10x10,normal_bonferroni,0.22222222222222224,0.5,0.06,0.11525734032802293,False,False
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.0,0.025,0.06132643152099511,True,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.05555555555555555,0.03,0.06969144590250467,True,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.1111111111111111,0.025,0.061326431520995074,True,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.16666666666666666,0.025,0.061326431520995074,True,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.2222222222222222,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.2777777777777778,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.3333333333333333,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.38888888888888884,0.06,0.1152573403280229,False,False
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.4444444444444444,0.065,0.12236049747090934,False,False
+Logistic regression,10x10,normal_bonferroni,0.26666666666666666,0.5,0.07,0.12936642812693697,False,False
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.0,0.03,0.06969144590250467,True,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.05555555555555555,0.035,0.0777610247429911,True,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.1111111111111111,0.03,0.0696914459025047,True,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.16666666666666666,0.03,0.0696914459025047,True,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.2222222222222222,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.2777777777777778,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.3333333333333333,0.045,0.09323456520920645,False,True
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.38888888888888884,0.055,0.10804539337775736,False,False
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.4444444444444444,0.055,0.10804539337775736,False,False
+Logistic regression,10x10,normal_bonferroni,0.3111111111111111,0.5,0.07,0.12936642812693697,False,False
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.0,0.045,0.09323456520920649,False,True
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.05555555555555555,0.045,0.0932345652092065,False,True
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.1111111111111111,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.16666666666666666,0.045,0.09323456520920646,False,True
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.2222222222222222,0.055,0.10804539337775729,False,False
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.2777777777777778,0.05,0.10071042265188146,False,False
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.3333333333333333,0.055,0.10804539337775734,False,False
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.38888888888888884,0.06,0.1152573403280229,False,False
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.4444444444444444,0.06,0.1152573403280229,False,False
+Logistic regression,10x10,normal_bonferroni,0.35555555555555557,0.5,0.07,0.12936642812693697,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.0,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.4,0.05555555555555555,0.04,0.08559487586086048,False,True
+Logistic regression,10x10,normal_bonferroni,0.4,0.1111111111111111,0.05,0.10071042265188139,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.16666666666666666,0.055,0.10804539337775732,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.2222222222222222,0.06,0.11525734032802294,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.2777777777777778,0.06,0.11525734032802294,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.3333333333333333,0.07,0.12936642812693697,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.38888888888888884,0.07,0.12936642812693697,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.4444444444444444,0.075,0.13628468010399264,False,False
+Logistic regression,10x10,normal_bonferroni,0.4,0.5,0.085,0.14988890347830322,False,False
+Logistic regression,10x10,exact_bonferroni,0.0,0.0,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.05555555555555555,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.1111111111111111,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.16666666666666666,0.015,0.06779339266213194,True,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.2222222222222222,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.2777777777777778,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.3333333333333333,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.38888888888888884,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.0,0.4444444444444444,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.0,0.5,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.0,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.05555555555555555,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.1111111111111111,0.015,0.06779339266213194,True,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.16666666666666666,0.015,0.06779339266213194,True,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.2222222222222222,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.2777777777777778,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.3333333333333333,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.38888888888888884,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.4444444444444444,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.044444444444444446,0.5,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.0,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.05555555555555555,0.01,0.058764440740474336,True,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.1111111111111111,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.16666666666666666,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.2222222222222222,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.2777777777777778,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.3333333333333333,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.38888888888888884,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.4444444444444444,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.08888888888888889,0.5,0.05,0.1215256722859313,False,False
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.0,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.05555555555555555,0.015,0.06779339266213194,True,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.1111111111111111,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.16666666666666666,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.2222222222222222,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.2777777777777778,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.3333333333333333,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.38888888888888884,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.4444444444444444,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.13333333333333333,0.5,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.0,0.015,0.06779339266213194,True,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.05555555555555555,0.015,0.06779339266213194,True,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.1111111111111111,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.16666666666666666,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.2222222222222222,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.2777777777777778,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.3333333333333333,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.38888888888888884,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.4444444444444444,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.17777777777777778,0.5,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.0,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.05555555555555555,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.1111111111111111,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.16666666666666666,0.02,0.07628369586334036,True,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.2222222222222222,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.2777777777777778,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.3333333333333333,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.38888888888888884,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.4444444444444444,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.22222222222222224,0.5,0.06,0.1353756675771063,False,False
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.0,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.05555555555555555,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.1111111111111111,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.16666666666666666,0.025,0.08439169566756854,False,True
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.2222222222222222,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.2777777777777778,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.3333333333333333,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.38888888888888884,0.06,0.1353756675771063,False,False
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.4444444444444444,0.065,0.14215265665956084,False,False
+Logistic regression,10x10,exact_bonferroni,0.26666666666666666,0.5,0.07,0.14884407661623067,False,False
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.0,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.05555555555555555,0.035,0.09979535150487898,False,True
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.1111111111111111,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.16666666666666666,0.03,0.09220912135139041,False,True
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.2222222222222222,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.2777777777777778,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.3333333333333333,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.38888888888888884,0.055,0.1285037766718781,False,False
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.4444444444444444,0.055,0.1285037766718781,False,False
+Logistic regression,10x10,exact_bonferroni,0.3111111111111111,0.5,0.07,0.14884407661623067,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.0,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.05555555555555555,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.1111111111111111,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.16666666666666666,0.045,0.11442741571964335,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.2222222222222222,0.055,0.1285037766718781,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.2777777777777778,0.05,0.1215256722859313,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.3333333333333333,0.055,0.1285037766718781,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.38888888888888884,0.06,0.1353756675771063,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.4444444444444444,0.06,0.1353756675771063,False,False
+Logistic regression,10x10,exact_bonferroni,0.35555555555555557,0.5,0.07,0.14884407661623067,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.0,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.05555555555555555,0.04,0.10719149005403761,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.1111111111111111,0.05,0.1215256722859313,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.16666666666666666,0.055,0.1285037766718781,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.2222222222222222,0.06,0.1353756675771063,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.2777777777777778,0.06,0.1353756675771063,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.3333333333333333,0.07,0.14884407661623067,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.38888888888888884,0.07,0.14884407661623067,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.4444444444444444,0.075,0.15545773662051432,False,False
+Logistic regression,10x10,exact_bonferroni,0.4,0.5,0.085,0.16847728117089833,False,False
+Logistic regression,10x10,holm,0.0,0.0,0.01,,True,True
+Logistic regression,10x10,holm,0.0,0.05555555555555555,0.01,,True,True
+Logistic regression,10x10,holm,0.0,0.1111111111111111,0.01,,True,True
+Logistic regression,10x10,holm,0.0,0.16666666666666666,0.015,,True,True
+Logistic regression,10x10,holm,0.0,0.2222222222222222,0.025,,False,True
+Logistic regression,10x10,holm,0.0,0.2777777777777778,0.025,,False,True
+Logistic regression,10x10,holm,0.0,0.3333333333333333,0.025,,False,True
+Logistic regression,10x10,holm,0.0,0.38888888888888884,0.035,,False,True
+Logistic regression,10x10,holm,0.0,0.4444444444444444,0.045,,False,False
+Logistic regression,10x10,holm,0.0,0.5,0.045,,False,False
+Logistic regression,10x10,holm,0.044444444444444446,0.0,0.01,,True,True
+Logistic regression,10x10,holm,0.044444444444444446,0.05555555555555555,0.01,,True,True
+Logistic regression,10x10,holm,0.044444444444444446,0.1111111111111111,0.015,,True,True
+Logistic regression,10x10,holm,0.044444444444444446,0.16666666666666666,0.015,,True,True
+Logistic regression,10x10,holm,0.044444444444444446,0.2222222222222222,0.02,,True,True
+Logistic regression,10x10,holm,0.044444444444444446,0.2777777777777778,0.025,,False,True
+Logistic regression,10x10,holm,0.044444444444444446,0.3333333333333333,0.03,,False,True
+Logistic regression,10x10,holm,0.044444444444444446,0.38888888888888884,0.035,,False,True
+Logistic regression,10x10,holm,0.044444444444444446,0.4444444444444444,0.04,,False,False
+Logistic regression,10x10,holm,0.044444444444444446,0.5,0.045,,False,False
+Logistic regression,10x10,holm,0.08888888888888889,0.0,0.01,,True,True
+Logistic regression,10x10,holm,0.08888888888888889,0.05555555555555555,0.01,,True,True
+Logistic regression,10x10,holm,0.08888888888888889,0.1111111111111111,0.02,,True,True
+Logistic regression,10x10,holm,0.08888888888888889,0.16666666666666666,0.02,,True,True
+Logistic regression,10x10,holm,0.08888888888888889,0.2222222222222222,0.02,,True,True
+Logistic regression,10x10,holm,0.08888888888888889,0.2777777777777778,0.02,,True,True
+Logistic regression,10x10,holm,0.08888888888888889,0.3333333333333333,0.025,,False,True
+Logistic regression,10x10,holm,0.08888888888888889,0.38888888888888884,0.03,,False,True
+Logistic regression,10x10,holm,0.08888888888888889,0.4444444444444444,0.035,,False,True
+Logistic regression,10x10,holm,0.08888888888888889,0.5,0.05,,False,False
+Logistic regression,10x10,holm,0.13333333333333333,0.0,0.02,,True,True
+Logistic regression,10x10,holm,0.13333333333333333,0.05555555555555555,0.015,,True,True
+Logistic regression,10x10,holm,0.13333333333333333,0.1111111111111111,0.03,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.16666666666666666,0.03,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.2222222222222222,0.03,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.2777777777777778,0.035,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.3333333333333333,0.035,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.38888888888888884,0.035,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.4444444444444444,0.035,,False,True
+Logistic regression,10x10,holm,0.13333333333333333,0.5,0.045,,False,False
+Logistic regression,10x10,holm,0.17777777777777778,0.0,0.015,,True,True
+Logistic regression,10x10,holm,0.17777777777777778,0.05555555555555555,0.015,,True,True
+Logistic regression,10x10,holm,0.17777777777777778,0.1111111111111111,0.025,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.16666666666666666,0.025,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.2222222222222222,0.025,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.2777777777777778,0.03,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.3333333333333333,0.03,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.38888888888888884,0.03,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.4444444444444444,0.035,,False,True
+Logistic regression,10x10,holm,0.17777777777777778,0.5,0.04,,False,False
+Logistic regression,10x10,holm,0.22222222222222224,0.0,0.02,,True,True
+Logistic regression,10x10,holm,0.22222222222222224,0.05555555555555555,0.02,,True,True
+Logistic regression,10x10,holm,0.22222222222222224,0.1111111111111111,0.02,,True,True
+Logistic regression,10x10,holm,0.22222222222222224,0.16666666666666666,0.02,,True,True
+Logistic regression,10x10,holm,0.22222222222222224,0.2222222222222222,0.025,,False,True
+Logistic regression,10x10,holm,0.22222222222222224,0.2777777777777778,0.035,,False,True
+Logistic regression,10x10,holm,0.22222222222222224,0.3333333333333333,0.035,,False,True
+Logistic regression,10x10,holm,0.22222222222222224,0.38888888888888884,0.04,,False,False
+Logistic regression,10x10,holm,0.22222222222222224,0.4444444444444444,0.045,,False,False
+Logistic regression,10x10,holm,0.22222222222222224,0.5,0.06,,False,False
+Logistic regression,10x10,holm,0.26666666666666666,0.0,0.025,,False,True
+Logistic regression,10x10,holm,0.26666666666666666,0.05555555555555555,0.03,,False,True
+Logistic regression,10x10,holm,0.26666666666666666,0.1111111111111111,0.025,,False,True
+Logistic regression,10x10,holm,0.26666666666666666,0.16666666666666666,0.025,,False,True
+Logistic regression,10x10,holm,0.26666666666666666,0.2222222222222222,0.035,,False,True
+Logistic regression,10x10,holm,0.26666666666666666,0.2777777777777778,0.04,,False,False
+Logistic regression,10x10,holm,0.26666666666666666,0.3333333333333333,0.04,,False,False
+Logistic regression,10x10,holm,0.26666666666666666,0.38888888888888884,0.06,,False,False
+Logistic regression,10x10,holm,0.26666666666666666,0.4444444444444444,0.065,,False,False
+Logistic regression,10x10,holm,0.26666666666666666,0.5,0.07,,False,False
+Logistic regression,10x10,holm,0.3111111111111111,0.0,0.03,,False,True
+Logistic regression,10x10,holm,0.3111111111111111,0.05555555555555555,0.035,,False,True
+Logistic regression,10x10,holm,0.3111111111111111,0.1111111111111111,0.03,,False,True
+Logistic regression,10x10,holm,0.3111111111111111,0.16666666666666666,0.03,,False,True
+Logistic regression,10x10,holm,0.3111111111111111,0.2222222222222222,0.04,,False,False
+Logistic regression,10x10,holm,0.3111111111111111,0.2777777777777778,0.04,,False,False
+Logistic regression,10x10,holm,0.3111111111111111,0.3333333333333333,0.045,,False,False
+Logistic regression,10x10,holm,0.3111111111111111,0.38888888888888884,0.055,,False,False
+Logistic regression,10x10,holm,0.3111111111111111,0.4444444444444444,0.055,,False,False
+Logistic regression,10x10,holm,0.3111111111111111,0.5,0.07,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.0,0.045,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.05555555555555555,0.045,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.1111111111111111,0.04,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.16666666666666666,0.045,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.2222222222222222,0.055,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.2777777777777778,0.05,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.3333333333333333,0.055,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.38888888888888884,0.06,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.4444444444444444,0.06,,False,False
+Logistic regression,10x10,holm,0.35555555555555557,0.5,0.07,,False,False
+Logistic regression,10x10,holm,0.4,0.0,0.04,,False,False
+Logistic regression,10x10,holm,0.4,0.05555555555555555,0.04,,False,False
+Logistic regression,10x10,holm,0.4,0.1111111111111111,0.05,,False,False
+Logistic regression,10x10,holm,0.4,0.16666666666666666,0.055,,False,False
+Logistic regression,10x10,holm,0.4,0.2222222222222222,0.06,,False,False
+Logistic regression,10x10,holm,0.4,0.2777777777777778,0.06,,False,False
+Logistic regression,10x10,holm,0.4,0.3333333333333333,0.07,,False,False
+Logistic regression,10x10,holm,0.4,0.38888888888888884,0.07,,False,False
+Logistic regression,10x10,holm,0.4,0.4444444444444444,0.075,,False,False
+Logistic regression,10x10,holm,0.4,0.5,0.085,,False,False
+Extra Trees,primary,multiplier,0.0,0.0,0.035,0.07074099009873952,True,True
+Extra Trees,primary,multiplier,0.0,0.1,0.04,0.0781096107142142,True,True
+Extra Trees,primary,multiplier,0.0,0.2,0.04,0.07810961071421418,True,True
+Extra Trees,primary,multiplier,0.0,0.3,0.065,0.11294368199753158,False,False
+Extra Trees,primary,multiplier,0.0,0.4,0.085,0.13923615712381254,False,False
+Extra Trees,primary,multiplier,0.0,0.5,0.095,0.15202364739626173,False,False
+Extra Trees,primary,multiplier,0.05,0.0,0.035,0.07074099009873952,True,True
+Extra Trees,primary,multiplier,0.05,0.1,0.04,0.07810961071421418,True,True
+Extra Trees,primary,multiplier,0.05,0.2,0.04,0.07810961071421418,True,True
+Extra Trees,primary,multiplier,0.05,0.3,0.07,0.11962030102494603,False,False
+Extra Trees,primary,multiplier,0.05,0.4,0.085,0.13923615712381254,False,False
+Extra Trees,primary,multiplier,0.05,0.5,0.085,0.13923615712381254,False,False
+Extra Trees,primary,multiplier,0.1,0.0,0.05,0.09238534330730386,False,True
+Extra Trees,primary,multiplier,0.1,0.1,0.045,0.08531594490358477,False,True
+Extra Trees,primary,multiplier,0.1,0.2,0.045,0.08531594490358477,False,True
+Extra Trees,primary,multiplier,0.1,0.3,0.075,0.1262236354943819,False,False
+Extra Trees,primary,multiplier,0.1,0.4,0.08,0.1327603669608683,False,False
+Extra Trees,primary,multiplier,0.1,0.5,0.085,0.13923615712381254,False,False
+Extra Trees,primary,multiplier,0.2,0.0,0.04,0.07810961071421418,True,True
+Extra Trees,primary,multiplier,0.2,0.1,0.035,0.07074099009873952,True,True
+Extra Trees,primary,multiplier,0.2,0.2,0.045,0.08531594490358477,False,True
+Extra Trees,primary,multiplier,0.2,0.3,0.06,0.10618579805831857,False,False
+Extra Trees,primary,multiplier,0.2,0.4,0.075,0.1262236354943819,False,False
+Extra Trees,primary,multiplier,0.2,0.5,0.09,0.14565585401735784,False,False
+Extra Trees,primary,multiplier,0.3,0.0,0.05,0.09238534330730386,False,True
+Extra Trees,primary,multiplier,0.3,0.1,0.035,0.07074099009873952,True,True
+Extra Trees,primary,multiplier,0.3,0.2,0.05,0.09238534330730383,False,True
+Extra Trees,primary,multiplier,0.3,0.3,0.07,0.11962030102494603,False,False
+Extra Trees,primary,multiplier,0.3,0.4,0.08,0.1327603669608683,False,False
+Extra Trees,primary,multiplier,0.3,0.5,0.085,0.13923615712381254,False,False
+Extra Trees,primary,multiplier,0.4,0.0,0.04,0.07810961071421418,True,True
+Extra Trees,primary,multiplier,0.4,0.1,0.035,0.07074099009873952,True,True
+Extra Trees,primary,multiplier,0.4,0.2,0.06,0.10618579805831847,False,False
+Extra Trees,primary,multiplier,0.4,0.3,0.07,0.11962030102494606,False,False
+Extra Trees,primary,multiplier,0.4,0.4,0.075,0.1262236354943819,False,False
+Extra Trees,primary,multiplier,0.4,0.5,0.08,0.1327603669608683,False,False
+Extra Trees,primary,normal_bonferroni,0.0,0.0,0.035,0.0738727255096592,True,True
+Extra Trees,primary,normal_bonferroni,0.0,0.1,0.04,0.08144889194398285,False,True
+Extra Trees,primary,normal_bonferroni,0.0,0.2,0.04,0.08144889194398285,False,True
+Extra Trees,primary,normal_bonferroni,0.0,0.3,0.065,0.11714465478051099,False,False
+Extra Trees,primary,normal_bonferroni,0.0,0.4,0.085,0.14398849591878163,False,False
+Extra Trees,primary,normal_bonferroni,0.0,0.5,0.095,0.15702023465691986,False,False
+Extra Trees,primary,normal_bonferroni,0.05,0.0,0.035,0.0738727255096592,True,True
+Extra Trees,primary,normal_bonferroni,0.05,0.1,0.04,0.08144889194398285,False,True
+Extra Trees,primary,normal_bonferroni,0.05,0.2,0.04,0.08144889194398285,False,True
+Extra Trees,primary,normal_bonferroni,0.05,0.3,0.07,0.12396818432059645,False,False
+Extra Trees,primary,normal_bonferroni,0.05,0.4,0.085,0.14398849591878163,False,False
+Extra Trees,primary,normal_bonferroni,0.05,0.5,0.085,0.14398849591878163,False,False
+Extra Trees,primary,normal_bonferroni,0.1,0.0,0.05,0.09609927736936419,False,True
+Extra Trees,primary,normal_bonferroni,0.1,0.1,0.045,0.08884855191672109,False,True
+Extra Trees,primary,normal_bonferroni,0.1,0.2,0.045,0.08884855191672109,False,True
+Extra Trees,primary,normal_bonferroni,0.1,0.3,0.075,0.13071200788447568,False,False
+Extra Trees,primary,normal_bonferroni,0.1,0.4,0.08,0.13738339248556675,False,False
+Extra Trees,primary,normal_bonferroni,0.1,0.5,0.085,0.14398849591878163,False,False
+Extra Trees,primary,normal_bonferroni,0.2,0.0,0.04,0.08144889194398285,False,True
+Extra Trees,primary,normal_bonferroni,0.2,0.1,0.035,0.0738727255096592,True,True
+Extra Trees,primary,normal_bonferroni,0.2,0.2,0.045,0.08884855191672109,False,True
+Extra Trees,primary,normal_bonferroni,0.2,0.3,0.06,0.11023273964726807,False,False
+Extra Trees,primary,normal_bonferroni,0.2,0.4,0.075,0.13071200788447568,False,False
+Extra Trees,primary,normal_bonferroni,0.2,0.5,0.09,0.15053259101791683,False,False
+Extra Trees,primary,normal_bonferroni,0.3,0.0,0.05,0.0960992773693642,False,True
+Extra Trees,primary,normal_bonferroni,0.3,0.1,0.035,0.0738727255096592,True,True
+Extra Trees,primary,normal_bonferroni,0.3,0.2,0.05,0.09609927736936417,False,True
+Extra Trees,primary,normal_bonferroni,0.3,0.3,0.07,0.12396818432059645,False,False
+Extra Trees,primary,normal_bonferroni,0.3,0.4,0.08,0.13738339248556672,False,False
+Extra Trees,primary,normal_bonferroni,0.3,0.5,0.085,0.14398849591878163,False,False
+Extra Trees,primary,normal_bonferroni,0.4,0.0,0.04,0.08144889194398283,False,True
+Extra Trees,primary,normal_bonferroni,0.4,0.1,0.035,0.0738727255096592,True,True
+Extra Trees,primary,normal_bonferroni,0.4,0.2,0.06,0.11023273964726796,False,False
+Extra Trees,primary,normal_bonferroni,0.4,0.3,0.07,0.12396818432059648,False,False
+Extra Trees,primary,normal_bonferroni,0.4,0.4,0.075,0.13071200788447568,False,False
+Extra Trees,primary,normal_bonferroni,0.4,0.5,0.08,0.13738339248556675,False,False
+Extra Trees,primary,exact_bonferroni,0.0,0.0,0.035,0.09278593407505425,False,True
+Extra Trees,primary,exact_bonferroni,0.0,0.1,0.04,0.09999556176287655,False,True
+Extra Trees,primary,exact_bonferroni,0.0,0.2,0.04,0.09999556176287655,False,True
+Extra Trees,primary,exact_bonferroni,0.0,0.3,0.065,0.13418573266006745,False,False
+Extra Trees,primary,exact_bonferroni,0.0,0.4,0.085,0.16002780843079303,False,False
+Extra Trees,primary,exact_bonferroni,0.0,0.5,0.095,0.17259510345927542,False,False
+Extra Trees,primary,exact_bonferroni,0.05,0.0,0.035,0.09278593407505425,False,True
+Extra Trees,primary,exact_bonferroni,0.05,0.1,0.04,0.09999556176287655,False,True
+Extra Trees,primary,exact_bonferroni,0.05,0.2,0.04,0.09999556176287655,False,True
+Extra Trees,primary,exact_bonferroni,0.05,0.3,0.07,0.14074741211379882,False,False
+Extra Trees,primary,exact_bonferroni,0.05,0.4,0.085,0.16002780843079303,False,False
+Extra Trees,primary,exact_bonferroni,0.05,0.5,0.085,0.16002780843079303,False,False
+Extra Trees,primary,exact_bonferroni,0.1,0.0,0.05,0.11399312628529294,False,False
+Extra Trees,primary,exact_bonferroni,0.1,0.1,0.045,0.10705767314035276,False,False
+Extra Trees,primary,exact_bonferroni,0.1,0.2,0.045,0.10705767314035276,False,False
+Extra Trees,primary,exact_bonferroni,0.1,0.3,0.075,0.14723773633130954,False,False
+Extra Trees,primary,exact_bonferroni,0.1,0.4,0.08,0.15366279761297208,False,False
+Extra Trees,primary,exact_bonferroni,0.1,0.5,0.085,0.16002780843079303,False,False
+Extra Trees,primary,exact_bonferroni,0.2,0.0,0.04,0.09999556176287655,False,True
+Extra Trees,primary,exact_bonferroni,0.2,0.1,0.035,0.09278593407505425,False,True
+Extra Trees,primary,exact_bonferroni,0.2,0.2,0.045,0.10705767314035276,False,False
+Extra Trees,primary,exact_bonferroni,0.2,0.3,0.06,0.1275455011756748,False,False
+Extra Trees,primary,exact_bonferroni,0.2,0.4,0.075,0.14723773633130954,False,False
+Extra Trees,primary,exact_bonferroni,0.2,0.5,0.09,0.1663372703815297,False,False
+Extra Trees,primary,exact_bonferroni,0.3,0.0,0.05,0.11399312628529294,False,False
+Extra Trees,primary,exact_bonferroni,0.3,0.1,0.035,0.09278593407505425,False,True
+Extra Trees,primary,exact_bonferroni,0.3,0.2,0.05,0.11399312628529294,False,False
+Extra Trees,primary,exact_bonferroni,0.3,0.3,0.07,0.14074741211379882,False,False
+Extra Trees,primary,exact_bonferroni,0.3,0.4,0.08,0.15366279761297208,False,False
+Extra Trees,primary,exact_bonferroni,0.3,0.5,0.085,0.16002780843079303,False,False
+Extra Trees,primary,exact_bonferroni,0.4,0.0,0.04,0.09999556176287655,False,True
+Extra Trees,primary,exact_bonferroni,0.4,0.1,0.035,0.09278593407505425,False,True
+Extra Trees,primary,exact_bonferroni,0.4,0.2,0.06,0.1275455011756748,False,False
+Extra Trees,primary,exact_bonferroni,0.4,0.3,0.07,0.14074741211379882,False,False
+Extra Trees,primary,exact_bonferroni,0.4,0.4,0.075,0.14723773633130954,False,False
+Extra Trees,primary,exact_bonferroni,0.4,0.5,0.08,0.15366279761297208,False,False
+Extra Trees,primary,holm,0.0,0.0,0.035,,False,True
+Extra Trees,primary,holm,0.0,0.1,0.04,,False,True
+Extra Trees,primary,holm,0.0,0.2,0.04,,False,True
+Extra Trees,primary,holm,0.0,0.3,0.065,,False,False
+Extra Trees,primary,holm,0.0,0.4,0.085,,False,False
+Extra Trees,primary,holm,0.0,0.5,0.095,,False,False
+Extra Trees,primary,holm,0.05,0.0,0.035,,False,True
+Extra Trees,primary,holm,0.05,0.1,0.04,,False,True
+Extra Trees,primary,holm,0.05,0.2,0.04,,False,True
+Extra Trees,primary,holm,0.05,0.3,0.07,,False,False
+Extra Trees,primary,holm,0.05,0.4,0.085,,False,False
+Extra Trees,primary,holm,0.05,0.5,0.085,,False,False
+Extra Trees,primary,holm,0.1,0.0,0.05,,False,False
+Extra Trees,primary,holm,0.1,0.1,0.045,,False,False
+Extra Trees,primary,holm,0.1,0.2,0.045,,False,False
+Extra Trees,primary,holm,0.1,0.3,0.075,,False,False
+Extra Trees,primary,holm,0.1,0.4,0.08,,False,False
+Extra Trees,primary,holm,0.1,0.5,0.085,,False,False
+Extra Trees,primary,holm,0.2,0.0,0.04,,False,True
+Extra Trees,primary,holm,0.2,0.1,0.035,,False,True
+Extra Trees,primary,holm,0.2,0.2,0.045,,False,False
+Extra Trees,primary,holm,0.2,0.3,0.06,,False,False
+Extra Trees,primary,holm,0.2,0.4,0.075,,False,False
+Extra Trees,primary,holm,0.2,0.5,0.09,,False,False
+Extra Trees,primary,holm,0.3,0.0,0.05,,False,False
+Extra Trees,primary,holm,0.3,0.1,0.035,,False,True
+Extra Trees,primary,holm,0.3,0.2,0.05,,False,False
+Extra Trees,primary,holm,0.3,0.3,0.07,,False,False
+Extra Trees,primary,holm,0.3,0.4,0.08,,False,False
+Extra Trees,primary,holm,0.3,0.5,0.085,,False,False
+Extra Trees,primary,holm,0.4,0.0,0.04,,False,True
+Extra Trees,primary,holm,0.4,0.1,0.035,,False,True
+Extra Trees,primary,holm,0.4,0.2,0.06,,False,False
+Extra Trees,primary,holm,0.4,0.3,0.07,,False,False
+Extra Trees,primary,holm,0.4,0.4,0.075,,False,False
+Extra Trees,primary,holm,0.4,0.5,0.08,,False,False
+HistGradientBoosting,primary,multiplier,0.0,0.0,0.06,0.10527355045262397,False,False
+HistGradientBoosting,primary,multiplier,0.0,0.1,0.07,0.11864021617837273,False,False
+HistGradientBoosting,primary,multiplier,0.0,0.2,0.075,0.12521188208101186,False,False
+HistGradientBoosting,primary,multiplier,0.0,0.3,0.095,0.15089733394078064,False,False
+HistGradientBoosting,primary,multiplier,0.0,0.4,0.105,0.16344012946461733,False,False
+HistGradientBoosting,primary,multiplier,0.0,0.5,0.11,0.16964806341793998,False,False
+HistGradientBoosting,primary,multiplier,0.05,0.0,0.055,0.09846125381914664,False,True
+HistGradientBoosting,primary,multiplier,0.05,0.1,0.06,0.10527355045262395,False,False
+HistGradientBoosting,primary,multiplier,0.05,0.2,0.075,0.12521188208101186,False,False
+HistGradientBoosting,primary,multiplier,0.05,0.3,0.1,0.15719081123076878,False,False
+HistGradientBoosting,primary,multiplier,0.05,0.4,0.105,0.16344012946461733,False,False
+HistGradientBoosting,primary,multiplier,0.05,0.5,0.12,0.1819493795774734,False,False
+HistGradientBoosting,primary,multiplier,0.1,0.0,0.055,0.09846125381914664,False,True
+HistGradientBoosting,primary,multiplier,0.1,0.1,0.07,0.11864021617837275,False,False
+HistGradientBoosting,primary,multiplier,0.1,0.2,0.08,0.13171826050262658,False,False
+HistGradientBoosting,primary,multiplier,0.1,0.3,0.09,0.14455655679386697,False,False
+HistGradientBoosting,primary,multiplier,0.1,0.4,0.095,0.15089733394078067,False,False
+HistGradientBoosting,primary,multiplier,0.1,0.5,0.105,0.16344012946461733,False,False
+HistGradientBoosting,primary,multiplier,0.2,0.0,0.065,0.11199671321168952,False,False
+HistGradientBoosting,primary,multiplier,0.2,0.1,0.075,0.12521188208101186,False,False
+HistGradientBoosting,primary,multiplier,0.2,0.2,0.075,0.12521188208101186,False,False
+HistGradientBoosting,primary,multiplier,0.2,0.3,0.075,0.12521188208101186,False,False
+HistGradientBoosting,primary,multiplier,0.2,0.4,0.085,0.13816490131448778,False,False
+HistGradientBoosting,primary,multiplier,0.2,0.5,0.1,0.15719081123076883,False,False
+HistGradientBoosting,primary,multiplier,0.3,0.0,0.07,0.11864021617837273,False,False
+HistGradientBoosting,primary,multiplier,0.3,0.1,0.085,0.13816490131448778,False,False
+HistGradientBoosting,primary,multiplier,0.3,0.2,0.095,0.15089733394078067,False,False
+HistGradientBoosting,primary,multiplier,0.3,0.3,0.095,0.15089733394078067,False,False
+HistGradientBoosting,primary,multiplier,0.3,0.4,0.115,0.17581707903411234,False,False
+HistGradientBoosting,primary,multiplier,0.3,0.5,0.13,0.1941115541131498,False,False
+HistGradientBoosting,primary,multiplier,0.4,0.0,0.095,0.15089733394078067,False,False
+HistGradientBoosting,primary,multiplier,0.4,0.1,0.105,0.16344012946461733,False,False
+HistGradientBoosting,primary,multiplier,0.4,0.2,0.11,0.16964806341793998,False,False
+HistGradientBoosting,primary,multiplier,0.4,0.3,0.11,0.16964806341793998,False,False
+HistGradientBoosting,primary,multiplier,0.4,0.4,0.135,0.20014482775923487,False,False
+HistGradientBoosting,primary,multiplier,0.4,0.5,0.145,0.21212310850161117,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.0,0.0,0.06,0.11023273964726807,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.0,0.1,0.07,0.12396818432059646,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.0,0.2,0.075,0.13071200788447568,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.0,0.3,0.095,0.15702023465691978,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.0,0.4,0.105,0.16984156376073706,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.0,0.5,0.11,0.17618181278432196,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.05,0.0,0.055,0.10322192706369675,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.05,0.1,0.06,0.11023273964726804,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.05,0.2,0.075,0.13071200788447568,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.05,0.3,0.1,0.16345539729157155,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.05,0.4,0.105,0.16984156376073706,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.05,0.5,0.12,0.18873521127708787,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.1,0.0,0.055,0.10322192706369675,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.1,0.1,0.07,0.12396818432059648,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.1,0.2,0.08,0.13738339248556672,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.1,0.3,0.09,0.15053259101791688,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.1,0.4,0.095,0.1570202346569198,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.1,0.5,0.105,0.16984156376073706,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.2,0.0,0.065,0.11714465478051099,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.2,0.1,0.075,0.13071200788447565,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.2,0.2,0.075,0.13071200788447568,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.2,0.3,0.075,0.13071200788447568,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.2,0.4,0.085,0.14398849591878163,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.2,0.5,0.1,0.1634553972915716,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.3,0.0,0.07,0.12396818432059646,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.3,0.1,0.085,0.14398849591878163,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.3,0.2,0.095,0.15702023465691978,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.3,0.3,0.095,0.1570202346569198,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.3,0.4,0.115,0.18247888042102578,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.3,0.5,0.13,0.20113422680462512,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.4,0.0,0.095,0.15702023465691978,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.4,0.1,0.105,0.16984156376073706,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.4,0.2,0.11,0.17618181278432196,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.4,0.3,0.11,0.17618181278432196,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.4,0.4,0.135,0.20728068352227288,False,False
+HistGradientBoosting,primary,normal_bonferroni,0.4,0.5,0.145,0.21947566183714973,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.0,0.0,0.06,0.1275455011756748,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.0,0.1,0.07,0.14074741211379882,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.0,0.2,0.075,0.14723773633130954,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.0,0.3,0.095,0.17259510345927542,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.0,0.4,0.105,0.18496923624722783,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.0,0.5,0.11,0.1910912705002743,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.05,0.0,0.055,0.12081811167698266,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.05,0.1,0.06,0.1275455011756748,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.05,0.2,0.075,0.14723773633130954,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.05,0.3,0.1,0.17880474649220254,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.05,0.4,0.105,0.18496923624722783,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.05,0.5,0.12,0.2032173642695062,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.1,0.0,0.055,0.12081811167698266,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.1,0.1,0.07,0.14074741211379882,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.1,0.2,0.08,0.15366279761297208,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.1,0.3,0.09,0.1663372703815297,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.1,0.4,0.095,0.17259510345927542,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.1,0.5,0.105,0.18496923624722783,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.2,0.0,0.065,0.13418573266006745,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.2,0.1,0.075,0.14723773633130954,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.2,0.2,0.075,0.14723773633130954,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.2,0.3,0.075,0.14723773633130954,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.2,0.4,0.085,0.16002780843079303,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.2,0.5,0.1,0.17880474649220254,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.3,0.0,0.07,0.14074741211379882,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.3,0.1,0.085,0.16002780843079303,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.3,0.2,0.095,0.17259510345927542,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.3,0.3,0.095,0.17259510345927542,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.3,0.4,0.115,0.19717325888031875,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.3,0.5,0.13,0.21519954215280762,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.4,0.0,0.095,0.17259510345927542,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.4,0.1,0.105,0.18496923624722783,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.4,0.2,0.11,0.1910912705002743,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.4,0.3,0.11,0.1910912705002743,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.4,0.4,0.135,0.2211409848719404,False,False
+HistGradientBoosting,primary,exact_bonferroni,0.4,0.5,0.145,0.23293191160226612,False,False
+HistGradientBoosting,primary,holm,0.0,0.0,0.06,,False,False
+HistGradientBoosting,primary,holm,0.0,0.1,0.07,,False,False
+HistGradientBoosting,primary,holm,0.0,0.2,0.075,,False,False
+HistGradientBoosting,primary,holm,0.0,0.3,0.095,,False,False
+HistGradientBoosting,primary,holm,0.0,0.4,0.105,,False,False
+HistGradientBoosting,primary,holm,0.0,0.5,0.11,,False,False
+HistGradientBoosting,primary,holm,0.05,0.0,0.055,,False,False
+HistGradientBoosting,primary,holm,0.05,0.1,0.06,,False,False
+HistGradientBoosting,primary,holm,0.05,0.2,0.075,,False,False
+HistGradientBoosting,primary,holm,0.05,0.3,0.1,,False,False
+HistGradientBoosting,primary,holm,0.05,0.4,0.105,,False,False
+HistGradientBoosting,primary,holm,0.05,0.5,0.12,,False,False
+HistGradientBoosting,primary,holm,0.1,0.0,0.055,,False,False
+HistGradientBoosting,primary,holm,0.1,0.1,0.07,,False,False
+HistGradientBoosting,primary,holm,0.1,0.2,0.08,,False,False
+HistGradientBoosting,primary,holm,0.1,0.3,0.09,,False,False
+HistGradientBoosting,primary,holm,0.1,0.4,0.095,,False,False
+HistGradientBoosting,primary,holm,0.1,0.5,0.105,,False,False
+HistGradientBoosting,primary,holm,0.2,0.0,0.065,,False,False
+HistGradientBoosting,primary,holm,0.2,0.1,0.075,,False,False
+HistGradientBoosting,primary,holm,0.2,0.2,0.075,,False,False
+HistGradientBoosting,primary,holm,0.2,0.3,0.075,,False,False
+HistGradientBoosting,primary,holm,0.2,0.4,0.085,,False,False
+HistGradientBoosting,primary,holm,0.2,0.5,0.1,,False,False
+HistGradientBoosting,primary,holm,0.3,0.0,0.07,,False,False
+HistGradientBoosting,primary,holm,0.3,0.1,0.085,,False,False
+HistGradientBoosting,primary,holm,0.3,0.2,0.095,,False,False
+HistGradientBoosting,primary,holm,0.3,0.3,0.095,,False,False
+HistGradientBoosting,primary,holm,0.3,0.4,0.115,,False,False
+HistGradientBoosting,primary,holm,0.3,0.5,0.13,,False,False
+HistGradientBoosting,primary,holm,0.4,0.0,0.095,,False,False
+HistGradientBoosting,primary,holm,0.4,0.1,0.105,,False,False
+HistGradientBoosting,primary,holm,0.4,0.2,0.11,,False,False
+HistGradientBoosting,primary,holm,0.4,0.3,0.11,,False,False
+HistGradientBoosting,primary,holm,0.4,0.4,0.135,,False,False
+HistGradientBoosting,primary,holm,0.4,0.5,0.145,,False,False

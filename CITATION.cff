@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite the associated manuscript and archived release."
+title: "Statistical Assurance Regions: SciGuard Reproducibility Implementation"
+type: software
+authors:
+  - family-names: Maale
+    given-names: Faustus Domebale
+  - family-names: Yi
+    given-names: Hui
+version: 1.0.0
+date-released: 2026-10-08
+license: MIT
+repository-code: "https://github.com/dfmaale/sciguard-sar"
+keywords:
+  - statistical assurance regions
+  - distribution shift
+  - missing data
+  - simultaneous inference
+  - machine learning
+  - reproducibility

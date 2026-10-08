@@ -1,0 +1,23 @@
+test_admission_year_alignment_and_topcoding (test_scientific_contract.MimicContract.test_admission_year_alignment_and_topcoding) ... ok
+test_end_to_end_synthetic_fixture_not_evidence (test_scientific_contract.MimicContract.test_end_to_end_synthetic_fixture_not_evidence) ... ok
+test_explicit_tolerance_required (test_scientific_contract.MimicContract.test_explicit_tolerance_required) ... ok
+test_all_constant_multiplier_is_conservative (test_scientific_contract.StatisticalContract.test_all_constant_multiplier_is_conservative) ... ok
+test_atc_ties_and_strict_threshold (test_scientific_contract.StatisticalContract.test_atc_ties_and_strict_threshold) ... ok
+test_continuous_envelope_known_linear_risk (test_scientific_contract.StatisticalContract.test_continuous_envelope_known_linear_risk) ... ok
+test_covariance_and_row_sampler_same_gaussian_law (test_scientific_contract.StatisticalContract.test_covariance_and_row_sampler_same_gaussian_law) ... ok
+test_exact_band_finite_sample_enumeration (test_scientific_contract.StatisticalContract.test_exact_band_finite_sample_enumeration) ... ok
+test_exact_zero_event_bound (test_scientific_contract.StatisticalContract.test_exact_zero_event_bound) ... ok
+test_groups_retained_and_degenerate_guard (test_scientific_contract.StatisticalContract.test_groups_retained_and_degenerate_guard) ... ok
+test_holm_finite_sample_enumeration_one_environment (test_scientific_contract.StatisticalContract.test_holm_finite_sample_enumeration_one_environment) ... ok
+test_mar_driver_protected_and_batch_invariant (test_scientific_contract.StatisticalContract.test_mar_driver_protected_and_batch_invariant) ... ok
+test_reference_intervals_include_boundaries (test_scientific_contract.StatisticalContract.test_reference_intervals_include_boundaries) ... ok
+test_shared_duplicate_columns_need_no_independence (test_scientific_contract.StatisticalContract.test_shared_duplicate_columns_need_no_independence) ... ok
+test_single_group_equals_paired (test_scientific_contract.StatisticalContract.test_single_group_equals_paired) ... ok
+test_spending_budget (test_scientific_contract.StatisticalContract.test_spending_budget) ... ok
+test_tau_nesting_and_invalid_loss (test_scientific_contract.StatisticalContract.test_tau_nesting_and_invalid_loss) ... ok
+test_unequal_samples_never_truncated (test_scientific_contract.StatisticalContract.test_unequal_samples_never_truncated) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.504s
+
+OK

@@ -1,0 +1,14 @@
+{
+  "analysis": "secondary_class_sensitive_mimic_iv",
+  "loss": "false_negative_risk_conditional_on_Y_equals_1",
+  "tau_fn": 0.20,
+  "required_sensitivity": 0.80,
+  "alpha": 0.05,
+  "minimum_positive_cases": 2,
+  "threshold_calibration": "source_holdout_only_then_frozen",
+  "target_source_sensitivity": 0.80,
+  "primary_inference": "exact_clopper_pearson_bonferroni",
+  "secondary_inference": "exact_holm",
+  "missingness_levels": [0.0, 0.1, 0.2, 0.3],
+  "models": ["Logistic regression", "HistGradientBoosting"]
+}

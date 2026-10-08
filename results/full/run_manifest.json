@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "status": "completed_public_and_synthetic",
+  "config": {
+    "profile": "full",
+    "seed": 20260927,
+    "alpha": 0.05,
+    "tau_calibration": 0.34,
+    "tau_nested": 0.35,
+    "calibration_reps": 500,
+    "sensitivity_reps": 300,
+    "continuous_reps": 200,
+    "nested_reps": 200,
+    "missingness_reps": 100,
+    "n_train": 1200,
+    "n_cal": 400,
+    "n_assure": 1000,
+    "n_reference": 20000,
+    "bootstrap_draws": 2000,
+    "wdbc_draws": 5000,
+    "reference_delta": 0.01,
+    "hgb_iterations": 60
+  },
+  "started_utc": "2026-10-07T23:46:50.089805+00:00",
+  "python": "3.12.7",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.5.1",
+    "matplotlib": "3.9.2",
+    "threadpoolctl": "3.5.0"
+  },
+  "sections": {
+    "calibration": {
+      "status": "completed",
+      "seconds": 4.005184800000279
+    },
+    "nested": {
+      "status": "completed",
+      "seconds": 865.4008877000015
+    },
+    "missingness": {
+      "status": "completed",
+      "seconds": 86.88878639999893
+    },
+    "wdbc": {
+      "status": "completed",
+      "seconds": 3.007067900005495
+    },
+    "sensitivity": {
+      "status": "completed",
+      "seconds": 16.556361599999946
+    },
+    "bootstrap_and_stress": {
+      "status": "completed",
+      "seconds": 10.76379640000232
+    },
+    "continuous": {
+      "status": "completed",
+      "seconds": 8.681226099994092
+    },
+    "pilot_design": {
+      "status": "completed",
+      "seconds": 0.761130899998534
+    }
+  },
+  "external_benchmark": "completed_credentialed_data",
+  "input_sha256": {
+    "data\\simulation_true_risks.csv": "8b242ba9097bce6c005733a56add77adbc4f4f382f168437a30d1f9f2e1e2e5c",
+    "data\\wdbc_sklearn.csv": "75a1d74a59df9cb0a78ecc0a36085bf8a85239557f178d3b8d758e88b26416e1"
+  },
+  "ended_utc": "2026-10-08T00:36:43.619662+00:00",
+  "output_sha256": {
+    "atc_prediction_replications.csv": "309686721a42506910c53f444fb94f27e680ee7180bf2a3de9b294340f923ce2",
+    "atc_prediction_summary.csv": "6efa5866fec59c06e9ab8f0892170d357be33be0aae836664db85529e144562a",
+    "bootstrap_runtime_replications.csv": "8fd7b05f5af97b5fd7b052d9719779aaa50733b22966b3bd5ff3904764f3cc27",
+    "bootstrap_runtime_summary.csv": "d7a41a0f7f097c5745be9428da58cf0d73528fc35a5fbe0aa0f3e4c3d708ca18",
+    "calibration_replications.csv": "8ac9f629775484713371a1b4acd8f989e0ef4fa2c4f048bed58137e2dd196119",
+    "calibration_summary.csv": "12c7dcb7c4d3d3e8d2f2e64147d49e0590c50f8bed3f85ff12ee3a17bfac89f3",
+    "continuous_example.csv": "12e153bbc3de18fee092bca3a1b622cde8a3b782e2f654c3823a23e3cf78d143",
+    "continuous_L_factor_0.5.csv": "78cf9aff2d179ac5a1d41338a1bc69e0d45560785424939d1cdac38668c86327",
+    "continuous_L_factor_1.csv": "65f31f655f1cc6fb35cdd105e7ef791e0199f3fea08e836e951484eeb3a2194b",
+    "continuous_L_factor_2.csv": "63b6cc385159847d5e1f82eeb56155f9de0c2428663e517ffbc196dc9c051e3c",
+    "continuous_replications.csv": "6b54cfe0c5b49ad8b90730f84f95294ef6b4299fe10b6e0724d858476b525e59",
+    "continuous_summary.csv": "f5ff899af62b9d736c21ca354e503fae7cb7eaf9e3af45d05182be81f070dd1e",
+    "missingness_environment_detail.csv": "5d09f7244dad2b1adce9af16a6d928ec78002661e8a7a082bc19e1179d042c9d",
+    "missingness_replications.csv": "f3be315f7acc8d9b7f43fffb0ec866daecbeeb2ae5d6d1201228b2d2eb264864",
+    "missingness_summary.csv": "b832aa1cc6ac8a38e534bafab472f443555caae3e29527a43043968a748029e4",
+    "nested_fit_replications.csv": "6ca5afe022d4ce22ac4b2393fe322d18f491fd57d585950f65e9b7ffd7e6a93b",
+    "nested_fit_summary.csv": "3ae05c8e1124b50e3aa1d7b73f90821e22349205742910ac01f11a087e5c238b",
+    "nested_reference_risks.csv": "b5b9591a8ed5405a70ff6f3e8d39d2eca1e3b924067d2e88789a612a4ac6ee13",
+    "nested_replications.csv": "c277deb6e1cede991e5c7e63c4e7abc5460787741b034ab294475c67582f924a",
+    "nested_summary.csv": "3ee1a7d7c304f65ca411cf241e3200c7964db11e54929042052fc428f6643444",
+    "paired_efficiency_gains.csv": "4c4f5ec816e01204b65588af30fd9d8a71801c9d5983b81be6a57dbc7efe9288",
+    "pilot_design_replications.csv": "90332a124e5e83549db6e2c2283bebdcf2ddc86d7c7c168d8028c44081144d81",
+    "pilot_design_summary.csv": "7b81ca06408f2dcc6dfdf8ecbc48591db790c2bbab8a6c92919883f8659d9fe4",
+    "sample_size_planning.csv": "722e7c1146a9202758cf36ccb63814d7967eeb054a30c05ed195c41cef876c7b",
+    "sensitivity_replications.csv": "91d670933b7bcfe4124949820c8ff2a31879dc9ef4e2880f03308e84b6bb23aa",
+    "sensitivity_summary.csv": "b3b442dbad68d24ffa81e0444bc6212070a24276939369a3d42ef8b4d75b52e1",
+    "stress_replications.csv": "7b0678082bc73712a391f9d8882b537007722fd7adc685f836ebb24697d3ae26",
+    "stress_summary.csv": "5bf64edb07ab0cab71ceb1598d14972063df6bfb52016c98e896793b540838a1",
+    "wdbc_detail.csv": "6c346f88ee8797980f6815548ed4a62376d6fe008facea1cc4f225bfca637d31",
+    "wdbc_summary.csv": "81bc497df7e5ee5110312ca015fa5221db0a89cd3d2d60f1b38f78d8ac614d12"
+  },
+  "source_sha256": {
+    "src\\sciguard\\__init__.py": "161cd91a618483511719c5d59967ce5cb0583bacbbebd8e43a64c12406420d30",
+    "src\\sciguard\\baselines.py": "d3f235f2e7bdf3c701a90c05c8e37638328614a75a3f087de6ea975b6f71d84e",
+    "src\\sciguard\\continuous.py": "7a8e53e9c0c246d4808c0c9c6348d4fde3244d7ec7c2063a702455c9404af91b",
+    "src\\sciguard\\core.py": "72e67d4ea448eaf2f83f8cb6a2a82ad5e9286e2388ec2e5df5d5dcd3cb40017e",
+    "src\\sciguard\\design.py": "206f8f0f24db0890cfc5e5181421303c6b52a393637ecbe2aa7de60828356514",
+    "src\\sciguard\\experiments.py": "420f2a1fd2061451e1e6dcc83a4deee8d404796841cf89c6f50f45212633a409",
+    "src\\sciguard\\groups.py": "f503a7ee55bd89438036f5ca090aa8591d93af13f1ee55c9399bbe0c3c0571fd",
+    "src\\sciguard\\metrics.py": "794501e0615e80e900a3105e6866d101797f65b873513208b0758c9f5db48a3e",
+    "src\\sciguard\\mimic.py": "5ead2fb19e37bb4692358886a1ebc6f4328562dd1dfe651f4faecb62ffc17670",
+    "src\\sciguard\\plotting.py": "3eb3dfedaae350d02d227af97df04f2056ae410a61c03369e3a06bae4d1bb2b7",
+    "src\\sciguard\\simulation.py": "6a172676716e13a1a18b26f9bdf8297f67f8ddcbf4e82e0b5d0d69fdbe6e6082"
+  }
+}

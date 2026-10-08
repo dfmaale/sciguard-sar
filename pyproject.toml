@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sciguard-ml"
+version = "1.0.0"
+description = "Simultaneous risk bounds and statistical assurance regions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Faustus Domebale Maale"}, {name = "Hui Yi"}]
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+experiments = ["pandas>=2.0", "matplotlib>=3.7", "scikit-learn>=1.4", "threadpoolctl>=3.1"]
+notebook = ["jupyterlab>=4", "nbclient>=0.10", "nbformat>=5.10"]
+test = ["pytest>=7"]
+reports = ["reportlab>=4", "pypdf>=5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

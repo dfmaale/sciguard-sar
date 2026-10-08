@@ -1,0 +1,42 @@
+{
+  "status": "completed_credentialed_data",
+  "dataset_version": "3.1",
+  "config_sha256": "a68f68d9a9b33b0522328f931a4bf2aaafa68262e6eee4ab9ead4827e3eca4a2",
+  "seconds": 20.84175790000154,
+  "source_n": 106864,
+  "train_n": 85491,
+  "nominal_n": 21373,
+  "deployment_n": 35114,
+  "features": [
+    "age",
+    "age_topcoded",
+    "gender",
+    "admission_type",
+    "admission_location",
+    "insurance",
+    "marital_status",
+    "race"
+  ],
+  "prediction_threshold": 0.5,
+  "family_size": 72,
+  "claim_scope": "admission-table prediction; approximate temporal shift; additional missingness synthetic",
+  "source_tables": {
+    "patients": {
+      "filename": "patients.csv.gz",
+      "size_bytes": 2835586,
+      "sha256": "4c7507de7ecad8c5ba7647ea4d26018e88ff6672c5fc22ab59c2a5697d687cdd"
+    },
+    "admissions": {
+      "filename": "admissions.csv.gz",
+      "size_bytes": 19928140,
+      "sha256": "a9584ed88e9ed664a2f66f86a5cf9fd175c8bb0af50e3b6115598b19e978384e"
+    }
+  },
+  "output_sha256": {
+    "mimic_cohort_flow.csv": "c652342d4fae788caecd850adfe8df74d92224524f81a55d7b76c51c32662978",
+    "mimic_results.csv": "d0bb90db11f50ee4ef6fae4f62c59baf72d6faf28a67c9fc5d0676a550c251c8",
+    "mimic_diagnostics.csv": "2aeb7eb4c0affae30dd049cb02c2dbede9ed615e17ddbe7cfb37242f7e9ae344",
+    "mimic_natural_missingness.csv": "3a3f1874cf38b680cdcc2e97f0e0f5c816b190a5daa72f0486c62f35130f8690",
+    "mimic_total_missingness.csv": "c48f5a720b9a0022d98cb02a53ee458468bb7c55fdf9947d8c3e4d7a9ad2f61d"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "alpha": 0.05,
+  "bootstrap_draws": 5000,
+  "dataset_max_year": 2022,
+  "dataset_min_year": 2008,
+  "dataset_version": "3.1",
+  "min_group_size": 200,
+  "missingness_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "models": [
+    "Logistic regression",
+    "HistGradientBoosting"
+  ],
+  "seed": 20260927,
+  "source_last_year": 2016,
+  "tau": 0.35,
+  "tau_rationale": "We prespecify tau = 0.35 as an operational maximum tolerable 0-1 classification error for evaluating SciGuard under MIMIC-IV deployment shifts. This threshold is fixed before examining the MIMIC-IV deployment results and is not tuned using the outcomes.",
+  "temporal_padding_years": 1
+}

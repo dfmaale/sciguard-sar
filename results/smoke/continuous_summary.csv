@@ -1,0 +1,4 @@
+method,replications,grid_coverage,grid_coverage_mcse,grid_coverage_lo,grid_coverage_hi,dense_mesh_coverage,dense_mesh_coverage_mcse,dense_mesh_coverage_lo,dense_mesh_coverage_hi,containment,containment_mcse,containment_lo,containment_hi,ARR,ARR_mcse,UCP,UCP_mcse
+multiplier,5,1.0,0.0,0.5655175352168251,1.0,1.0,0.0,0.5655175352168251,1.0,1.0,0.0,0.5655175352168251,1.0,0.14268939393939392,0.09099785754650082,0.0,0.0
+exact_bonferroni,5,1.0,0.0,0.5655175352168251,1.0,1.0,0.0,0.5655175352168251,1.0,1.0,0.0,0.5655175352168251,1.0,0.05829545454545455,0.04865044814001263,0.0,0.0
+hoeffding,5,1.0,0.0,0.5655175352168251,1.0,1.0,0.0,0.5655175352168251,1.0,1.0,0.0,0.5655175352168251,1.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,145 @@
+TemporalDomain,Model,Missingness,method,positive_n,false_negatives,fn_risk,sensitivity,upper_fn_risk,certified,eligible,tau_fn,required_sensitivity,alpha
+2017 - 2021,Logistic regression,0.0,exact_bonferroni,14,10,0.7142857142857143,0.2857142857142857,0.9692977242775872,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.0,holm,14,10,0.7142857142857143,0.2857142857142857,,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.1,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.1,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.2,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.2,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.3,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,Logistic regression,0.3,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.0,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.0,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.1,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.1,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.2,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.2,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.3,exact_bonferroni,14,9,0.6428571428571429,0.3571428571428571,0.9444237607702193,False,True,0.2,0.8,0.05
+2017 - 2021,HistGradientBoosting,0.3,holm,14,9,0.6428571428571429,0.3571428571428571,,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.0,exact_bonferroni,14,14,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.0,holm,14,14,1.0,0.0,,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.1,exact_bonferroni,14,14,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.1,holm,14,14,1.0,0.0,,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.2,exact_bonferroni,14,14,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.2,holm,14,14,1.0,0.0,,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.3,exact_bonferroni,14,14,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2017 - 2021,Always survive,0.3,holm,14,14,1.0,0.0,,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.0,exact_bonferroni,12,6,0.5,0.5,0.8953022071454965,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.0,holm,12,6,0.5,0.5,,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.1,exact_bonferroni,12,7,0.5833333333333334,0.41666666666666663,0.9334597193354203,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.1,holm,12,7,0.5833333333333334,0.41666666666666663,,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.2,exact_bonferroni,12,5,0.4166666666666667,0.5833333333333333,0.8492140868991724,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.2,holm,12,5,0.4166666666666667,0.5833333333333333,,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.3,exact_bonferroni,12,5,0.4166666666666667,0.5833333333333333,0.8492140868991724,False,True,0.2,0.8,0.05
+2018 - 2022,Logistic regression,0.3,holm,12,5,0.4166666666666667,0.5833333333333333,,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.0,exact_bonferroni,12,4,0.3333333333333333,0.6666666666666667,0.7949464768642182,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.0,holm,12,4,0.3333333333333333,0.6666666666666667,,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.1,exact_bonferroni,12,5,0.4166666666666667,0.5833333333333333,0.8492140868991724,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.1,holm,12,5,0.4166666666666667,0.5833333333333333,,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.2,exact_bonferroni,12,3,0.25,0.75,0.7316725391074625,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.2,holm,12,3,0.25,0.75,,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.3,exact_bonferroni,12,3,0.25,0.75,0.7316725391074625,False,True,0.2,0.8,0.05
+2018 - 2022,HistGradientBoosting,0.3,holm,12,3,0.25,0.75,,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.0,exact_bonferroni,12,12,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.0,holm,12,12,1.0,0.0,,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.1,exact_bonferroni,12,12,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.1,holm,12,12,1.0,0.0,,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.2,exact_bonferroni,12,12,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.2,holm,12,12,1.0,0.0,,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.3,exact_bonferroni,12,12,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2018 - 2022,Always survive,0.3,holm,12,12,1.0,0.0,,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.0,exact_bonferroni,1092,211,0.19322344322344323,0.8067765567765568,0.23384108694722516,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.0,holm,1092,211,0.19322344322344323,0.8067765567765568,,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.1,exact_bonferroni,1092,219,0.20054945054945056,0.7994505494505495,0.24165525504177088,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.1,holm,1092,219,0.20054945054945056,0.7994505494505495,,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.2,exact_bonferroni,1092,203,0.1858974358974359,0.8141025641025641,0.22600602612778678,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.2,holm,1092,203,0.1858974358974359,0.8141025641025641,,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.3,exact_bonferroni,1092,199,0.18223443223443223,0.8177655677655677,0.2220803699616791,False,True,0.2,0.8,0.05
+2019 - 2022,Logistic regression,0.3,holm,1092,199,0.18223443223443223,0.8177655677655677,,False,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.0,exact_bonferroni,1092,162,0.14835164835164835,0.8516483516483516,0.18548412821460677,True,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.0,holm,1092,162,0.14835164835164835,0.8516483516483516,,True,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.1,exact_bonferroni,1092,166,0.152014652014652,0.847985347985348,0.18946725251664198,True,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.1,holm,1092,166,0.152014652014652,0.847985347985348,,True,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.2,exact_bonferroni,1092,169,0.15476190476190477,0.8452380952380952,0.19245003681111228,True,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.2,holm,1092,169,0.15476190476190477,0.8452380952380952,,True,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.3,exact_bonferroni,1092,195,0.17857142857142858,0.8214285714285714,0.218149129669181,False,True,0.2,0.8,0.05
+2019 - 2022,HistGradientBoosting,0.3,holm,1092,195,0.17857142857142858,0.8214285714285714,,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.0,exact_bonferroni,1092,1092,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.0,holm,1092,1092,1.0,0.0,,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.1,exact_bonferroni,1092,1092,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.1,holm,1092,1092,1.0,0.0,,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.2,exact_bonferroni,1092,1092,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.2,holm,1092,1092,1.0,0.0,,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.3,exact_bonferroni,1092,1092,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2019 - 2022,Always survive,0.3,holm,1092,1092,1.0,0.0,,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.0,exact_bonferroni,13,5,0.38461538461538464,0.6153846153846154,0.8160485815983273,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.0,holm,13,5,0.38461538461538464,0.6153846153846154,,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.1,exact_bonferroni,13,4,0.3076923076923077,0.6923076923076923,0.7609675912092441,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.1,holm,13,4,0.3076923076923077,0.6923076923076923,,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.2,exact_bonferroni,13,4,0.3076923076923077,0.6923076923076923,0.7609675912092441,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.2,holm,13,4,0.3076923076923077,0.6923076923076923,,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.3,exact_bonferroni,13,5,0.38461538461538464,0.6153846153846154,0.8160485815983273,False,True,0.2,0.8,0.05
+2020 - 2022,Logistic regression,0.3,holm,13,5,0.38461538461538464,0.6153846153846154,,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.0,exact_bonferroni,13,3,0.23076923076923078,0.7692307692307692,0.6978595392302303,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.0,holm,13,3,0.23076923076923078,0.7692307692307692,,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.1,exact_bonferroni,13,3,0.23076923076923078,0.7692307692307692,0.6978595392302303,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.1,holm,13,3,0.23076923076923078,0.7692307692307692,,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.2,exact_bonferroni,13,4,0.3076923076923077,0.6923076923076923,0.7609675912092441,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.2,holm,13,4,0.3076923076923077,0.6923076923076923,,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.3,exact_bonferroni,13,6,0.46153846153846156,0.5384615384615384,0.8639722591657164,False,True,0.2,0.8,0.05
+2020 - 2022,HistGradientBoosting,0.3,holm,13,6,0.46153846153846156,0.5384615384615384,,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.0,exact_bonferroni,13,13,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.0,holm,13,13,1.0,0.0,,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.1,exact_bonferroni,13,13,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.1,holm,13,13,1.0,0.0,,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.2,exact_bonferroni,13,13,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.2,holm,13,13,1.0,0.0,,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.3,exact_bonferroni,13,13,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2020 - 2022,Always survive,0.3,holm,13,13,1.0,0.0,,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.0,exact_bonferroni,5,1,0.2,0.8,0.8888845488548064,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.0,holm,5,1,0.2,0.8,,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.1,exact_bonferroni,5,1,0.2,0.8,0.8888845488548064,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.1,holm,5,1,0.2,0.8,,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.2,exact_bonferroni,5,1,0.2,0.8,0.8888845488548064,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.2,holm,5,1,0.2,0.8,,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.3,exact_bonferroni,5,1,0.2,0.8,0.8888845488548064,False,True,0.2,0.8,0.05
+2021 - 2022,Logistic regression,0.3,holm,5,1,0.2,0.8,,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.0,exact_bonferroni,5,0,0.0,1.0,0.766478161274433,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.0,holm,5,0,0.0,1.0,,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.1,exact_bonferroni,5,0,0.0,1.0,0.766478161274433,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.1,holm,5,0,0.0,1.0,,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.2,exact_bonferroni,5,0,0.0,1.0,0.766478161274433,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.2,holm,5,0,0.0,1.0,,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.3,exact_bonferroni,5,0,0.0,1.0,0.766478161274433,False,True,0.2,0.8,0.05
+2021 - 2022,HistGradientBoosting,0.3,holm,5,0,0.0,1.0,,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.0,exact_bonferroni,5,5,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.0,holm,5,5,1.0,0.0,,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.1,exact_bonferroni,5,5,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.1,holm,5,5,1.0,0.0,,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.2,exact_bonferroni,5,5,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.2,holm,5,5,1.0,0.0,,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.3,exact_bonferroni,5,5,1.0,0.0,1.0,False,True,0.2,0.8,0.05
+2021 - 2022,Always survive,0.3,holm,5,5,1.0,0.0,,False,True,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.0,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.0,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.1,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.1,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.2,exact_bonferroni,1,0,0.0,1.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.2,holm,1,0,0.0,1.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.3,exact_bonferroni,1,0,0.0,1.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Logistic regression,0.3,holm,1,0,0.0,1.0,,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.0,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.0,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.1,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.1,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.2,exact_bonferroni,1,0,0.0,1.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.2,holm,1,0,0.0,1.0,,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.3,exact_bonferroni,1,0,0.0,1.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,HistGradientBoosting,0.3,holm,1,0,0.0,1.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.0,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.0,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.1,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.1,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.2,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.2,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.3,exact_bonferroni,1,1,1.0,0.0,1.0,False,False,0.2,0.8,0.05
+2022 - 2022,Always survive,0.3,holm,1,1,1.0,0.0,,False,False,0.2,0.8,0.05

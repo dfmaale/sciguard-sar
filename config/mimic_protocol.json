@@ -1,0 +1,15 @@
+{
+  "dataset_version": "3.1",
+  "dataset_min_year": 2008,
+  "dataset_max_year": 2022,
+  "source_last_year": 2016,
+  "temporal_padding_years": 1,
+  "tau": null,
+  "tau_rationale": "",
+  "alpha": 0.05,
+  "missingness_levels": [0.0, 0.1, 0.2, 0.3],
+  "min_group_size": 200,
+  "models": ["Logistic regression", "HistGradientBoosting"],
+  "seed": 20260927,
+  "bootstrap_draws": 5000
+}

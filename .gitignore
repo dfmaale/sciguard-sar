@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local or credentialed data
+data/mimic-iv/
+data/mimiciv/
+**/patients.csv
+**/patients.csv.gz
+**/admissions.csv
+**/admissions.csv.gz
+.env
+*.pem
+*.key
+
+# Local MIMIC derivatives and models
+results/mimic_local/
+models/
+
+# LaTeX build products
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

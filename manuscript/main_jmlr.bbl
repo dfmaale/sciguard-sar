@@ -1,0 +1,148 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alquier(2024)]{alquier2024}
+Pierre Alquier.
+\newblock User-friendly introduction to {PAC-Bayes} bounds.
+\newblock \emph{Foundations and Trends in Machine Learning}, 17\penalty0
+  (2):\penalty0 174--303, 2024.
+\newblock \doi{10.1561/2200000100}.
+
+\bibitem[Angelopoulos et~al.(2025)Angelopoulos, Bates, Cand\`es, Jordan, and
+  Lei]{angelopoulos2025ltt}
+Anastasios~N. Angelopoulos, Stephen Bates, Emmanuel~J. Cand\`es, Michael~I.
+  Jordan, and Lihua Lei.
+\newblock Learn then test: Calibrating predictive algorithms to achieve risk
+  control.
+\newblock \emph{The Annals of Applied Statistics}, 19\penalty0 (2):\penalty0
+  1641--1662, 2025.
+\newblock \doi{10.1214/24-AOAS1998}.
+
+\bibitem[Bates et~al.(2021)Bates, Angelopoulos, Lei, Malik, and
+  Jordan]{bates2021rcps}
+Stephen Bates, Anastasios~N. Angelopoulos, Lihua Lei, Jitendra Malik, and
+  Michael~I. Jordan.
+\newblock Distribution-free, risk-controlling prediction sets.
+\newblock \emph{Journal of the ACM}, 68\penalty0 (6):\penalty0 43:1--43:34,
+  2021.
+\newblock \doi{10.1145/3478535}.
+
+\bibitem[Chernozhukov et~al.(2013)Chernozhukov, Chetverikov, and
+  Kato]{chernozhukov2013gaussian}
+Victor Chernozhukov, Denis Chetverikov, and Kengo Kato.
+\newblock Gaussian approximations and multiplier bootstrap for maxima of sums
+  of high-dimensional random vectors.
+\newblock \emph{The Annals of Statistics}, 41\penalty0 (6):\penalty0
+  2786--2819, 2013.
+\newblock \doi{10.1214/13-AOS1161}.
+
+\bibitem[Chernozhukov et~al.(2022)Chernozhukov, Chetverikov, Kato, and
+  Koike]{cckk2022}
+Victor Chernozhukov, Denis Chetverikov, Kengo Kato, and Yuta Koike.
+\newblock Improved central limit theorem and bootstrap approximations in high
+  dimensions, 2022.
+\newblock URL \url{https://arxiv.org/abs/1912.10529}.
+\newblock arXiv:1912.10529, version 2.
+
+\bibitem[Clopper and Pearson(1934)]{clopper1934}
+C.~J. Clopper and E.~S. Pearson.
+\newblock The use of confidence or fiducial limits illustrated in the case of
+  the binomial.
+\newblock \emph{Biometrika}, 26\penalty0 (4):\penalty0 404--413, 1934.
+\newblock \doi{10.1093/biomet/26.4.404}.
+
+\bibitem[Degras(2011)]{degras2011}
+David~A. Degras.
+\newblock Simultaneous confidence bands for nonparametric regression with
+  functional data.
+\newblock \emph{Statistica Sinica}, 21\penalty0 (4):\penalty0 1735--1765, 2011.
+
+\bibitem[Dixit et~al.(2025)Dixit, Mei, Booker, Storey-Matsutani, Ren, and
+  Majumdar]{dixit2025pwc}
+Anushri Dixit, Zhiting Mei, Meghan Booker, Mariko Storey-Matsutani, Allen~Z.
+  Ren, and Anirudha Majumdar.
+\newblock Perceive with confidence: Statistical safety assurances for
+  navigation with learning-based perception.
+\newblock In \emph{Proceedings of The 8th Conference on Robot Learning}, volume
+  270 of \emph{Proceedings of Machine Learning Research}, pages 2517--2541,
+  2025.
+
+\bibitem[Duchi and Namkoong(2021)]{duchi2021dro}
+John~C. Duchi and Hongseok Namkoong.
+\newblock Learning models with uniform performance via distributionally robust
+  optimization.
+\newblock \emph{The Annals of Statistics}, 49\penalty0 (3):\penalty0
+  1378--1406, 2021.
+\newblock \doi{10.1214/20-AOS2004}.
+
+\bibitem[Garg et~al.(2022)Garg, Balakrishnan, Lipton, Neyshabur, and
+  Sedghi]{garg2022ood}
+Saurabh Garg, Sivaraman Balakrishnan, Zachary~C. Lipton, Behnam Neyshabur, and
+  Hanie Sedghi.
+\newblock Leveraging unlabeled data to predict out-of-distribution performance.
+\newblock In \emph{International Conference on Learning Representations}, 2022.
+
+\bibitem[Hammar et~al.(2026)Hammar, Alpcan, and Lupu]{hammar2026safe}
+Kim Hammar, Tansu Alpcan, and Emil Lupu.
+\newblock Causal online learning of safe regions in cloud radio access
+  networks.
+\newblock \emph{arXiv preprint arXiv:2602.05280}, 2026.
+
+\bibitem[Hoeffding(1963)]{hoeffding1963}
+Wassily Hoeffding.
+\newblock Probability inequalities for sums of bounded random variables.
+\newblock \emph{Journal of the American Statistical Association}, 58\penalty0
+  (301):\penalty0 13--30, 1963.
+\newblock \doi{10.1080/01621459.1963.10500830}.
+
+\bibitem[Holm(1979)]{holm1979}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0
+  65--70, 1979.
+
+\bibitem[Johnson et~al.(2024)Johnson, Bulgarelli, Pollard, Gow, Moody, Horng,
+  Celi, and Mark]{mimic31}
+Alistair Johnson, Lucas Bulgarelli, Tom Pollard, Brian Gow, Benjamin Moody,
+  Steven Horng, Leo~Anthony Celi, and Roger Mark.
+\newblock {MIMIC-IV}, version 3.1, 2024.
+\newblock URL \url{https://physionet.org/content/mimiciv/3.1/}.
+
+\bibitem[Johnson et~al.(2023)Johnson, Bulgarelli, Shen, Gayles, Shammout,
+  Horng, Pollard, Hao, Moody, Gow, Lehman, Celi, and Mark]{johnson2023mimic}
+Alistair E.~W. Johnson, Lucas Bulgarelli, Lu~Shen, Alvin Gayles, Ayad Shammout,
+  Steven Horng, Tom~J. Pollard, Sicheng Hao, Benjamin Moody, Brian Gow,
+  Li-wei~H. Lehman, Leo~Anthony Celi, and Roger~G. Mark.
+\newblock Mimic-iv, a freely accessible electronic health record dataset.
+\newblock \emph{Scientific Data}, 10\penalty0 (1):\penalty0 1, 2023.
+\newblock \doi{10.1038/s41597-022-01899-x}.
+
+\bibitem[Tibshirani et~al.(2019)Tibshirani, Barber, Cand\`es, and
+  Ramdas]{tibshirani2019weighted}
+Ryan~J. Tibshirani, Rina~Foygel Barber, Emmanuel~J. Cand\`es, and Aaditya
+  Ramdas.
+\newblock Conformal prediction under covariate shift.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+
+\bibitem[Torens et~al.(2025)Torens, J\"unger, Schirmer, Nagarajan, Schopferer,
+  Zhukov, and Dauer]{torens2025odd}
+Christoph Torens, Franz J\"unger, Sebastian Schirmer, Pranav Nagarajan, Simon
+  Schopferer, Dmytro Zhukov, and Johann~C. Dauer.
+\newblock Runtime monitoring of operational design domain to safeguard machine
+  learning components.
+\newblock \emph{CEAS Aeronautical Journal}, 16:\penalty0 973--991, 2025.
+\newblock \doi{10.1007/s13272-025-00883-6}.
+
+\bibitem[Zhou et~al.(2023)Zhou, Balakrishnan, and Lipton]{zhou2023dams}
+Helen Zhou, Sivaraman Balakrishnan, and Zachary~C. Lipton.
+\newblock Domain adaptation under missingness shift.
+\newblock In \emph{Proceedings of the 26th International Conference on
+  Artificial Intelligence and Statistics}, volume 206 of \emph{Proceedings of
+  Machine Learning Research}, pages 9577--9606, 2023.
+
+\end{thebibliography}
