@@ -1,5 +1,7 @@
 # Statistical Assurance Regions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23228566.svg)](https://doi.org/10.5281/zenodo.23228566)
+
 Statistical Assurance Regions (SARs) certify the prespecified deployment environments in which a frozen predictive pipeline remains below a risk tolerance. **SciGuard** is the reference Python implementation used for the accompanying JMLR study of joint missingness and distribution shift.
 
 ## Current release scope
@@ -64,7 +66,7 @@ Credentialed users can follow [`docs/MIMIC_REPRODUCTION.md`](docs/MIMIC_REPRODUC
 
 ## Citation
 
-Please use the metadata in [`CITATION.cff`](CITATION.cff). A version-specific Zenodo DOI will be added after the first GitHub release is archived.
+Please use the metadata in [`CITATION.cff`](CITATION.cff). The exact `v1.0.0` reproducibility release is permanently archived at [Zenodo](https://doi.org/10.5281/zenodo.23228566).
 
 ## License
 

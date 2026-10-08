@@ -11,6 +11,8 @@ version: 1.0.0
 date-released: 2026-10-08
 license: MIT
 repository-code: "https://github.com/dfmaale/sciguard-sar"
+doi: 10.5281/zenodo.23228566
+url: "https://doi.org/10.5281/zenodo.23228566"
 keywords:
   - statistical assurance regions
   - distribution shift
