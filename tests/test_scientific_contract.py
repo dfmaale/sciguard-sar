@@ -133,7 +133,11 @@ class MimicContract(unittest.TestCase):
         self.assertTrue(d.subject_id.is_unique)
 
     def test_explicit_tolerance_required(self):
-        with self.assertRaises(ValueError): validate_config(self.config)
+        cfg=dict(self.config)
+        cfg["tau"]=None
+        cfg["tau_rationale"]=""
+        with self.assertRaises(ValueError):
+            validate_config(cfg)
 
     def test_end_to_end_synthetic_fixture_not_evidence(self):
         self.fixture()

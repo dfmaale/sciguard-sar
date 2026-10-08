@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "code_cells": 21,
+  "embedded_pngs": 10,
+  "source_files_verified": 11,
+  "result_csvs_verified": 30,
+  "mimic_result_csvs_verified": 5,
+  "pdf_pages": {
+    "figures/full/missingness.pdf": 1,
+    "figures/full/sensitivity.pdf": 1,
+    "figures/full/stress.pdf": 1,
+    "figures/full/workflow.pdf": 1,
+    "figures/full/nested.pdf": 1,
+    "figures/full/calibration.pdf": 1,
+    "figures/full/continuous.pdf": 1,
+    "figures/full/wdbc.pdf": 1,
+    "manuscript/main_jmlr.pdf": 25,
+    "SciGuard_Major_Revision_Response.pdf": 8,
+    "SciGuard_Final_Review_Response.pdf": 3
+  },
+  "notebook_execution": {
+    "canonical": true,
+    "execution_backend": "inprocess",
+    "execution_seconds": 250.30455501100002,
+    "execution_status": "completed_recorded_outputs",
+    "public_path_sanitized": true,
+    "revision": "2026-10-08"
+  },
+  "clinical_data_execution": "completed_credentialed_data"
+}

@@ -237,14 +237,16 @@ from predictors. Native and synthetic missingness are separately reported.
 
 One family covers all models/domains/missingness. The protocol adds exact alternatives,
 small-group handling, cohort flow, an always-survive baseline, prevalence and imbalance
-diagnostics, a SAR map, and frozen-config/source-file hashes. The arbitrary 0.35 default has
-been removed; a prospective clinical risk tolerance and rationale must be supplied locally.
+diagnostics, a SAR map, and frozen-config/source-file hashes. The completed v3.1 run used the
+prospectively recorded operational tolerance $	au=0.35$ for 0--1 loss and minimum group size 200.
 
-**Status: OPEN EMPIRICAL REQUIREMENT.** Credentialed data were not attached, so no real
-MIMIC result has been generated. Synthetic fixtures test software, not benchmark validity.
-Admission-table features remain a limited baseline; clinical timing, temporal support,
-dependence, representativeness and utility require an actual-data audit. This major-review
-request cannot honestly be marked resolved yet.
+**Status: EMPIRICALLY EXECUTED WITH IMPORTANT QUALIFICATION.** The credentialed MIMIC-IV v3.1
+run contains 35,114 deployment admissions and 72 prespecified model-domain-missingness
+conditions; 60 conditions met the group-size rule and all 60 were certified by multiplier,
+exact-Bonferroni, Hoeffding and Holm procedures. The 32-patient 2022--2022 group was withheld.
+The always-survive baseline was also certified, showing that this operational 0--1 loss and
+tolerance are too permissive to support a clinical-utility claim. The benchmark therefore
+resolves the missing execution requirement but not clinical validation.
 
 **Location:** Manuscript Section 8; notebook Section 11; `mimic.py`, `config/mimic_protocol.json`.
 
@@ -279,13 +281,15 @@ manifest. The test suite targets scientific failure modes rather than only shape
 Only the current manuscript and canonical notebook should be used for the next review.
 
 **Status:** Implemented; execution and artifact checks are recorded separately in
-`VALIDATION_REPORT.md`. Actual MIMIC execution remains pending.
+`VALIDATION_REPORT.md`. The credentialed MIMIC-IV v3.1 run is now complete and reported
+with its class-imbalance limitation.
 
 ## Before another journal submission
 
-Complete the natural-shift benchmark and examine its practical usefulness against the trivial
-baseline; audit clinical data timing and dependence; obtain a defensible risk requirement;
-decide with the supervisor whether the applied contribution is sufficient for the intended venue
-or whether substantial new theory is needed; establish a public code archive and verify author,
-funding and disclosure details. This revision does not promise acceptance or declare the paper
-ready for JMLR submission.
+The natural-shift MIMIC-IV benchmark is complete, but its practical usefulness against the
+trivial baseline reveals that a clinically meaningful loss/tolerance remains unresolved.
+Audit clinical feature timing and temporal sensitivity, consider a prospectively specified
+class-sensitive follow-up analysis, broaden external validation, decide with the supervisor
+whether the applied contribution is sufficient for the intended venue or whether substantial
+new theory is needed, establish a public code archive, and verify author, funding and disclosure
+details. This revision does not promise acceptance or declare the paper ready for JMLR submission.

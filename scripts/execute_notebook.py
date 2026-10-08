@@ -12,7 +12,7 @@ os.environ.setdefault("MPLBACKEND","Agg")
 from pathlib import Path
 import nbformat
 ROOT=Path(__file__).resolve().parents[1]
-path=ROOT/"notebooks"/"SciGuard_JMLR_Reproducible_Analysis_MIMIC_IV.ipynb"
+path=ROOT/"SciGuard_JMLR_Reproducible_Analysis_MIMIC_IV.ipynb"
 
 
 def main():

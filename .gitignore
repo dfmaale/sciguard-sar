@@ -17,8 +17,11 @@ data/mimiciv/
 *.pem
 *.key
 
-# Local MIMIC derivatives and models
-results/mimic_local/
+# Local MIMIC derivatives and models. Aggregate CSV/JSON/TeX outputs are public.
+results/mimic_local/*
+!results/mimic_local/*.csv
+!results/mimic_local/*.json
+!results/mimic_local/*.tex
 models/
 
 # LaTeX build products

@@ -21,7 +21,7 @@
     "reference_delta": 0.01,
     "hgb_iterations": 20
   },
-  "started_utc": "2026-10-08T03:49:45.816214+00:00",
+  "started_utc": "2026-09-27T19:04:29.506179+00:00",
   "python": "3.12.14",
   "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
   "packages": {
@@ -35,35 +35,35 @@
   "sections": {
     "calibration": {
       "status": "completed",
-      "seconds": 0.019294971999897825
+      "seconds": 0.07867279199990662
     },
     "sensitivity": {
       "status": "completed",
-      "seconds": 0.09245431999988796
+      "seconds": 0.2246363020001354
     },
     "bootstrap_and_stress": {
       "status": "completed",
-      "seconds": 0.25808514499999546
+      "seconds": 0.7799373440000181
     },
     "nested": {
       "status": "completed",
-      "seconds": 0.15998814399995354
+      "seconds": 0.3119364060000862
     },
     "missingness": {
       "status": "completed",
-      "seconds": 0.11462095399997452
+      "seconds": 0.2492906079999102
     },
     "wdbc": {
       "status": "completed",
-      "seconds": 0.19634614200003853
+      "seconds": 0.4646200960000897
     },
     "continuous": {
       "status": "completed",
-      "seconds": 0.16441111099993577
+      "seconds": 0.3589941079999335
     },
     "pilot_design": {
       "status": "completed",
-      "seconds": 0.012035547000095903
+      "seconds": 0.02792108099993129
     }
   },
   "external_benchmark": "not_run",
@@ -71,14 +71,14 @@
     "data/simulation_true_risks.csv": "8b242ba9097bce6c005733a56add77adbc4f4f382f168437a30d1f9f2e1e2e5c",
     "data/wdbc_sklearn.csv": "75a1d74a59df9cb0a78ecc0a36085bf8a85239557f178d3b8d758e88b26416e1"
   },
-  "ended_utc": "2026-10-08T03:49:46.847769+00:00",
+  "ended_utc": "2026-09-27T19:04:32.034439+00:00",
   "output_sha256": {
     "atc_prediction_replications.csv": "b59ffd3ad98d90ff94d37449475cb82d00676a1d6066688be77c1adff26a0870",
     "atc_prediction_summary.csv": "fa6b53a1d4ca07fce862a4f8bb70b3c7d136a90daf19df2e738c7d2e02499d9c",
-    "bootstrap_runtime_replications.csv": "b02147978b31e2b39d0e953abf2627a3a756c569c9b04090bbd3707680fdaa5b",
-    "bootstrap_runtime_summary.csv": "a3beaf2ac1809fb6febc3b6d6da526053fe3f7f56e367039acad556c3c15ca24",
-    "calibration_replications.csv": "9aa3d0e0d8c55023eba2612aeae86ac93cb25471c2e71bf361b73b9dce675c6b",
-    "calibration_summary.csv": "d5c897acf12c867fd6ca1cb6e2ad10fb288881b01449c9b8668f2eb1d94822eb",
+    "bootstrap_runtime_replications.csv": "6752f8ecc8f6fb5c48c2c60335f4fa1cdeb9fcd72bb201ffd7df9debc7ad97c5",
+    "bootstrap_runtime_summary.csv": "cba11671c3a038970f10c69e234cfeee8df8f0786ffea6c2b46cbd42d5e134f1",
+    "calibration_replications.csv": "785d57c897309c9e186699ac9f8f3ed2cecc54a8ffcdd4e4eeb6f3d04f1e0267",
+    "calibration_summary.csv": "d6e65bc7c0223c0e7fe04404dc15df4dd909b366563c9bbeba121ff1ee9f567a",
     "continuous_L_factor_0.5.csv": "5af5469cf795a76655e1120527d35de24a1237d17d1fc016b8243cd12d7a6f6e",
     "continuous_L_factor_1.csv": "75757d1d47d8736fde1a729efbef6c9235eadc9871915af8e8702f6b8093724b",
     "continuous_L_factor_2.csv": "3e64ab13ccfecd6e735a5f0e0380836b8141af0a58d64efc845d333873a7b3a4",
@@ -88,21 +88,21 @@
     "missingness_environment_detail.csv": "a9c2206ef1a2aba5ec6441c10328684d1410be161332c31beb34001d746d4b77",
     "missingness_replications.csv": "4d8b2fcd4a7e04a9eaf997a8ceb63cb6a507f5fd9b3c7203eb06d802f0a33353",
     "missingness_summary.csv": "32123532740c9b44090f3c28569cf8d69ffa27f38e0fbd76a4e27b15c1c0ecc2",
-    "nested_fit_replications.csv": "8fa4f3c26b75766a373b135f161c376f6f6843a0513592a4a894f15e1358f2a7",
-    "nested_fit_summary.csv": "28d5f650a8a128ba8f55bbb98c9954c22e24c24b52fd0fa36d73702913d6960f",
+    "nested_fit_replications.csv": "e0d3389f3756f7d31e661033625b3cdc64032071aa8d7d83aefa38d9debbbd25",
+    "nested_fit_summary.csv": "79c6f3923373cebd369fe4b0c8448c816375d18762b455a5b7408c7b44e7d729",
     "nested_reference_risks.csv": "540c588f8c913b73fd3686b5e5924150089732a2f96132dc6688d2a28b38b931",
-    "nested_replications.csv": "ceb88f0c19e88649e3eeaa3de2406223280c09513b0cb87a3fd9a8e317f6833c",
-    "nested_summary.csv": "31ed050800a7cf63d6b6c6420a083e3104ba5308f3fa262bd8a216037804d975",
+    "nested_replications.csv": "c86df149c44157fc1469c029bad044b0469a735c7a12d60b407d254afe9ac551",
+    "nested_summary.csv": "defb335179fd15302773c1a65df0186c32c5aca5a71f5675f7439e096abe5a0b",
     "paired_efficiency_gains.csv": "642973a767d2785d1e5d6c507f6f23c30758b3ab8565df3b3c3fbc9ece728f69",
     "pilot_design_replications.csv": "3edb9f4ded27a49fffd550f9a113463527f25859e2d4c70a038fb7e41c6ff01f",
     "pilot_design_summary.csv": "705a0816ef500aecdf6b0e48c9682178cd84f4679a6b8d880c4da9a4523550de",
     "sample_size_planning.csv": "0b09f1333e35f90dcbaff9b23c735dd6944b10684bdb8329e85c98ea7f3a9eaf",
-    "sensitivity_replications.csv": "413d53a8c2a9150927410d420d5425448127bfd56777145652214b3ff4cafe77",
-    "sensitivity_summary.csv": "2f83148cc7fc3128e9ba72f140386f8bcbed2cbda0521ffc9d8e92258beae559",
+    "sensitivity_replications.csv": "8096bd1186a8105e2d1fae006166f26c6499422ee63f4cbc0e0051429d0aab68",
+    "sensitivity_summary.csv": "0c0ca2c85c39c8c9c46105d886fa52f895d5df94c56e60054e42615a9a09662a",
     "stress_replications.csv": "03e3864138619c902ca69132208322e8fcc62ca2606f9d64095ec4a172e5209a",
     "stress_summary.csv": "4758e383cf8c1ebf54271151df0d0d8e15eee989e3da0d3a13e9c5543b10c0b8",
     "wdbc_detail.csv": "3520cfe0f4f0ea7b3eb7da004bf5be9e35e61f96533dd6082fdf82d3dd3787a3",
-    "wdbc_summary.csv": "93e65e337a18dcd723958e9f51644295c3bfb9173cbdaade89402232e0acc1c0"
+    "wdbc_summary.csv": "20676a8995027749988c6bf30ca0757c6aaec0bf72555442f9170a8688f52ca5"
   },
   "source_sha256": {
     "src/sciguard/__init__.py": "161cd91a618483511719c5d59967ce5cb0583bacbbebd8e43a64c12406420d30",
@@ -114,7 +114,6 @@
     "src/sciguard/groups.py": "f503a7ee55bd89438036f5ca090aa8591d93af13f1ee55c9399bbe0c3c0571fd",
     "src/sciguard/metrics.py": "794501e0615e80e900a3105e6866d101797f65b873513208b0758c9f5db48a3e",
     "src/sciguard/mimic.py": "5ead2fb19e37bb4692358886a1ebc6f4328562dd1dfe651f4faecb62ffc17670",
-    "src/sciguard/plotting.py": "3eb3dfedaae350d02d227af97df04f2056ae410a61c03369e3a06bae4d1bb2b7",
     "src/sciguard/simulation.py": "6a172676716e13a1a18b26f9bdf8297f67f8ddcbf4e82e0b5d0d69fdbe6e6082"
   }
 }

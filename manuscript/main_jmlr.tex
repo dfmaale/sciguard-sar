@@ -1,7 +1,7 @@
 \documentclass[twoside,11pt]{article}
 \usepackage[preprint]{jmlr2e}
 \usepackage{amsmath,amssymb,bm,booktabs,array,microtype,placeins}
-\graphicspath{{../figures/full/}}
+\graphicspath{{../figures/full/}{../figures/mimic_local/}}
 \newcommand{\A}{\mathcal A}
 \newcommand{\E}{\mathcal E}
 \newcommand{\Pp}{\mathbb P}
@@ -25,22 +25,22 @@ North Carolina A\&T State University, Greensboro, NC, USA}
 
 \begin{abstract}
 A frozen predictive pipeline can satisfy a risk requirement in some deployment conditions
-and fail in others. SciGuard represents this evaluation problem through a statistical assurance
-region: an estimated inner subset of a prespecified environment family whose predictive risks
-are bounded by a tolerance. We develop an auditable workflow using established simultaneous
-inference, with finite-sample exact-binomial and bounded-loss alternatives alongside a
-dependence-aware Gaussian multiplier band. We state the sampling construction that permits
-shared stress transformations, distinguish uncertainty in the assurance sample from uncertainty
-in simulation reference risks, and give an independent-pilot design procedure. A continuous
-extension is available only with an externally justified global smoothness bound. Experiments
-include nested predictive-pipeline refits, missingness-mechanism comparisons, a breast-cancer
-data stress test, and computational and adverse-regime ablations. The rerun exposes limits of
-Gaussian approximation: multiplier simultaneous coverage is \CalMultCoverage{} in the primary
-design and \RareMultCoverage{} in a rare-event design at a nominal 0.95 level. Exact-binomial
-alternatives trade efficiency for finite-sample control. A corrected MIMIC-IV temporal protocol
-is implemented but has not been executed on credentialed data. The contribution is a scoped
-methodological and reproducibility framework; broad deployment utility and clinical safety
-are not established by the present evidence.
+and fail in others. We study statistical assurance regions (SARs), estimated inner subsets
+of prespecified environment families whose predictive risks are simultaneously bounded by a
+tolerance. The SciGuard workflow combines finite-sample exact-binomial and bounded-loss
+procedures with a dependence-aware Gaussian multiplier band, explicit sampling constructions,
+reference-risk accounting, and independent-pilot design. Calibration shows that the multiplier
+can gain efficiency but is not a default finite-sample method for binary loss: simultaneous
+coverage was 0.928 in the primary design and 0.780 in a rare-event design, versus nominal 0.95.
+Experiments include nested refits, missingness mechanisms, WDBC stress tests, and credentialed
+MIMIC-IV v3.1 evaluation on 35,114 deployment admissions. MIMIC domain labels are approximate
+and calendar-overlapping because of patient-specific date shifting; we do not claim measured
+covariate or outcome shift across them. Under a permissive 0--1-loss tolerance, all 60 eligible
+conditions, including an always-survive baseline, were certified. Under a secondary
+false-negative-risk target requiring sensitivity at least 0.80, exact Bonferroni certification
+retained only 3 of 60 conditions, all for histogram gradient boosting. SAR certification is
+therefore relative to the chosen loss, tolerance, environment family, and sampling contract,
+not a claim of clinical safety.
 \end{abstract}
 \begin{keywords}
 deployment assurance, distribution shift, missing data, simultaneous inference, risk control
@@ -66,33 +66,40 @@ bounded-sum inequalities, multiple testing, and Gaussian multiplier approximatio
 provide ways to control joint error \citep{clopper1934,hoeffding1963,holm1979,chernozhukov2013gaussian}.
 Learn then Test (LTT) can directly index its hypotheses by deployment environments
 \citep{angelopoulos2025ltt}. Merely naming the resulting set does not create a new inferential
-theorem. We therefore position SciGuard as an applied methodology and software workflow that
-connects an explicit environment design, sampling assumptions, uncertainty accounting, and
-an interpretable set-valued report.
+theorem. We therefore study SARs as an applied methodology and implement them in the SciGuard
+software workflow, which connects an explicit environment design, sampling assumptions,
+uncertainty accounting, and an interpretable set-valued report.
 
-The revision makes four substantive contributions to that workflow. First, it separates
+The revision makes five substantive contributions to that workflow. First, it separates
 finite-sample risk control from asymptotic dependence-aware inference and states when each
 is appropriate. Second, it gives the row-level construction needed to justify reuse of
 observations under multiple transformations, including corrections to a missingness generator
 that previously did not implement the claimed MAR mechanism. Third, it puts nested fitted-model
 experiments and reference-risk uncertainty at the center of the evaluation. Fourth, it provides
 one executable notebook and shared software implementation from which all current tables and
-figures are generated. An additional local MIMIC-IV protocol addresses temporal alignment,
-patient separation, class imbalance, and missingness reporting, but its empirical execution
-remains outstanding.
+figures are generated. Fifth, it executes a credentialed MIMIC-IV v3.1 evaluation using
+admission-aligned approximate temporal domains, one admission per patient, native and added
+missingness accounting, two learned models, and an always-survive baseline. The permissive
+primary 0--1-loss specification is complemented by a reviewer-requested class-sensitive
+false-negative-risk specification requiring sensitivity of at least 0.80. The MIMIC analysis
+is deliberately interpreted as an assurance-workflow benchmark rather than evidence of measured
+temporal shift or clinical safety.
 
 The results do not support universal use of the multiplier method. It can enlarge the certified
 region when losses across environments are strongly dependent, but its simultaneous coverage
-deteriorates for sparse errors in the examined finite samples. This finding motivates retaining
-simple exact or bounded-loss procedures as substantive alternatives rather than weak baselines.
+was 0.928 in the primary calibration (95\% Monte Carlo interval $[0.902,0.948]$) and fell to
+0.780 in the rare-event design, both below the nominal 0.95 target. We therefore use exact
+Clopper--Pearson Bonferroni or exact Holm as the default certification routes for binary losses;
+the multiplier is a dependence-aware secondary route whose finite-sample approximation must be
+validated rather than assumed.
 
 \section{Relationship to Existing Work}
 \label{sec:related}
 \paragraph{Risk control and simultaneous inference.}
 Risk-controlling prediction sets and LTT provide model-agnostic calibration and testing
 frameworks \citep{bates2021rcps,angelopoulos2025ltt}. In our finite-family setting, the hypotheses
-$H_{0k}:R_k\geq\tau$ are an immediate LTT application. SciGuard's environment-indexed output
-is an operational interpretation of this framework, not a disjoint class of guarantees.
+$H_{0k}:R_k\geq\tau$ are an immediate LTT application. The environment-indexed assurance
+report is an operational interpretation of this framework, not a disjoint class of guarantees.
 Simultaneous confidence bands also have a substantial history beyond high-dimensional
 Gaussian maxima; for example, \citet{degras2011} studies bands for functional regression.
 Here the coordinates are prespecified environment-specific predictive risks. Their construction
@@ -123,8 +130,8 @@ navigation safety. Their guarantee concerns the resulting system, whereas our ri
 alone says nothing about downstream control or clinical harm. \citet{torens2025odd} monitor an
 operational design domain for an ML component; here uncertainty in average predictive loss
 determines an inner set within an explicitly supplied family. \citet{hammar2026safe} learn a
-network's safe operating region through causal observation and intervention. SciGuard's
-present empirical analysis is offline and does not implement such active region expansion.
+network's safe operating region through causal observation and intervention. Our present
+empirical analysis is offline and does not implement such active region expansion.
 These are meaningful precedents for region-based assurance, not evidence that the term SAR
 denotes a previously unstudied class of problems.
 
@@ -167,6 +174,7 @@ dependence, or cluster sampling also require an appropriate analysis rather than
 argument. Conditioning on training data does not remove dependence among assurance rows.
 
 \subsection{Natural groups and independent samples}
+\label{sec:natural-groups}
 For a master sample of independent subjects, let $G_{id}$ indicate a prespecified domain
 or subgroup. With $n_d=\sum_iG_{id}$ and $\widehat p_d=n_d/n$, estimate
 \begin{equation}
@@ -183,7 +191,7 @@ For exact binomial inference, condition on a group's membership indicators: unde
 master rows and a fixed group definition, its selected binary losses have the group-conditional
 Bernoulli law. A union bound can then cover all groups and stress conditions, despite overlap.
 
-When environments instead have genuinely independent, unequal samples, SciGuard accepts
+When environments instead have genuinely independent, unequal samples, the workflow accepts
 separate loss vectors. It neither truncates all samples to their shortest length nor pairs
 unrelated patients by row position. Validity remains a statement about the represented
 environment populations, not unobserved sites.
@@ -272,15 +280,26 @@ Quantile consistency and the continuous mapping argument give asymptotic coverag
 The set-containment implication then follows as in Proposition~\ref{prop:finite}.
 \end{proof}
 
-For increasing $K$, the high-dimensional results of \citet{chernozhukov2013gaussian}
-provide sufficient regimes for bounded coordinates with uniformly positive variances;
-a familiar conservative regime is $\log^7(Kn)/n\to0$ under the associated regularity constants.
-Lemma~\ref{lem:rows} establishes the relevant independent-vector construction; bounded losses
-and a uniform variance lower bound supply its basic moment conditions. This rate is not a
-practical sample-size prescription. Later refinements improve Gaussian and bootstrap
-approximation rates \citep{cckk2022}; we do not assert their sharpest rates or optimality for
-the present grouped and stressed-data implementation. The experiments assess finite-sample
-behavior directly and show that the assumptions can be practically uninformative for rare errors.
+For increasing $K$, high-dimensional Gaussian approximation requires additional uniform
+moment and variance conditions; Appendix~\ref{app:highdim} records one conservative sufficient
+regime and later refinements. We do not use such asymptotic rates as practical sample-size
+prescriptions. The applications here with $K=25$--125, including the 36--100-cell grid studies
+and the 72-condition MIMIC family, are treated as prespecified finite families; Proposition
+\ref{prop:mult}'s fixed-family asymptotic statement is the relevant theoretical reference.
+Finite-sample validation remains decisive, especially for sparse binary errors.
+
+\paragraph{Rare-event guidance.}
+For Bernoulli loss, designs expected to yield fewer than roughly 5--10 errors in any
+environment should default to exact Clopper--Pearson Bonferroni or exact Holm certification
+rather than use the studentized Gaussian multiplier as the sole certificate. In the adverse
+binary design, risks ranged from 0.002 to 0.08 at $n=500$, corresponding to roughly 1--40
+expected errors per cell; multiplier coverage fell to 0.780, with the low-count part of this
+range motivating the 5--10-error diagnostic. The rule is practical guidance, not a theorem
+cutoff, and it is not sufficient by itself: the primary calibration also showed modest
+multiplier undercoverage, 0.928 with 95\% Monte Carlo interval $[0.902,0.948]$, even without a
+rare-cell trigger. Accordingly, exact Clopper--Pearson Bonferroni or exact Holm is our default
+for binary-loss certification; the multiplier may be reported as a dependence-aware secondary
+analysis when its approximation is supported by validation.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{workflow.pdf}
@@ -323,9 +342,18 @@ same outcomes to invent new environments and applying an unadjusted band only af
 not justified by either argument.
 
 For planning, \eqref{eq:hoeffding} has additive width at most $\epsilon$ when
-$n\geq\log(K/\alpha)/(2\epsilon^2)$. This bound is conservative and controls band width,
-not the probability of certifying a cell with a particular true risk. Pilot simulations can
-estimate recall for plausible risk margins, but they cannot establish external validity.
+$n\geq\log(K/\alpha)/(2\epsilon^2)$. This bound is conservative and controls band width
+only; it does not guarantee a particular assurance-region recall or a particular probability of
+certifying a cell. Pilot simulations can estimate recall for plausible risk margins, but they
+cannot establish external validity.
+
+\paragraph{Higher-dimensional stress spaces.}
+If $d$ stress axes each use $G$ grid levels, an exhaustive Cartesian design has
+$K=G^d$ environments. Thus even moderate resolution becomes expensive in data, computation,
+and interpretation as $d$ grows. We recommend scientifically restricting axes when possible or
+using an independent pilot to screen a larger candidate family before freezing the assurance
+grid. Any pilot-selected family must remain independent of the assurance outcomes, or inference
+must protect a fixed superset. The current work does not provide an optimal active-grid search.
 
 Suppose a compact continuous family has a scientifically justified global bound
 $|R(e)-R(e')|\leq L_Rd(e,e')$. Define
@@ -337,12 +365,16 @@ On the grid-coverage event, $R(e)\leq R(e_k)+L_Rd(e,e_k)\leq U_k+L_Rd(e,e_k)$ fo
 every $k$, so \eqref{eq:continuous} covers the risk everywhere. Thresholding it gives a
 continuous inner region. This is a standard smoothness consequence of simultaneous inference.
 
-The largest observed slope on a finite grid is not a valid global upper bound on $L_R$.
-An independent pilot removes selection bias but cannot exclude unobserved rapid variation
-between design points without structural assumptions. If an externally justified random
-$\widehat L_R$ bounds the global constant with failure probability $\delta$, the combined
-error budget is at most $\alpha+\delta$. Without such a bound, finite-grid certification
-and explicitly assumption-dependent smoothness sensitivity are the defensible outputs.
+The largest observed slope on the assurance grid is not a valid global upper bound on $L_R$,
+and estimating $L_R$ from the same outcomes used for certification invalidates the containment
+argument. When a data-driven value is unavoidable, our recommended workflow is sample splitting:
+use an independent pilot sample to propose and freeze a conservative smoothness bound, then use
+a separate assurance sample for the risk band. This removes same-sample selection bias but still
+cannot rule out unobserved rapid variation between design points without structural assumptions.
+If an externally or independently justified random $\widehat L_R$ bounds the global constant
+with failure probability $\delta$, the combined error budget is at most $\alpha+\delta$.
+Without such a bound, finite-grid certification and explicitly assumption-dependent smoothness
+sensitivity are the defensible outputs.
 
 \section{Experimental Design and Evaluation}
 \label{sec:experiments}
@@ -494,6 +526,7 @@ dashed line is the nominal coverage target; higher recall alone does not establi
 \end{figure}
 
 \subsection{Dependence, sample size, and adverse regimes}
+\label{sec:adverse}
 \label{sec:stress}
 The sensitivity study uses 300 replications per setting, varying $n\in\{500,1000,5000\}$
 at latent correlation $.55$ and correlation $\rho\in\{.10,.55,.90\}$ at $n=1000$.
@@ -540,7 +573,9 @@ $L_R=\sqrt{.15^2+.12^2}$. We use a $5\times5$ assurance grid, $\tau=.32$, 200 re
 and an $81\times81$ mesh to compute numerical recall and containment diagnostics.
 Table~\ref{tab:continuous} distinguishes grid coverage from mesh containment. The analytical
 argument for \eqref{eq:continuous}, not the dense mesh, supplies coverage over every point
-when the grid band and the global bound are valid. Separate exports evaluate sensitivity to
+when the grid band and the global bound are valid. The $81\times81$ mesh recall and containment
+values are numerical diagnostics only: they approximate geometric behavior and do not provide
+or replace an inferential guarantee. Separate exports evaluate sensitivity to
 half and twice the analytic bound; the half-bound is not asserted valid.
 \begin{table}[t]
 \centering\small
@@ -599,65 +634,193 @@ in missingness and is not identical to the equally spaced $6\times6$ grid. Certi
 fractions cannot be interpreted as continuous areas without an additional design measure
 or smoothness argument. A grid is not selected retrospectively for the largest certificate.
 
-\section{MIMIC-IV: Implemented Protocol and Remaining Evidence}
+\section{MIMIC-IV External Benchmark}
 \label{sec:mimic}
-\textbf{No MIMIC-IV results are claimed in this revision.} The supplied archive contains
-neither credentialed MIMIC tables nor a completed benchmark output. The earlier primary
-notebook stopped at its MIMIC section with a missing-file error. We provide a corrected local
-execution path and validate its mechanics using synthetic table fixtures; that test is not
-clinical evidence. A genuine naturally shifted evaluation remains necessary to address the
-central empirical limitation of the present manuscript.
+We executed the local protocol on credentialed MIMIC-IV v3.1
+\citep{mimic31,johnson2023mimic}. The purpose of this experiment is to test whether the
+assurance workflow can be carried through on a large real EHR cohort with approximate temporal
+grouping and native missingness. We do not establish or quantify covariate shift or outcome
+shift across these groups, and the experiment is not a claim that the fitted mortality models
+or either risk target constitute a clinically validated deployment rule. The primary
+0--1-loss specification is intentionally permissive and certifies every adequately sized
+condition, including the trivial always-survive comparator. A secondary class-sensitive
+specification, fixed before computing its deployment certificates, instead targets false-negative
+risk and yields a selective assurance region. Together the two specifications demonstrate both
+execution of the workflow and the consequences of target design.
 
-The protocol targets in-hospital mortality for the first eligible adult admission per patient,
-using admission-table variables only. It excludes identifiers, outcome flags, discharge or
-death times, and length of stay from predictors. Age top-coding is retained explicitly.
-The field-availability audit for the intended admission-time decision must still be completed
-on the actual data; a demographic/admission model is a limited baseline, not a comprehensive
-clinical prediction system.
+\paragraph{Cohort and prediction task.}
+The raw join contained 546,028 admissions. After retaining valid adult admissions and selecting
+the first eligible admission per patient, 223,452 patients remained. Admission-aligned temporal
+intervals placed 106,864 patients in the source cohort and 35,114 in deployment; 81,474
+admissions with source/deployment ambiguity under the padded interval rule were excluded.
+The ambiguity exclusion is a deterministic row-level function of each patient's own shifted
+interval metadata and fixed cutoffs; it does not couple different patients, so after selecting
+one admission per patient the retained observations preserve the independent-row construction
+used in Lemma~\ref{lem:rows}. The source cohort was split into 85,491 fitting observations and a 21,373-observation source
+holdout. The binary target was in-hospital mortality. Predictors were age, an age-topcoding
+indicator, gender, admission type, admission location, insurance, marital status, and race.
+These variables are intentionally restricted to demographic and administrative fields available
+from the admission-level tables; no laboratory measurements, vital signs, medications, or ICU
+time-series variables enter the models. Identifiers, outcome flags, death/discharge times, and
+length of stay were not used as predictors.
 
-MIMIC-IV shifts dates separately for each patient. Its documentation instructs users to align
-stays to the anchor year rather than treat a patient's \texttt{anchor\_year\_group} as the period
-of every admission \citep{mimic31,johnson2023mimic}. The loader adds the shifted admission-year
-offset to both group endpoints and, by default, pads the approximate interval by one year
-for year-boundary ambiguity. This padding is an analysis choice, not an official exact-date
-guarantee. Intervals are restricted to the declared dataset coverage. Source intervals must
-end by the prespecified cutoff and deployment intervals begin afterward; overlapping
-intervals are excluded. Deployment groups are approximate admission intervals, which may
-overlap one another in calendar time, rather than exact years or distinct hospitals.
+MIMIC-IV shifts dates separately for each patient. We therefore align each admission to the
+patient anchor year, form approximate admission intervals, pad interval endpoints by one year
+for boundary ambiguity, and restrict them to the declared v3.1 coverage. Because the dates are
+deidentified at the patient level, these labels are approximate ordering intervals rather than
+literal shared calendar periods and should not be interpreted as exact secular trends. We do not
+use these labels as evidence that a particular magnitude of covariate or outcome shift occurred;
+they define prespecified deployment groups for the assurance exercise. The source period ends by 2016. Deployment groups are the resulting post-cutoff approximate intervals
+2017--2021, 2018--2022, 2019--2022, 2020--2022, 2021--2022, and 2022--2022.
+The interval labels may overlap in calendar time, but each retained patient contributes to
+one prespecified deployment-domain label. The grouped construction in
+Section~\ref{sec:natural-groups} accommodates unequal domain sizes, while common-row inference
+preserves dependence across the model and missingness conditions evaluated on the same patients.
 
-The example configuration describes v3.1, with source ending by 2016 and subsequent
-deployment intervals. Users must supply the actual version, scientifically justified tolerance,
-and rationale before running. The former illustrative $.35$ mortality-error tolerance is not
-carried forward as a meaningful clinical requirement. Unweighted logistic regression and
-histogram gradient boosting are fitted on source patients, with a source holdout kept separate.
-An always-survive classifier is included. All models, groups, and missingness conditions form
-one family for the clinical certification comparison, avoiding unadjusted selection across models.
+\paragraph{Prespecified family and certification rule.}
+We fit unweighted logistic regression and histogram gradient boosting on the source training
+cohort and retain an always-survive comparator. Added MCAR feature missingness levels were
+$m\in\{0,.10,.20,.30\}$, with native missingness recorded separately. The three models,
+six temporal domains, and four missingness levels define one 72-condition family. We fixed
+$\alpha=.05$, 5,000 multiplier draws, and a minimum group size of 200 before certification.
+The operational tolerance was fixed as $\tau=.35$ for 0--1 classification error before
+examining deployment outcomes. It was chosen deliberately as a permissive workflow-execution
+threshold, not from the deployment results and not as a clinically acceptable mortality-error
+rate. Because the source-holdout risks were already available when this operational value was
+finalized, the primary specification should not be interpreted as a prospective clinical
+requirement. Multiplier, exact-Bonferroni, Hoeffding, and Holm procedures were all applied to
+the same family.
 
-The protocol reports mortality prevalence, sensitivity, specificity, balanced accuracy, AUROC,
-and AUPRC, because low misclassification risk alone can be misleading for rare outcomes.
-These diagnostics do not inherit the 0--1-risk guarantee. Native feature missingness is
-reported separately from synthetic MCAR additions and total missingness. The grouped
-influence construction \eqref{eq:group}, exact group-conditional binomial bounds, Hoeffding,
-and Holm accommodate unequal group sizes without fabricating row alignment. Small groups
-are retained as uncertified. One admission per patient addresses repeated-patient rows but
-does not establish independence across time or hospital processes.
+\paragraph{Results.}
+The source-holdout 0--1 risks were 0.0184 for logistic regression, 0.0185 for histogram
+gradient boosting, and 0.0184 for the always-survive comparator. Five temporal domains met the
+minimum group size, yielding 60 eligible model-domain-missingness conditions; the 2022--2022
+group contained only 32 patients, so its 12 conditions were retained as ineligible and not
+certified. All 60 eligible conditions were certified by all four inferential procedures.
+For exact Bonferroni, the largest upper risk among eligible conditions was 0.0474, far below
+the prespecified tolerance; the largest Hoeffding upper bound was 0.1044. The multiplier
+critical value was 2.538 and its largest eligible upper bound was 0.0465.
+Figure~\ref{fig:mimic} displays the exact-Bonferroni assurance map, and
+Table~\ref{tab:mimic} summarizes the temporal groups.
 
-Only aggregate tables, the frozen configuration, and source-file hashes are exported by the
-local protocol. No patient-level cohort or fitted model is included in this revision. Completing
-the external evaluation requires inspecting actual cohort flow, temporal support, native
-missingness, label and feature timing, prevalence, trivial-baseline performance, and effective
-sample sizes before any benchmark result is promoted into the manuscript.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{mimic_sar_decision_map.pdf}
+\caption{MIMIC-IV v3.1 assurance map using familywise exact-Bonferroni upper risks at
+$\tau=.35$. Columns add 0--30\% MCAR feature missingness; rows are approximate admission
+intervals. Green cells are certified. The 2022--2022 interval has $n=32<200$ and is withheld
+from certification. The figure reports statistical support for the prespecified 0--1-risk
+criterion, not clinical safety.}
+\label{fig:mimic}
+\end{figure}
+
+\begin{table}[t]
+\centering\small
+\caption{MIMIC-IV temporal-domain summary. Mortality prevalence, logistic-regression risk,
+AUROC, and AUPRC are shown at zero added missingness. ``Max exact upper'' is the largest
+exact-Bonferroni upper risk across the three models and four missingness levels in that domain.
+The last column gives certified/total model-missingness conditions.}
+\label{tab:mimic}
+\input{generated/mimic.tex}
+\end{table}
+
+\paragraph{Interpretation under class imbalance.}
+The primary run exposes an important limitation of thresholded 0--1 loss for a rare outcome.
+At zero added missingness, logistic-regression AUROC ranged from 0.805 to 0.951 across the five
+eligible temporal domains, yet sensitivity at the default 0.5 prediction threshold was zero in
+four domains and only 0.049 in 2019--2022. The always-survive comparator was also certified in
+every eligible condition because mortality prevalence was low and $\tau=.35$ was permissive
+relative to the observed 0--1 risks. Thus the primary certificate is internally valid for the
+specified loss and tolerance while remaining weak as a statement about mortality detection.
+
+\paragraph{Secondary class-sensitive specification.}
+To make the real-data assurance target informative for the minority outcome, we added a
+reviewer-requested secondary analysis based on false-negative risk,
+$R_{\mathrm{FN}}(e)=\Pr\{\widehat Y=0\mid Y=1,e\}$. Before computing these secondary deployment
+certificates, we fixed $\tau_{\mathrm{FN}}=.20$, corresponding to an operational requirement of
+sensitivity at least 0.80; this 80\% requirement is interpretable but is not claimed to be a
+clinical standard. For each learned model, the largest classification threshold attaining at
+least 0.80 sensitivity was selected using only the independent source holdout and then frozen:
+0.0217 for logistic regression and 0.0227 for histogram gradient boosting, each attaining
+source sensitivity 0.802 with specificity 0.747 and 0.749, respectively. The always-survive
+comparator has sensitivity zero by construction.
+
+Because the effective sample size is now the number of deaths in each domain, exact
+Clopper--Pearson Bonferroni is the primary certification route and exact Holm is retained as
+a secondary check. Positive-case counts in the six approximate domains were 14, 12, 1,092,
+13, 5, and 1; the final 2022--2022 domain was therefore ineligible for this specification.
+Among the 60 eligible model-domain-missingness conditions, only 3 were certified by exact
+Bonferroni, all for histogram gradient boosting in the 2019--2022 group at 0\%, 10\%, and
+20\% added missingness. Their observed sensitivities were 0.852, 0.848, and 0.845, with
+simultaneous upper false-negative-risk bounds 0.1855, 0.1895, and 0.1925. At 30\% missingness
+the same model retained observed sensitivity 0.818, but its upper bound increased to 0.218 and
+the cell was not certified. Logistic regression certified 0 of 20 eligible conditions, and the
+always-survive comparator certified 0 of 20. Figure~\ref{fig:mimic-fn} and
+Table~\ref{tab:mimic-fn} summarize this secondary specification.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{mimic_class_sensitive_sar.pdf}
+\caption{MIMIC-IV class-sensitive assurance map for false-negative risk at
+$\tau_{\mathrm{FN}}=.20$, equivalent to a required sensitivity of at least 0.80. Thresholds for
+the two learned models were calibrated on the independent source holdout and then frozen.
+Exact Clopper--Pearson Bonferroni is the primary certification route. Green cells are certified,
+yellow cells have observed false-negative risk at or below tolerance but an upper bound above
+tolerance, red cells have observed false-negative risk above tolerance, and gray cells have
+insufficient positive cases. Only three conditions are certified, all for histogram gradient
+boosting in the 2019--2022 group at 0--20\% added missingness.}
+\label{fig:mimic-fn}
+\end{figure}
+
+\begin{table}[t]
+\centering\small
+\caption{Secondary class-sensitive MIMIC-IV specification. ``Threshold'' is the frozen
+classification threshold selected on the source holdout to attain sensitivity at least 0.80.
+Each learned model has 20 eligible deployment conditions (five domains by four missingness
+levels); the one-positive-case 2022--2022 domain is excluded.}
+\label{tab:mimic-fn}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Threshold & Source sens. & Source spec. & Certified/eligible\\
+\midrule
+Logistic regression & 0.0217 & 0.802 & 0.747 & 0/20\\
+HistGradientBoosting & 0.0227 & 0.802 & 0.749 & 3/20\\
+Always survive & -- & 0.000 & 1.000 & 0/20\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The contrast between the two MIMIC specifications is the substantive design lesson: deployment
+assurance cannot repair a scientifically inadequate loss, threshold, or tolerance, but changing
+the scientific target changes the assurance question in a transparent way. The secondary result
+is still an assurance analysis rather than evidence of clinical safety.
+
+Only aggregate tables, the frozen configuration, and source-file hashes are distributed.
+Credentialed patient-level MIMIC-IV data, patient-level derivatives, and fitted clinical models
+are not bundled.
 
 \section{Practical Interpretation and Limitations}
 \label{sec:discussion}
 \paragraph{Choosing a method.}
-Use an exact binary-loss procedure when finite-sample control is central and the independent
-sampling model is defensible; use a bounded-loss inequality for other bounded losses when
-conservatism is acceptable. A multiplier band can be useful when the family is strongly
-dependent and validation supports the approximation, but the rare-event experiment shows
-that sample size alone is not a sufficient diagnostic. Compare paired recall gains with exact
-Holm as well as normal Bonferroni, and inspect validity at the same time. The method should
-be fixed in advance or multiplicity should cover any subsequent method selection.
+For binary losses, we recommend exact Clopper--Pearson Bonferroni or exact Holm as the default
+certification route when its sampling assumptions are defensible. Sparse counts strengthen
+that recommendation: fewer than roughly 5--10 expected errors in any cell should trigger an
+exact route automatically. The multiplier remains useful as a dependence-aware secondary
+analysis, but the primary calibration's 0.928 simultaneous coverage shows that modest
+undercoverage can occur even when sparsity is not the obvious failure mode. Use a bounded-loss
+inequality for nonbinary bounded losses when conservatism is acceptable. Any multiplier use
+should be accompanied by finite-sample validation in a design comparable to the intended
+application, and any method selection performed after seeing assurance losses must itself be
+covered by the multiplicity control.
+
+\paragraph{Scalability.}
+Grid complexity grows multiplicatively across deployment axes: $d$ axes with $G$ levels each
+produce $K=G^d$ environments. The direct row-multiplier implementation costs $O(BnK)$; the
+conditional-covariance alternative trades this for $O(nK^2+K^3+BK^2)$ work and $O(K^2)$
+storage. Appendix~\ref{app:runtime} reports measured bootstrap timings and variability. These
+computational costs reinforce the design recommendation to keep stress axes scientifically
+focused or to use independent-pilot screening rather than an indiscriminately dense high-
+dimensional grid.
 
 \paragraph{What is established.}
 We give a coherent assurance target, transparent sampling and inference contracts, a
@@ -674,28 +837,41 @@ The continuous extension depends on external smoothness. Unknown shifts and caus
 transportability remain outside the certificate. Unbounded heavy-tailed losses and adversarial
 adaptation are not studied. Reference-risk uncertainty persists near the tolerance even with
 20,000 rows. The primary simulation deliberately calibrates inference, and WDBC remains
-small and semisynthetic. The unexecuted MIMIC protocol cannot fill the missing natural-shift
-evidence. These limitations prevent a claim of general deployment readiness.
+small and semisynthetic. The completed MIMIC-IV experiment adds a large credentialed EHR
+application with approximate temporal grouping, but it does not establish measured covariate
+or outcome shift, uses admission-table predictors from one institutional data source, and adds
+synthetic MCAR missingness. The permissive primary 0--1-loss specification certifies a trivial
+always-survive baseline; the secondary false-negative-risk specification is more discriminating,
+but it was added as a reviewer-requested assurance target and is not a prospective clinical
+validation. These limitations still prevent a claim of general deployment readiness or clinical
+safety.
 
 \section{Conclusion}
-SciGuard connects a prespecified deployment family to an explicit, auditable set-valued
-risk report. Established finite-sample and bootstrap tools provide different routes to that
-report, with different assumptions and efficiency. The revised experiments show both the
-benefit of accounting for dependence and consequential Gaussian-approximation failures.
-The appropriate conclusion is a scoped applied framework with reproducible evidence and
-an implementable external-validation protocol. Stronger claims require completed natural-shift
-evaluation and, if theoretical novelty is the objective, results beyond the standard
-simultaneous-inference and smoothness arguments used here.
+The proposed workflow connects a prespecified deployment family to an explicit, auditable
+set-valued risk report. Established finite-sample and bootstrap tools provide different routes to
+that report, with different assumptions and efficiency. The experiments show both the benefit
+of accounting for dependence and consequential Gaussian-approximation failures; exact methods
+remain the default for binary-loss certification in this work. The credentialed MIMIC-IV run
+demonstrates end-to-end execution on a large EHR cohort with approximate temporal groups,
+native missingness, unequal group sizes, and class imbalance, without claiming that those group
+labels establish measured covariate or outcome shift. Its two risk specifications illustrate the
+scientific dependence of a certificate on the target: the permissive 0--1-risk tolerance certifies
+an always-survive classifier, whereas a secondary false-negative-risk target certifies only 3 of
+60 eligible conditions, all for histogram gradient boosting. The appropriate conclusion is
+therefore a scoped assurance framework with reproducible synthetic, tabular, and EHR evidence,
+not a general claim of deployment readiness or clinical safety. Stronger clinical claims require
+prospectively chosen task-specific losses and tolerances, broader external validation, and
+evidence beyond the standard simultaneous-inference and smoothness arguments used here.
 
 \section*{Data and Code Availability}
-The source code, reproducibility notebook, configuration files, aggregate experimental outputs,
-figures, tests, and manuscript materials are publicly available at
-\url{https://github.com/dfmaale/sciguard-sar}. The exact \texttt{v1.0.0} release used for this
-study is permanently archived at Zenodo: \url{https://doi.org/10.5281/zenodo.23228566}.
-MIMIC-IV is a credentialed dataset and is therefore not redistributed with the repository.
-Eligible users may obtain access directly from PhysioNet and reproduce the analysis using the
-supplied protocol and configuration files. Only aggregate MIMIC-IV outputs are included in the
-public archive.
+The source code, canonical analysis notebook, tests, current-run CSVs, generated figures,
+manuscript sources, and completed aggregate MIMIC-IV benchmark outputs are publicly available
+at \url{https://github.com/dfmaale/sciguard-sar}. The archived software record is available at
+Zenodo: \url{https://doi.org/10.5281/zenodo.23228566}. The WDBC CSV and simulation surface are
+supplied directly. MIMIC-IV is credentialed and is not redistributed; the repository instead
+contains the frozen v3.1 protocol, cohort-flow/result/diagnostic tables, natural-missingness
+summaries, decision maps, and SHA-256 hashes of the local source tables used for the run.
+Patient-level MIMIC data, patient-level derivatives, and fitted clinical models are not included.
 
 \appendix
 \section{Additional Tables}
@@ -713,6 +889,7 @@ replication differences. These efficiency comparisons must be read with coverage
 \FloatBarrier
 
 \section{Computational Cost and Bootstrap Variability}
+\label{app:runtime}
 The direct multiplier sampler requires $O(BnK)$ operations. Sampling from its conditional
 Gaussian covariance instead costs $O(nK^2+K^3+BK^2)$ and stores a $K\times K$ covariance;
 it can be advantageous for moderate $K$. The code chooses that route when $K\leq\min(n,2000)$
@@ -732,6 +909,20 @@ are also exported so bootstrap variability is inspectable directly.
 \label{tab:runtime}\input{generated/runtime.tex}
 \end{table}
 
+
+\section{High-Dimensional Gaussian Approximation Note}
+\label{app:highdim}
+For increasing $K$, the high-dimensional Gaussian-approximation results of
+\citet{chernozhukov2013gaussian} provide sufficient regimes for bounded coordinates with
+uniformly positive variances; a familiar conservative regime is
+$\log^7(Kn)/n\to0$ under the associated regularity constants. Lemma~\ref{lem:rows}
+establishes the independent-vector construction used here, while bounded losses and a uniform
+variance lower bound supply basic moment conditions. Later refinements improve Gaussian and
+bootstrap approximation rates \citep{cckk2022}. We do not assert their sharpest rates or
+optimality for the present grouped and stressed-data implementation, and none of these rates is
+used as a practical sample-size prescription. The finite-sample stress experiments instead
+assess approximation behavior directly.
+
 \section{Planning and Verification}
 \begin{table}[ht]
 \centering\small
@@ -742,11 +933,16 @@ stated margin, with $\alpha=.05$. This is not a guarantee of a particular recall
 Tests cover finite-sample binomial error by enumerating possible counts, the zero-error
 bound, empirical degeneracy, duplicated columns, covariance/row multiplier equivalence,
 unequal samples, overlapping and empty groups, reference boundaries, MAR row locality,
-ATC ties, and admission-aligned MIMIC cohort construction. The synthetic MIMIC fixture exercises
-the complete local pipeline and aggregate-output schema. It is discarded after testing and
-is never treated as a benchmark dataset. The canonical notebook imports these same functions,
-records configuration and package versions, and generates its manuscript inputs from the
-completed full run rather than hard-coded target values.
+ATC ties, and admission-aligned MIMIC cohort construction. A synthetic MIMIC fixture exercises
+the local pipeline and aggregate-output schema during tests and is discarded afterward; it is
+not treated as benchmark evidence. The credentialed v3.1 execution reported in
+Section~\ref{sec:mimic} is stored separately as aggregate outputs with a frozen configuration
+and source-table hashes. The canonical notebook imports these same functions, records
+configuration and package versions, and generates manuscript inputs from completed runs rather
+than hard-coded target values. All tables and figures in this revision are regenerated from the
+current corrected implementation with seed 20260927; rerunning the released notebook with the
+frozen configuration reproduces the reported outputs. Earlier draft outputs are superseded by
+this implementation, and no result in the present revision was selected by changing the seed.
 
 \bibliography{references}
 \end{document}

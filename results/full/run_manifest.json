@@ -113,7 +113,7 @@
     "src\\sciguard\\experiments.py": "420f2a1fd2061451e1e6dcc83a4deee8d404796841cf89c6f50f45212633a409",
     "src\\sciguard\\groups.py": "f503a7ee55bd89438036f5ca090aa8591d93af13f1ee55c9399bbe0c3c0571fd",
     "src\\sciguard\\metrics.py": "794501e0615e80e900a3105e6866d101797f65b873513208b0758c9f5db48a3e",
-    "src\\sciguard\\mimic.py": "5ead2fb19e37bb4692358886a1ebc6f4328562dd1dfe651f4faecb62ffc17670",
+    "src\\sciguard\\mimic.py": "d386d0020cee0ab3214370e37f89884a8727ca1ca236cddacc06e3dcd7325b43",
     "src\\sciguard\\plotting.py": "3eb3dfedaae350d02d227af97df04f2056ae410a61c03369e3a06bae4d1bb2b7",
     "src\\sciguard\\simulation.py": "6a172676716e13a1a18b26f9bdf8297f67f8ddcbf4e82e0b5d0d69fdbe6e6082"
   }

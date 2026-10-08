@@ -1,7 +1,7 @@
 rep,Model,fit_seconds,nominal_reference_risk,reference_safe_fraction
-0,Logistic regression,0.0022658059999685065,0.312,0.9375
-0,HistGradientBoosting,0.012715443999923082,0.266,1.0
-1,Logistic regression,0.0018068920001041988,0.304,1.0
-1,HistGradientBoosting,0.011420736999980363,0.288,1.0
-2,Logistic regression,0.0016575969998484652,0.296,0.625
-2,HistGradientBoosting,0.010972488999868801,0.32,0.5625
+0,Logistic regression,0.0065820589998111245,0.312,0.9375
+0,HistGradientBoosting,0.025351209000064046,0.266,1.0
+1,Logistic regression,0.0027690909998909774,0.304,1.0
+1,HistGradientBoosting,0.01948827599994729,0.288,1.0
+2,Logistic regression,0.0027907379999305704,0.296,0.625
+2,HistGradientBoosting,0.02283077900005992,0.32,0.5625

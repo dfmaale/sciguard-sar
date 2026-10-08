@@ -2,41 +2,47 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23228566.svg)](https://doi.org/10.5281/zenodo.23228566)
 
-Statistical Assurance Regions (SARs) certify the prespecified deployment environments in which a frozen predictive pipeline remains below a risk tolerance. **SciGuard** is the reference Python implementation used for the accompanying JMLR study of joint missingness and distribution shift.
+Statistical Assurance Regions (SARs) identify the prespecified deployment environments in
+which a frozen predictive pipeline remains below a risk tolerance. **SciGuard** is the
+reference Python implementation and reproducibility workflow accompanying the JMLR study.
 
-## Current release scope
+Open **`SciGuard_JMLR_Reproducible_Analysis_MIMIC_IV.ipynb`** after cloning or downloading the entire repository.
+It is the sole current notebook. The manuscript is `manuscript/main_jmlr.tex` and its compiled PDF.
 
-This repository contains:
+This revision unifies the notebook and package, corrects missingness generation, adds exact
+finite-sample comparisons, quantifies reference-risk uncertainty, and replaces the empirical
+claims with a fresh full run. The multiplier band is asymptotic and undercovers in some tested
+regimes. MIMIC-IV v3.1 has now been executed on credentialed local data; only aggregate benchmark outputs, the frozen protocol, and source-file hashes are included.
 
-- simultaneous and finite-sample SAR procedures;
-- simulation, WDBC, and continuous-environment experiments;
-- the executable Jupyter notebook used for the study;
-- aggregate MIMIC-IV results and figures, without patient-level data;
-- a secondary class-sensitive analysis based on false-negative risk
-  \(R_{\mathrm{FN}}(e)\), with \(\tau_{\mathrm{FN}}=0.20\);
-- tests, manuscript source, and generated manuscript tables.
-
-In the prespecified class-sensitive MIMIC-IV analysis, **3 of 60 eligible model-environment combinations were certified** by the primary exact Bonferroni procedure. This result should be interpreted together with the sparse-event eligibility rules and limitations documented in the notebook.
-
-## Install
+## Install and run
 
 ```bash
 git clone https://github.com/dfmaale/sciguard-sar.git
 cd sciguard-sar
-python -m pip install -e ".[experiments,notebook,test]"
-```
-
-## Validate and reproduce
-
-```bash
+python -m pip install -e ".[experiments,notebook]"
 python -m unittest discover -s tests -v
 python scripts/run_analysis.py --profile smoke
+```
+
+The synthetic and WDBC analyses above do not require MIMIC-IV. A complete re-execution of
+the canonical notebook, including its MIMIC-IV sections, requires credentialed local data:
+
+```bash
 SCIGUARD_RUN_MIMIC=1 MIMIC_IV_PATH=/path/to/mimic-iv python scripts/execute_notebook.py
 ```
 
-The canonical notebook is `notebooks/SciGuard_JMLR_Reproducible_Analysis_MIMIC_IV.ipynb`. Complete execution of its MIMIC-IV sections requires authorized local data; the public simulation and WDBC analyses can be regenerated independently with `scripts/run_analysis.py`.
+This command executes the full canonical notebook in a fresh in-process IPython shell,
+captures its outputs, and exports manuscript tables. It does not need kernel sockets.
+For a conventional Jupyter kernel, use `python scripts/execute_notebook.py --backend jupyter`,
+or open the notebook in JupyterLab and choose Restart Kernel and Run All Cells. The delivered
+execution metadata states which backend was used.
 
-For a quick notebook execution, set `SCIGUARD_PROFILE=smoke`. The default profile is `full`. Non-notebook reproduction is available through:
+For a quick notebook run, set `SCIGUARD_PROFILE=smoke`. On Windows, a convenient first-cell
+setting is `os.environ['SCIGUARD_PROFILE'] = 'smoke'` **before** the PROFILE assignment.
+The default is `full`. Full and smoke outputs are separate. Results are recomputed, never
+silently read from the old archive. The full run can take several minutes.
+
+For non-notebook reproduction:
 
 ```bash
 python scripts/run_analysis.py --profile full
@@ -44,30 +50,71 @@ python scripts/render_results.py
 python scripts/export_manuscript.py
 ```
 
-## MIMIC-IV access and privacy
+Compile the manuscript from its directory with `latexmk -pdf -interaction=nonstopmode main_jmlr.tex`.
+The official style file supplied in the original archive is retained. Main tables and numeric
+macros are generated from current full-run CSVs; do not hand-edit the generated tables.
 
-MIMIC-IV is credentialed and is **not redistributed** here. This repository contains only code, configurations, aggregate outputs, and figures. Do not commit raw MIMIC-IV tables, row-level derivatives, trained clinical models, credentials, or local data paths.
+## MIMIC-IV
 
-Credentialed users can follow [`docs/MIMIC_REPRODUCTION.md`](docs/MIMIC_REPRODUCTION.md) to reproduce the analysis locally.
+1. Keep your credentialed dataset locally; this archive does not download or contain it.
+2. `config/mimic_protocol.json` now contains the frozen v3.1 benchmark settings used for the
+   completed run, including the operational 0--1-risk tolerance and prospective rationale.
+   Change these settings only for a clearly identified new analysis.
+3. Set `MIMIC_IV_PATH` to the directory containing `hosp/patients.csv(.gz)` and
+   `hosp/admissions.csv(.gz)` (older `core/` layout is also supported).
+4. Set `SCIGUARD_RUN_MIMIC=1` and run the notebook, or use:
 
-## Repository map
+```bash
+python scripts/run_mimic.py --data /path/to/mimic-iv --config config/mimic_protocol.json
+```
 
-| Path | Purpose |
+The completed credentialed run is stored under `results/mimic_local/` and its decision map
+under `figures/mimic_local/`. The temporal protocol aligns each admission to its anchor year,
+excludes ambiguous source/deployment overlap, and reports approximate admission intervals.
+It includes native missingness, class-imbalance diagnostics, an always-survive baseline, and
+one simultaneous family across models/domains/missingness. Patient-level MIMIC-IV data are
+not redistributed.
+
+The reviewer-requested secondary specification evaluates false-negative risk with
+`tau_fn = 0.20`, equivalent to requiring sensitivity of at least 0.80. Under the primary exact
+Clopper-Pearson Bonferroni procedure, 3 of 60 eligible conditions were certified; all three
+were histogram-gradient-boosting conditions.
+
+## Current files
+
+| Path | Role |
 |---|---|
-| `src/sciguard/` | SciGuard inference and experiment implementation |
-| `tests/` | Scientific-contract and software tests |
-| `notebooks/` | Canonical reproducibility notebook |
-| `config/` | Prespecified analysis configuration |
-| `results/full/` | Full simulation and WDBC aggregate outputs |
-| `results/mimic_aggregate/` | Public class-sensitive aggregate results |
-| `figures/` | Publication and assurance-region figures |
-| `manuscript/` | JMLR LaTeX source and generated tables |
-| `docs/` | Audit, validation, and reproduction notes |
+| `src/sciguard/` | Shared inference, DGP, experiments, clinical protocol and plotting |
+| `results/full/` | Full-run simulation/application replications, summaries, config, versions and hashes |
+| `results/mimic_local/` | Aggregate credentialed MIMIC-IV v3.1 outputs, frozen config and source hashes |
+| `results/smoke/` | Execution checks; not manuscript evidence |
+| `figures/full/` | Figures from the current full run |
+| `figures/mimic_local/` | Completed MIMIC-IV assurance-map figures |
+| `manuscript/generated/` | CSV-derived tables, numerical macros and provenance |
+| `docs/REVISION_RESPONSE.md` | Earlier major-revision response and corrective actions |
+| `docs/FINAL_REVIEW_RESPONSE.md` | Response to the second-round minor-revision review |
+| `docs/NOTEBOOK_AUDIT.md` | Original-to-revised notebook consistency map |
+| `docs/VALIDATION_REPORT.md` | What was executed and what remains unverified |
+| `SciGuard_Revised_Manuscript.pdf` | Current 25-page JMLR-format manuscript |
+| `SciGuard_Major_Revision_Response.pdf` | Earlier major-revision response, notebook audit and validation report |
+| `SciGuard_Final_Review_Response.pdf` | Point-by-point response to the second-round review |
+
+The standalone notebook download still needs this repository's `src/`, `data/`, and `scripts/`
+folders to rerun. Clone or download the complete repository. Restricted clinical data,
+patient-level derivatives, and trained clinical models are not included.
+
+To rebuild the response PDFs and audit the final artifacts, install the `reports` extra,
+then run `python scripts/build_revision_report.py`, `python scripts/build_final_review_response.py`,
+and `python scripts/verify_artifacts.py`.
+The response PDF renderer uses DejaVu fonts at `/usr/share/fonts/truetype/dejavu`;
+adjust that path on other systems. Manuscript compilation requires LaTeX and latexmk.
 
 ## Citation
 
-Please use the metadata in [`CITATION.cff`](CITATION.cff). The exact `v1.0.0` reproducibility release is permanently archived at [Zenodo](https://doi.org/10.5281/zenodo.23228566).
+Please use the metadata in [`CITATION.cff`](CITATION.cff). The archived software record is
+available at [Zenodo](https://doi.org/10.5281/zenodo.23228566).
 
 ## License
 
-The software is distributed under the [MIT License](LICENSE). MIMIC-IV remains governed by its own PhysioNet data-use requirements.
+The software is distributed under the [MIT License](LICENSE). MIMIC-IV remains governed by
+its own PhysioNet data-use requirements.

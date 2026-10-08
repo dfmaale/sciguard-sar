@@ -18,6 +18,6 @@ test_tau_nesting_and_invalid_loss (test_scientific_contract.StatisticalContract.
 test_unequal_samples_never_truncated (test_scientific_contract.StatisticalContract.test_unequal_samples_never_truncated) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 1.504s
+Ran 18 tests in 1.393s
 
 OK
