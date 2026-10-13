@@ -9,6 +9,7 @@
 \newcommand{\Pp}{\mathbb P}
 \newcommand{\Ee}{\mathbb E}
 \newcommand{\R}{\mathbb R}
+\newcommand{\dist}{\operatorname{dist}}
 \input{generated/numbers.tex}
 \input{sciguard_preamble_for_maintex.tex}
 \ShortHeadings{Statistical Assurance Regions}{Maale and Yi}
@@ -63,6 +64,9 @@ the certified inner estimate $\widehat\A_\tau=\{e_k:U_k\leq\tau\}$.
 For example, upper bounds $(.07,.09,.13)$ at tolerance $.10$ certify the first two environments.
 The third remains uncertified even if its point estimate is below $.10$; it has not thereby
 been proven unsafe. This distinction is the basis of the statistical assurance region (SAR).
+Figure~\ref{fig:sciguard-overview} gives a visual overview of the framework.
+
+\input{sciguard_visual_for_maintex.tex}
 
 The inferential devices underlying this construction are established. Exact binomial limits,
 bounded-sum inequalities, multiple testing, and Gaussian multiplier approximation already
@@ -76,10 +80,10 @@ uncertainty accounting, and an interpretable set-valued report.
 The paper makes five substantive contributions to that workflow. First, it separates
 finite-sample risk control from asymptotic dependence-aware inference and states when each
 is appropriate. Second, it gives the row-level construction needed to justify reuse of
-observations under multiple transformations, including corrections to a missingness generator
-that previously did not implement the claimed MAR mechanism. Third, it puts nested fitted-model
+observations under multiple transformations, including a missingness generator whose MAR
+mechanism depends only on always-observed covariates. Third, it puts nested fitted-model
 experiments and reference-risk uncertainty at the center of the evaluation. Fourth, it provides
-one executable notebook and shared software implementation from which all current tables and
+one executable notebook and shared software implementation from which all tables and
 figures are generated. Fifth, it executes a credentialed MIMIC-IV v3.1 evaluation using
 admission-aligned approximate temporal domains, one admission per patient, native and added
 missingness accounting, two learned models, and an always-survive baseline. The permissive
@@ -171,19 +175,20 @@ same row law and fixed maps give the same vector distribution for each $i$.
 Shared masks, noise, or outcome uniforms within a row are therefore compatible with
 simultaneous inference. Perfectly correlated coordinates are permitted. In contrast,
 normalizing missingness probabilities by the assurance-batch mean makes the transformation
-depend on other rows and is not justified by Lemma~\ref{lem:rows}. Our corrected generators
+depend on other rows and is not justified by Lemma~\ref{lem:rows}. Our generators
 use fixed population-calibrated intercepts in the simulation. Repeated patients, temporal
 dependence, or cluster sampling also require an appropriate analysis rather than this i.i.d.
 argument. Conditioning on training data does not remove dependence among assurance rows.
 
 \subsection{Natural groups and independent samples}
 \label{sec:natural-groups}
-For a master sample of independent subjects, let $G_{id}$ indicate a prespecified domain
-or subgroup. With $n_d=\sum_iG_{id}$ and $\widehat p_d=n_d/n$, estimate
+For a master sample of independent subjects, let $G_{ig}$ indicate that subject $i$ belongs to
+a prespecified domain or subgroup $g$, and let $j$ index the stress or model conditions.
+With $n_g=\sum_iG_{ig}$ and $\widehat p_g=n_g/n$, estimate
 \begin{equation}
-\widehat R_{d,m}=\frac{\sum_iG_{id}L_i^{(m)}}{n_d},\qquad
-\widehat\psi_{i,d,m}=\frac{G_{id}}{\widehat p_d}
-       (L_i^{(m)}-\widehat R_{d,m}).
+\widehat R_{g,j}=\frac{\sum_iG_{ig}L_i^{(j)}}{n_g},\qquad
+\widehat\psi_{i,g,j}=\frac{G_{ig}}{\widehat p_g}
+       (L_i^{(j)}-\widehat R_{g,j}).
 \label{eq:group}
 \end{equation}
 Common row multipliers applied to these influence estimates preserve overlapping-group and
@@ -198,6 +203,20 @@ When environments instead have genuinely independent, unequal samples, the workf
 separate loss vectors. It neither truncates all samples to their shortest length nor pairs
 unrelated patients by row position. Validity remains a statement about the represented
 environment populations, not unobserved sites.
+
+\subsection{Class-conditional risks}
+\label{sec:classcond}
+Some targets, such as the false-negative risk $\Pr\{\widehat Y=0\mid Y=1,e\}$, are
+conditional on the label. Let $G_{ig}$ be as above and let $Y_i$ be the label. Conditional on
+the vector of all $(Y_i,G_{ig})$ and on $D_0$, the rows are independent, and every row in the
+cell $\{Y=1,G=g\}$ has the same law. The indicator $\mathbb I\{\widehat Y_i=0\}$ of those rows
+is therefore Bernoulli with the class-conditional risk of that cell, and the exact bound
+\eqref{eq:cp} applies with $n_k$ equal to the cell's positive count. Any eligibility rule that
+depends only on the counts of $(Y_i,G_{ig})$, such as a minimum number of positive cases, is
+measurable with respect to the conditioning variables and does not invalidate the bound.
+The same argument shows that the family may be restricted to eligible conditions before
+certification, which would reduce the Bonferroni penalty. The reported MIMIC results keep
+ineligible conditions in the multiplicity family; this is valid but conservative.
 
 \section{Risk Bounds and Set Containment}
 \label{sec:inference}
@@ -270,6 +289,8 @@ the ideal conditional quantile in \eqref{eq:multiplier} yields
 $\liminf_{n\to\infty}\Pp(R_k\leq U_k^{\mathrm M}\text{ for all }k\mid D_0)\geq1-\alpha$.
 For an empirical bootstrap quantile, the statement also requires the number of draws to
 increase sufficiently for quantile estimation error to vanish.
+The statement is pointwise in the risk vector: it is not uniform over designs whose risks
+or variances approach zero, which is the regime of the rare-event experiment below.
 \end{proposition}
 \begin{proof}
 The multivariate central limit theorem applies to the independent bounded loss vectors.
@@ -283,13 +304,40 @@ Quantile consistency and the continuous mapping argument give asymptotic coverag
 The set-containment implication then follows as in Proposition~\ref{prop:finite}.
 \end{proof}
 
+\begin{algorithm}[t]
+\caption{SciGuard statistical assurance region}
+\label{alg:sar}
+\KwIn{Frozen pipeline $g$; environment family $\E(D_0)=\{e_1,\ldots,e_K\}$; independent
+assurance sample of size $n$; tolerance $\tau$; level $1-\alpha$; route (exact, Hoeffding, or
+multiplier); number of multiplier draws $B$.}
+Evaluate $g$ in every environment and form the loss matrix $\mathbf L\in[0,1]^{n\times K}$\;
+Compute $\widehat R_k$ and $\widehat\sigma_k$ for $k=1,\ldots,K$\;
+\uIf{route is exact (binary losses)}{
+  $U_k\leftarrow U_k^{\mathrm{CP}}$ from \eqref{eq:cp}\;
+}
+\uElseIf{route is Hoeffding}{
+  $U_k\leftarrow U_k^{\mathrm H}$ from \eqref{eq:hoeffding}\;
+}
+\Else{
+  If all columns are empirically constant, set every $U_k=1$ and skip multiplier simulation\;
+  Otherwise, carry out the following multiplier steps\;
+  \For{$b=1,\ldots,B$}{
+    Draw $\xi_1^{(b)},\ldots,\xi_n^{(b)}\stackrel{\mathrm{iid}}\sim N(0,1)$ and compute $T^*_b$ as in \eqref{eq:multiplier}, over nonconstant columns\;
+  }
+  $\widehat c_{1-\alpha}\leftarrow$ empirical $(1-\alpha)$ quantile of $\{T^*_b\}_{b=1}^B$\;
+  Replace a negative simulated critical value by zero; set $U_k=1$ for empirically constant columns\;
+  For nonconstant columns, $U_k\leftarrow U_k^{\mathrm M}$ from \eqref{eq:multupper}\;
+}
+\Return{$\widehat\A_\tau=\{e_k:U_k\leq\tau\}$ and the upper-risk vector $(U_1,\ldots,U_K)$}\;
+\end{algorithm}
+
 For increasing $K$, high-dimensional Gaussian approximation requires additional uniform
 moment and variance conditions; Appendix~\ref{app:highdim} records one conservative sufficient
 regime and later refinements. We do not use such asymptotic rates as practical sample-size
-prescriptions. The applications here with $K=25$--125, including the 36--100-cell grid studies
-and the 72-condition MIMIC family, are treated as prespecified finite families; Proposition
-\ref{prop:mult}'s fixed-family asymptotic statement is the relevant theoretical reference.
-Finite-sample validation remains decisive, especially for sparse binary errors.
+prescriptions. The applications here, with $K$ between 16 and 125 (including the 16- to
+100-cell grid studies and the 72-condition MIMIC family), are treated as prespecified finite
+families; the fixed-family statement of Proposition~\ref{prop:mult} is the relevant theoretical
+reference. Finite-sample validation remains decisive, especially for sparse binary errors.
 
 \paragraph{Rare-event guidance.}
 For Bernoulli loss, designs expected to yield fewer than roughly 5--10 errors in any
@@ -331,10 +379,6 @@ not supply efficient adaptive or optimal sequential region learning.
 \section{Environment Design and Continuous Regions}
 \label{sec:design}
 
-Figure~\ref{fig:sciguard-overview} provides a visual overview of the proposed statistical assurance framework.
-
-\input{sciguard_visual_for_maintex.tex}
-
 The environment family is a scientific input. Begin with a specified loss and decision
 threshold, define interpretable axes and externally motivated ranges, and distinguish changes
 to the population from changes to measurement or observation. A transformation of one labeled
@@ -356,20 +400,20 @@ certifying a cell. Pilot simulations can estimate recall for plausible risk marg
 cannot establish external validity.
 
 \paragraph{Higher-dimensional stress spaces.}
-If $d$ stress axes each use $G$ grid levels, an exhaustive Cartesian design has
-$K=G^d$ environments. Thus even moderate resolution becomes expensive in data, computation,
-and interpretation as $d$ grows. We recommend scientifically restricting axes when possible or
+If $q$ stress axes each use $J$ grid levels, an exhaustive Cartesian design has
+$K=J^q$ environments. Thus even moderate resolution becomes expensive in data, computation,
+and interpretation as $q$ grows. We recommend scientifically restricting axes when possible or
 using an independent pilot to screen a larger candidate family before freezing the assurance
 grid. Any pilot-selected family must remain independent of the assurance outcomes, or inference
 must protect a fixed superset. The current work does not provide an optimal active-grid search.
 
 Suppose a compact continuous family has a scientifically justified global bound
-$|R(e)-R(e')|\leq L_Rd(e,e')$. Define
+$|R(e)-R(e')|\leq L_R\,\dist(e,e')$. Define
 \begin{equation}
-U^{\mathrm{cont}}(e)=\min\left\{1,\min_{k\leq K}[U_k+L_Rd(e,e_k)]\right\}.
+U^{\mathrm{cont}}(e)=\min\left\{1,\min_{k\leq K}[U_k+L_R\dist(e,e_k)]\right\}.
 \label{eq:continuous}
 \end{equation}
-On the grid-coverage event, $R(e)\leq R(e_k)+L_Rd(e,e_k)\leq U_k+L_Rd(e,e_k)$ for
+On the grid-coverage event, $R(e)\leq R(e_k)+L_R\dist(e,e_k)\leq U_k+L_R\dist(e,e_k)$ for
 every $k$, so \eqref{eq:continuous} covers the risk everywhere. Thresholding it gives a
 continuous inner region. This is a standard smoothness consequence of simultaneous inference.
 
@@ -387,10 +431,9 @@ sensitivity are the defensible outputs.
 \section{Experimental Design and Evaluation}
 \label{sec:experiments}
 All reported results are generated by the shared implementation, with seed 20260927.
-They supersede the historical CSVs retained under \texttt{archive/pre\_revision/}. Models,
-designs, and inferential settings are fixed in code; outcomes are not filtered to match earlier
-published-looking numbers. The full profile and smoke profile write separate directories.
-Tables and numerical macros are exported from full-run CSVs with a hash-based provenance record.
+Models, designs, and inferential settings are fixed in code. The full profile and smoke profile
+write separate directories. Tables and numerical macros are exported from full-run CSVs with a
+hash-based provenance record.
 
 With known risk vector $R$, containment is
 $C=\mathbb I\{\widehat\A_\tau\subseteq\A_\tau\}$,
@@ -406,21 +449,25 @@ mean recalls and paired differences have replication-level Monte Carlo standard 
 \label{sec:nested}
 The central predictive-pipeline experiment uses \NestedReps{} independent refits. Each generates
 1,200 training rows, 400 source-calibration rows for ATC, 1,000 assurance rows, and
-\ReferenceN{} separate reference rows. Ten Gaussian covariates have AR(1) covariance with
+\ReferenceN{} separate reference rows. Ten Gaussian covariates have AR(1) covariance $\Sigma$ with
 parameter $.35$. Outcomes follow
 \begin{equation}
 \Pp(Y=1\mid X)=\operatorname{expit}\left[1.5\{.75X_0-.65X_1+.45X_2
 + .55X_0X_1-.35X_2^2+.20X_3\}\right].
 \label{eq:dgp}
 \end{equation}
-A fixed normalized direction $d\propto(.8,-.6,.4,.2,0,\ldots,0)$ induces mean shift
-$s\Sigma^{1/2}d$, using the Cholesky factor. The grid has
-$m\in\{0,.1,.2,.3\}$ and $s\in\{0,.15,.30,.45\}$, with $\tau=.35$.
+A fixed normalized direction $\mathbf v\propto(.8,-.6,.4,.2,0,\ldots,0)$ induces mean shift
+$s\,\mathbf C\mathbf v$, where $\Sigma=\mathbf C\mathbf C^\top$ is the Cholesky factorization.
+The grid has $m\in\{0,.1,.2,.3\}$ and $s\in\{0,.15,.30,.45\}$, with $\tau=.35$.
 Feature $X_0$ remains observed for comparability with the MAR study; severity $m$ is the
 missingness rate among the other nine features. Imputation uses training means.
 The two pipelines are standardized logistic regression and histogram gradient boosting
 (60 boosting iterations, 15 maximum leaves, learning rate $.08$). The same base rows,
 label uniforms, and missingness randomness are used across models and environments.
+Each fitted model is certified separately over its $K=16$ environments with its own
+$\alpha=.05$ familywise budget. No joint assurance-band guarantee across the two models
+is claimed; the independent reference-risk intervals allocate their separate $.01$ budget
+across both models.
 
 The independent reference mean $\widetilde R_k$ is not called an oracle truth. Simultaneous
 two-sided exact binomial intervals $[a_k,b_k]$ allocate total error $.01$ over both models'
@@ -479,20 +526,24 @@ structured missingness with the same training and evaluation design. MAR depends
 always-observed $X_0$; MNAR depends on the latent value of the feature being hidden. Logistic
 intercepts solve a population Gaussian expectation equation for the target marginal missingness,
 using 64-node Gaussian quadrature. They are fixed before evaluation and are not normalized
-using assurance rows. Structured failure makes features 1--3 missing together, with every
-eligible feature retaining marginal severity $m$. The original cyclic driver scheme could
-hide its own conditioning variables and was not a valid general MAR implementation.
+using assurance rows.
+For MAR and MNAR, the driver is centered by the known environment-specific mean
+shift before applying the population-calibrated intercept. Thus the intercept for a given
+$m$ is reused on a centered standard-normal driver, preserving population marginal
+missingness $m$ under each mean-shifted environment; no assurance-batch mean is used.
+Structured failure makes features 1--3 missing together, with every
+eligible feature retaining marginal severity $m$.
 
 Reference intervals allocate error $.01$ over all four mechanisms within each refit.
 Table~\ref{tab:missing} shows that the reference uncertainty can matter even when every
 point-reference containment indicator equals one. In particular, ambiguous cells reduce the
 MCAR multiplier lower endpoint. These results concern the chosen parameterizations; they do
 not imply that MNAR is generally easier or safer than MCAR. Realized missingness fractions
-and all exact-baseline comparisons are retained in the current-run CSVs.
+and all exact-baseline comparisons are retained in the run CSVs.
 \begin{table}[t]
 \centering\small\setlength{\tabcolsep}{4pt}
 \caption{Multiplier results for missingness mechanisms. Ambiguous cells are averaged over
-the 16 environments per refit. All metrics use the corrected mechanism definitions.}
+the 16 environments per refit. All metrics use the mechanism definitions of this section.}
 \label{tab:missing}\input{generated/missingness.tex}
 \end{table}
 \begin{figure}[t]
@@ -660,26 +711,29 @@ admissions with source/deployment ambiguity under the padded interval rule were 
 The ambiguity exclusion is a deterministic row-level function of each patient's own shifted
 interval metadata and fixed cutoffs; it does not couple different patients, so after selecting
 one admission per patient the retained observations preserve the independent-row construction
-used in Lemma~\ref{lem:rows}. The source cohort was split into 85,491 fitting observations and a 21,373-observation source
-holdout. The binary target was in-hospital mortality. Predictors were age, an age-topcoding
-indicator, gender, admission type, admission location, insurance, marital status, and race.
-These variables are intentionally restricted to demographic and administrative fields available
-from the admission-level tables; no laboratory measurements, vital signs, medications, or ICU
-time-series variables enter the models. Identifiers, outcome flags, death/discharge times, and
-length of stay were not used as predictors.
+used in Lemma~\ref{lem:rows}. The source cohort was split into 85,491 fitting observations and a
+21,373-observation source holdout. The binary target was in-hospital mortality. Predictors were
+age, an age-topcoding indicator, gender, admission type, admission location, insurance, marital
+status, and race. These variables are intentionally restricted to demographic and administrative
+fields available from the admission-level tables; no laboratory measurements, vital signs,
+medications, or ICU time-series variables enter the models. Identifiers, outcome flags,
+death/discharge times, and length of stay were not used as predictors.
 
 MIMIC-IV shifts dates separately for each patient. We therefore align each admission to the
 patient anchor year, form approximate admission intervals, pad interval endpoints by one year
 for boundary ambiguity, and restrict them to the declared v3.1 coverage. Because the dates are
 deidentified at the patient level, these labels are approximate ordering intervals rather than
-literal shared calendar periods and should not be interpreted as exact secular trends. We do not
-use these labels as evidence that a particular magnitude of covariate or outcome shift occurred;
-they define prespecified deployment groups for the assurance exercise. The source period ends by 2016. Deployment groups are the resulting post-cutoff approximate intervals
+literal shared calendar periods and should not be interpreted as exact secular trends. They
+define prespecified deployment groups for the assurance exercise. The source period ends by
+2016. Deployment groups are the resulting post-cutoff approximate intervals
 2017--2021, 2018--2022, 2019--2022, 2020--2022, 2021--2022, and 2022--2022.
 The interval labels may overlap in calendar time, but each retained patient contributes to
 one prespecified deployment-domain label. The grouped construction in
 Section~\ref{sec:natural-groups} accommodates unequal domain sizes, while common-row inference
 preserves dependence across the model and missingness conditions evaluated on the same patients.
+Treating patients as independent within a domain ignores shared period effects (for example,
+calendar-time waves of admissions or practice change) that could induce dependence among
+patients in the same interval; the resulting bounds are conditional on that i.i.d.\ assumption.
 
 \paragraph{Prespecified family and certification rule.}
 We fit unweighted logistic regression and histogram gradient boosting on the source training
@@ -740,22 +794,30 @@ specified loss and tolerance while remaining weak as a statement about mortality
 \paragraph{Secondary class-sensitive specification.}
 To make the real-data assurance target informative for the minority outcome, we report a
 secondary analysis based on false-negative risk,
-$R_{\mathrm{FN}}(e)=\Pr\{\widehat Y=0\mid Y=1,e\}$. Before computing these secondary deployment
-certificates, we fixed $\tau_{\mathrm{FN}}=.20$, corresponding to an operational requirement of
-sensitivity at least 0.80; this 80\% requirement is interpretable but is not claimed to be a
-clinical standard. For each learned model, the largest classification threshold attaining at
-least 0.80 sensitivity was selected using only the independent source holdout and then frozen:
-0.0217 for logistic regression and 0.0227 for histogram gradient boosting, each attaining
-source sensitivity 0.802 with specificity 0.747 and 0.749, respectively. Because the source
-holdout is disjoint from the deployment cohort, this threshold calibration is part of the frozen
-design information and does not reuse deployment assurance outcomes. The always-survive
-comparator has sensitivity zero by construction.
+$R_{\mathrm{FN}}(e)=\Pr\{\widehat Y=0\mid Y=1,e\}$, analyzed as in
+Section~\ref{sec:classcond}. This specification was introduced after the primary workflow had
+been executed and its zero-sensitivity outcome observed; it is therefore prespecified only
+relative to its own deployment certificates, not prospective in the full sense. Before
+computing those certificates, we fixed $\tau_{\mathrm{FN}}=.20$, corresponding to an
+operational requirement of sensitivity at least 0.80; this requirement is interpretable but is
+not claimed to be a clinical standard. For each learned model, the largest classification
+threshold attaining at least 0.80 sensitivity was selected using only the independent source
+holdout and then frozen: 0.0217 for logistic regression and 0.0227 for histogram gradient
+boosting, each attaining source sensitivity 0.802 with specificity 0.747 and 0.749,
+respectively. Because the source holdout is disjoint from the deployment cohort, this threshold
+calibration is part of the frozen design information and does not reuse deployment assurance
+outcomes. The always-survive comparator has sensitivity zero by construction.
 
 Because the effective sample size is now the number of deaths in each domain, exact
 Clopper--Pearson Bonferroni is the primary certification route and exact Holm is retained as
-a secondary check. The secondary protocol fixed a minimum of two positive cases per domain
-before the deployment certificates were computed. Positive-case counts in the six approximate
-domains were 14, 12, 1,092, 13, 5, and 1; the final 2022--2022 domain was therefore retained
+a secondary check.
+Exact Holm also certified 3 of the 60 eligible conditions, the same three histogram-gradient-boosting conditions as exact Bonferroni.
+The secondary protocol fixed a minimum of two positive cases per domain before the deployment
+certificates were computed. This minimum is only a screen against empty or trivial cells; the
+binding constraint is the width of the exact bound, as the example below shows, whereas the
+primary specification's minimum group size of 200 screens for total domain size. Positive-case
+counts in the six approximate domains were 14, 12, 1,092, 13, 5, and 1, so the 2019--2022
+domain holds 1,092 of the 1,137 deployment deaths; the final 2022--2022 domain was retained
 as ineligible for this specification. Among the 60 eligible model-domain-missingness conditions,
 only 3 were certified by exact Bonferroni, all for histogram gradient boosting in the
 2019--2022 group at 0\%, 10\%, and 20\% added missingness. Their observed sensitivities were
@@ -768,13 +830,14 @@ The 3-of-60 count should be interpreted primarily as a statement about where the
 enough positive-outcome information to support a familywise certificate, not as a ranking of
 model quality across temporal domains. Four of the five eligible domains contain only 5--14
 deaths. With exact Bonferroni correction over the full 72-condition family (the 12 ineligible
-conditions remain in the multiplicity family), even zero observed false negatives among 14
+conditions remain in the multiplicity family; see Section~\ref{sec:classcond} for why this is
+conservative), even zero observed false negatives among 14
 positive cases gives a one-sided upper bound of approximately 0.405, well above
 $\tau_{\mathrm{FN}}=.20$; the smaller positive-case domains are still less precise.
 Thus no cell in those four domains could certify at this tolerance even under perfect observed
-sensitivity. All three certificates arise in the 2019--2022 domain, which contains 1,092
-positive cases. Non-certification in the remaining small-positive domains is therefore
-power-limited and should not be interpreted as evidence that their fitted models are worse.
+sensitivity. All three certificates arise in the 2019--2022 domain, so the secondary analysis
+is in effect a single-domain result. Non-certification in the remaining small-positive domains
+is power-limited and should not be interpreted as evidence that their fitted models are worse.
 Figure~\ref{fig:mimic-fn} and Table~\ref{tab:mimic-fn} summarize this secondary specification.
 
 \begin{figure}[t]
@@ -812,12 +875,10 @@ Always survive & -- & 0.000 & 1.000 & 0/20\\
 
 The contrast between the two MIMIC specifications is the substantive design lesson: deployment
 assurance cannot repair a scientifically inadequate loss, threshold, or tolerance, but changing
-the scientific target changes the assurance question in a transparent way. The two specifications
-are reported as separate assurance statements and no cross-specification multiplicity adjustment
-is claimed. The secondary specification was introduced after the primary workflow had been
-executed; neither specification is selected post hoc as the ``better'' certificate, and the two
-should not be combined into a single familywise statement. The secondary result is still an
-assurance analysis rather than evidence of clinical safety.
+the scientific target changes the assurance question in a transparent way. The two
+specifications are reported as separate assurance statements; no cross-specification
+multiplicity adjustment is claimed, neither is selected post hoc as the ``better'' certificate,
+and they should not be combined into a single familywise statement.
 
 Only aggregate tables, the frozen configuration, and source-file hashes are distributed.
 Credentialed patient-level MIMIC-IV data, patient-level derivatives, and fitted clinical models
@@ -838,8 +899,8 @@ application, and any method selection performed after seeing assurance losses mu
 covered by the multiplicity control.
 
 \paragraph{Scalability.}
-Grid complexity grows multiplicatively across deployment axes: $d$ axes with $G$ levels each
-produce $K=G^d$ environments. The direct row-multiplier implementation costs $O(BnK)$; the
+Grid complexity grows multiplicatively across deployment axes: $q$ axes with $J$ levels each
+produce $K=J^q$ environments. The direct row-multiplier implementation costs $O(BnK)$; the
 conditional-covariance alternative trades this for $O(nK^2+K^3+BK^2)$ work and $O(K^2)$
 storage. Appendix~\ref{app:runtime} reports measured bootstrap timings and variability. These
 computational costs reinforce the design recommendation to keep stress axes scientifically
@@ -848,11 +909,11 @@ dimensional grid.
 
 \paragraph{What is established.}
 We give a coherent assurance target, transparent sampling and inference contracts, a
-standard finite-sample route, a justified fixed-family multiplier construction, corrected
-mechanism simulations, explicit reference uncertainty, and reproducible comparisons.
-The framework accepts any frozen pipeline yielding bounded losses, but the experiments
-cover a small number of tabular model classes. Interface generality is not empirical evidence
-for arbitrary neural architectures or deployment systems.
+standard finite-sample route, a justified fixed-family multiplier construction, mechanism
+simulations with explicit definitions, explicit reference uncertainty, and reproducible
+comparisons. The framework accepts any frozen pipeline yielding bounded losses, but the
+experiments cover a small number of tabular model classes. Interface generality is not empirical
+evidence for arbitrary neural architectures or deployment systems.
 
 \paragraph{What remains open.}
 The inferential components do not constitute a new optimality theorem. No minimax recovery
@@ -860,14 +921,15 @@ rate, general safe exploration guarantee, or efficient time-uniform adaptive gri
 The continuous extension depends on external smoothness. Unknown shifts and causal
 transportability remain outside the certificate. Unbounded heavy-tailed losses and adversarial
 adaptation are not studied. Reference-risk uncertainty persists near the tolerance even with
-20,000 rows. The primary simulation deliberately calibrates inference, and WDBC remains
-small and semisynthetic. The completed MIMIC-IV experiment adds a large credentialed EHR
-application with approximate temporal grouping, but it does not establish measured covariate
-or outcome shift, uses admission-table predictors from one institutional data source, and adds
-synthetic MCAR missingness. The permissive primary 0--1-loss specification certifies a trivial
-always-survive baseline; the secondary false-negative-risk specification is more discriminating,
-but it is an additional assurance target and is not a prospective clinical validation. These
-limitations still prevent a claim of general deployment readiness or clinical safety.
+\ReferenceN{} reference rows. The primary simulation deliberately calibrates inference, and
+WDBC remains small and semisynthetic. The completed MIMIC-IV experiment adds a large
+credentialed EHR application with approximate temporal grouping, but it does not establish
+measured covariate or outcome shift, uses admission-table predictors from one institutional
+data source, treats patients as independent within domains, and adds synthetic MCAR
+missingness. The permissive primary 0--1-loss specification certifies a trivial always-survive
+baseline; the secondary false-negative-risk specification is more discriminating, but its
+certificates come from a single domain and it is not a prospective clinical validation. These
+limitations prevent a claim of general deployment readiness or clinical safety.
 
 \section{Conclusion}
 The proposed workflow connects a prespecified deployment family to an explicit, auditable
@@ -887,7 +949,7 @@ prospectively chosen task-specific losses and tolerances, broader external valid
 evidence beyond the standard simultaneous-inference and smoothness arguments used here.
 
 \section*{Data and Code Availability}
-The source code, canonical analysis notebook, tests, current-run CSVs, generated figures,
+The source code, canonical analysis notebook, tests, run CSVs, generated figures,
 manuscript sources, and completed aggregate MIMIC-IV benchmark outputs are publicly available
 at \url{https://github.com/dfmaale/sciguard-sar}. The archived software record is available at
 Zenodo: \url{https://doi.org/10.5281/zenodo.23241355}. The WDBC CSV and simulation surface are
@@ -913,25 +975,8 @@ replication differences. These efficiency comparisons must be read with coverage
 
 \section{Computational Cost and Bootstrap Variability}
 \label{app:runtime}
-\begin{algorithm}[H]
-\caption{SciGuard statistical assurance region}
-\KwIn{Frozen predictive pipeline $g$; candidate environments $\mathcal{E}_n$; assurance sample; tolerance $\tau$; confidence level $1-\alpha$; bootstrap size $B$.}
-
-Evaluate $g$ across all environments and form the paired loss matrix $\mathbf{L} \in \mathbb{R}^{n \times K_n}$\;
-Compute $\widehat{R}_k$ and $\widehat{\sigma}_k$ for all environments\;
-
-\For{$b = 1,\ldots,B$}{
-    Draw Gaussian multipliers $\xi_1^{(b)},\ldots,\xi_n^{(b)}$\;
-    Compute $T_b^* = \max_k(-Z_{kb}^*)$\;
-}
-
-Set $\widehat{c}_{1-\alpha}$ to the empirical $(1-\alpha)$ quantile of $\{T_b^*\}_{b=1}^B$\;
-Compute simultaneous upper bounds $U_k$ from \eqref{eq:multupper}; set $U_k=1$ for zero empirical variance\;
-
-\Return{$\widehat{\mathcal{A}}_{\tau,\alpha}(g) = \{e_k : U_k \le \tau\}$ and the full upper-risk surface}\;
-\end{algorithm}
-
-
+Algorithm~\ref{alg:sar} in Section~\ref{sec:inference} gives the full procedure; this appendix
+concerns the cost of its multiplier route.
 
 The direct multiplier sampler requires $O(BnK)$ operations. Sampling from its conditional
 Gaussian covariance instead costs $O(nK^2+K^3+BK^2)$ and stores a $K\times K$ covariance;
@@ -951,7 +996,6 @@ are also exported so bootstrap variability is inspectable directly.
 \caption{Conditional-covariance multiplier timing and variability.}
 \label{tab:runtime}\input{generated/runtime.tex}
 \end{table}
-
 
 \section{High-Dimensional Gaussian Approximation Note}
 \label{app:highdim}
@@ -983,10 +1027,9 @@ Section~\ref{sec:mimic} is stored separately as aggregate outputs with a frozen 
 and source-table hashes. The canonical notebook imports these same functions, records
 configuration and package versions, and generates manuscript inputs from completed runs rather
 than hard-coded target values. All tables and figures in this manuscript are regenerated from the
-current corrected implementation with seed 20260927; rerunning the released notebook with the
-frozen configuration reproduces the reported outputs, including the secondary MIMIC false-negative
-tables and assurance map. Historical draft outputs are superseded by this implementation, and no
-reported result was selected by changing the seed.
+released implementation with seed 20260927; rerunning the released notebook with the
+frozen configuration reproduces the reported outputs, including the secondary MIMIC
+false-negative tables and assurance map. No reported result was selected by changing the seed.
 
 \bibliography{references}
 \end{document}
