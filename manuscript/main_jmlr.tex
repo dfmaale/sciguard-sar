@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,bm,booktabs,array,microtype,placeins}
 \usepackage[ruled,vlined]{algorithm2e}
 \DontPrintSemicolon
-\graphicspath{{../figures/full/}{../figures/mimic_class_sensitive/}{../figures/mimic_local/}}
+\graphicspath{{../figures/full/}{../figures/mimic_local/}}
 \newcommand{\A}{\mathcal A}
 \newcommand{\E}{\mathcal E}
 \newcommand{\Pp}{\mathbb P}
@@ -24,6 +24,7 @@ North Carolina A\&T State University, Greensboro, NC, USA
 \name Hui Yi \email hyi@ncat.edu \\
 \addr Department of Mathematics \& Statistics\\
 North Carolina A\&T State University, Greensboro, NC, USA}
+% TODO: fill in \editor{...} (or remove) according to the target journal's template.
 \editor{}
 \maketitle
 
@@ -102,6 +103,8 @@ validated rather than assumed.
 
 \section{Relationship to Existing Work}
 \label{sec:related}
+% TODO: verify that dixit2025pwc, torens2025odd, hammar2026safe and zhou2023dams
+% exist in references.bib and that each is described accurately below.
 \paragraph{Risk control and simultaneous inference.}
 Risk-controlling prediction sets and LTT provide model-agnostic calibration and testing
 frameworks \citep{bates2021rcps,angelopoulos2025ltt}. In our finite-family setting, the hypotheses
@@ -319,14 +322,11 @@ Compute $\widehat R_k$ and $\widehat\sigma_k$ for $k=1,\ldots,K$\;
   $U_k\leftarrow U_k^{\mathrm H}$ from \eqref{eq:hoeffding}\;
 }
 \Else{
-  If all columns are empirically constant, set every $U_k=1$ and skip multiplier simulation\;
-  Otherwise, carry out the following multiplier steps\;
   \For{$b=1,\ldots,B$}{
-    Draw $\xi_1^{(b)},\ldots,\xi_n^{(b)}\stackrel{\mathrm{iid}}\sim N(0,1)$ and compute $T^*_b$ as in \eqref{eq:multiplier}, over nonconstant columns\;
+    Draw $\xi_1^{(b)},\ldots,\xi_n^{(b)}\stackrel{\mathrm{iid}}\sim N(0,1)$ and compute $T^*_b$ as in \eqref{eq:multiplier}\;
   }
   $\widehat c_{1-\alpha}\leftarrow$ empirical $(1-\alpha)$ quantile of $\{T^*_b\}_{b=1}^B$\;
-  Replace a negative simulated critical value by zero; set $U_k=1$ for empirically constant columns\;
-  For nonconstant columns, $U_k\leftarrow U_k^{\mathrm M}$ from \eqref{eq:multupper}\;
+  $U_k\leftarrow U_k^{\mathrm M}$ from \eqref{eq:multupper}\;
 }
 \Return{$\widehat\A_\tau=\{e_k:U_k\leq\tau\}$ and the upper-risk vector $(U_1,\ldots,U_K)$}\;
 \end{algorithm}
@@ -464,10 +464,8 @@ missingness rate among the other nine features. Imputation uses training means.
 The two pipelines are standardized logistic regression and histogram gradient boosting
 (60 boosting iterations, 15 maximum leaves, learning rate $.08$). The same base rows,
 label uniforms, and missingness randomness are used across models and environments.
-Each fitted model is certified separately over its $K=16$ environments with its own
-$\alpha=.05$ familywise budget. No joint assurance-band guarantee across the two models
-is claimed; the independent reference-risk intervals allocate their separate $.01$ budget
-across both models.
+% TODO: state whether the two models are certified jointly (K=32, one familywise budget)
+% or separately (K=16 each) in the nested study.
 
 The independent reference mean $\widetilde R_k$ is not called an oracle truth. Simultaneous
 two-sided exact binomial intervals $[a_k,b_k]$ allocate total error $.01$ over both models'
@@ -504,7 +502,8 @@ visible without assigning ATC a certification interpretation.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{nested.pdf}
-\caption{Reference-based recall across nested refits. Bars are means; error bars are approximate pointwise 95\% $t$ intervals across independent refits. Colors identify certification methods and hatching identifies the fitted model. These intervals quantify Monte Carlo uncertainty in mean recall, not uncertainty in the reference risks.}
+\caption{Reference-based recall across nested refits. Bars are means; error bars are 1.96
+MCSE. These error bars describe Monte Carlo variation, not uncertainty in the reference risks.}
 \label{fig:nested}
 \end{figure}
 
@@ -527,10 +526,8 @@ always-observed $X_0$; MNAR depends on the latent value of the feature being hid
 intercepts solve a population Gaussian expectation equation for the target marginal missingness,
 using 64-node Gaussian quadrature. They are fixed before evaluation and are not normalized
 using assurance rows.
-For MAR and MNAR, the driver is centered by the known environment-specific mean
-shift before applying the population-calibrated intercept. Thus the intercept for a given
-$m$ is reused on a centered standard-normal driver, preserving population marginal
-missingness $m$ under each mean-shifted environment; no assurance-batch mean is used.
+% TODO: state whether the MNAR/MAR intercepts are recalibrated under each mean-shifted
+% distribution (so marginal missingness stays at m) or fixed at the unshifted calibration.
 Structured failure makes features 1--3 missing together, with every
 eligible feature retaining marginal severity $m$.
 
@@ -548,7 +545,8 @@ the 16 environments per refit. All metrics use the mechanism definitions of this
 \end{table}
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{missingness.pdf}
-\caption{Mechanism sensitivity and the effect of reference-risk uncertainty. ARR bars have approximate pointwise 95\% $t$ intervals across refits. Multiplier point-reference containment has 95\% Wilson intervals. Separate black vertical segments span mean lower/upper containment indicators from reference-risk uncertainty; these segments are not confidence intervals.}
+\caption{Mechanism sensitivity and the effect of reference-risk uncertainty. Vertical segments
+in panel B span mean lower/upper containment indicators; they are not confidence intervals.}
 \label{fig:missing}
 \end{figure}
 
@@ -577,7 +575,8 @@ precision of that finding and does not verify a universal nominal guarantee.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{calibration.pdf}
-\caption{Simultaneous coverage and the recall distribution over primary replications. Coverage diamonds have pointwise 95\% Wilson intervals; black markers show mean ARR with approximate pointwise 95\% $t$ intervals, overlaid on the ARR distributions. The dashed line is the nominal coverage target; higher recall alone does not establish validity.}
+\caption{Simultaneous coverage and the recall distribution over primary replications. The
+dashed line is the nominal coverage target; higher recall alone does not establish validity.}
 \label{fig:cal}
 \end{figure}
 
@@ -593,7 +592,7 @@ is not the only way to reduce multiplicity conservatism.
 \begin{figure}[t]
 \centering\includegraphics[width=.96\linewidth]{sensitivity.pdf}
 \caption{Coverage and recall sensitivity. Latent Gaussian correlation is a generator parameter,
-not the observed binary-loss correlation. Coverage error bars are pointwise 95\% Wilson intervals; recall error bars are mean $\pm 1.96$ MCSE. Vertical scales are shared within each metric and include interval endpoints. Holm is omitted from risk-band coverage panels.}
+not the observed binary-loss correlation. Holm is omitted from risk-band coverage panels.}
 \label{fig:sensitivity}
 \end{figure}
 
@@ -640,7 +639,8 @@ half and twice the analytic bound; the half-bound is not asserted valid.
 \end{table}
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{continuous.pdf}
-\caption{One fixed multiplier replication of the continuous SAR. Green denotes certified points within the analytic safe region; yellow denotes analytically safe but uncertified points, and salmon denotes points above the risk tolerance $\tau=.32$. The solid curve is the analytic boundary $R(e)=\tau$ and the dashed curve is the certified boundary $U(e)=\tau$. The Lipschitz envelope is evaluated directly on a dense mesh; contour interpolation is for display only. Multiplier validity is asymptotic.}
+\caption{Continuous-region example on the surface $R(m,s)$: certified inner region from the
+$5\times5$ assurance grid extended by the Lipschitz bound, over the 200 replications.}
 \label{fig:continuous}
 \end{figure}
 
@@ -672,7 +672,8 @@ observed risk is descriptive. Counts at two tolerances do not establish clinical
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{wdbc.pdf}
 \centering\includegraphics[width=\linewidth]{wdbc_upc.pdf}
-\caption{WDBC assurance maps (top) and exact Bonferroni upper-risk plots (bottom) for three models. Green cells certify at $\tau=.08$; yellow cells certify only at $\tau=.10$; salmon cells certify at neither tolerance. Non-certification does not establish unsafe true risk. In the lower plots, markers show observed risk and dashed curves show one-sided 95\% familywise upper confidence bounds; the dotted line is $\tau=.08$. Each curve corresponds to one shift level.}
+\caption{Exact Bonferroni risk surfaces for the three models. White and gold contours, where
+present, mark tolerances $.08$ and $.10$. Absence of a contour can mean no grid crossing.}
 \label{fig:wdbc}
 \end{figure}
 
@@ -811,7 +812,8 @@ outcomes. The always-survive comparator has sensitivity zero by construction.
 Because the effective sample size is now the number of deaths in each domain, exact
 Clopper--Pearson Bonferroni is the primary certification route and exact Holm is retained as
 a secondary check.
-Exact Holm also certified 3 of the 60 eligible conditions, the same three histogram-gradient-boosting conditions as exact Bonferroni.
+% TODO: report the exact-Holm certified counts for this specification (or remove the
+% claim that Holm was computed here).
 The secondary protocol fixed a minimum of two positive cases per domain before the deployment
 certificates were computed. This minimum is only a screen against empty or trivial cells; the
 binding constraint is the width of the exact bound, as the example below shows, whereas the

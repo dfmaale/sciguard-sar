@@ -95,7 +95,7 @@ were histogram-gradient-boosting conditions.
 | `docs/FINAL_REVIEW_RESPONSE.md` | Response to the second-round minor-revision review |
 | `docs/NOTEBOOK_AUDIT.md` | Original-to-revised notebook consistency map |
 | `docs/VALIDATION_REPORT.md` | What was executed and what remains unverified |
-| `SciGuard_Revised_Manuscript.pdf` | Current 29-page JMLR-format manuscript |
+| `SciGuard_Revised_Manuscript.pdf` | Current 28-page JMLR-format manuscript |
 | `SciGuard_Major_Revision_Response.pdf` | Earlier major-revision response, notebook audit and validation report |
 | `SciGuard_Final_Review_Response.pdf` | Point-by-point response to the second-round review |
 
