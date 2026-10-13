@@ -1,13 +1,16 @@
 \documentclass[twoside,11pt]{article}
 \usepackage[preprint]{jmlr2e}
 \usepackage{amsmath,amssymb,bm,booktabs,array,microtype,placeins}
-\graphicspath{{../figures/full/}{../figures/mimic_local/}}
+\usepackage[ruled,vlined]{algorithm2e}
+\DontPrintSemicolon
+\graphicspath{{../figures/full/}{../figures/mimic_class_sensitive/}{../figures/mimic_local/}}
 \newcommand{\A}{\mathcal A}
 \newcommand{\E}{\mathcal E}
 \newcommand{\Pp}{\mathbb P}
 \newcommand{\Ee}{\mathbb E}
 \newcommand{\R}{\mathbb R}
 \input{generated/numbers.tex}
+\input{sciguard_preamble_for_maintex.tex}
 \ShortHeadings{Statistical Assurance Regions}{Maale and Yi}
 \firstpageno{1}
 \begin{document}
@@ -327,6 +330,11 @@ not supply efficient adaptive or optimal sequential region learning.
 
 \section{Environment Design and Continuous Regions}
 \label{sec:design}
+
+Figure~\ref{fig:sciguard-overview} provides a visual overview of the proposed statistical assurance framework.
+
+\input{sciguard_visual_for_maintex.tex}
+
 The environment family is a scientific input. Begin with a specified loss and decision
 threshold, define interpretable axes and externally motivated ranges, and distinguish changes
 to the population from changes to measurement or observation. A transformation of one labeled
@@ -449,8 +457,7 @@ visible without assigning ATC a certification interpretation.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{nested.pdf}
-\caption{Reference-based recall across nested refits. Bars are means; error bars are 1.96
-MCSE. These error bars describe Monte Carlo variation, not uncertainty in the reference risks.}
+\caption{Reference-based recall across nested refits. Bars are means; error bars are approximate pointwise 95\% $t$ intervals across independent refits. Colors identify certification methods and hatching identifies the fitted model. These intervals quantify Monte Carlo uncertainty in mean recall, not uncertainty in the reference risks.}
 \label{fig:nested}
 \end{figure}
 
@@ -490,8 +497,7 @@ the 16 environments per refit. All metrics use the corrected mechanism definitio
 \end{table}
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{missingness.pdf}
-\caption{Mechanism sensitivity and the effect of reference-risk uncertainty. Vertical segments
-in panel B span mean lower/upper containment indicators; they are not confidence intervals.}
+\caption{Mechanism sensitivity and the effect of reference-risk uncertainty. ARR bars have approximate pointwise 95\% $t$ intervals across refits. Multiplier point-reference containment has 95\% Wilson intervals. Separate black vertical segments span mean lower/upper containment indicators from reference-risk uncertainty; these segments are not confidence intervals.}
 \label{fig:missing}
 \end{figure}
 
@@ -520,8 +526,7 @@ precision of that finding and does not verify a universal nominal guarantee.
 
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{calibration.pdf}
-\caption{Simultaneous coverage and the recall distribution over primary replications. The
-dashed line is the nominal coverage target; higher recall alone does not establish validity.}
+\caption{Simultaneous coverage and the recall distribution over primary replications. Coverage diamonds have pointwise 95\% Wilson intervals; black markers show mean ARR with approximate pointwise 95\% $t$ intervals, overlaid on the ARR distributions. The dashed line is the nominal coverage target; higher recall alone does not establish validity.}
 \label{fig:cal}
 \end{figure}
 
@@ -537,7 +542,7 @@ is not the only way to reduce multiplicity conservatism.
 \begin{figure}[t]
 \centering\includegraphics[width=.96\linewidth]{sensitivity.pdf}
 \caption{Coverage and recall sensitivity. Latent Gaussian correlation is a generator parameter,
-not the observed binary-loss correlation. Holm is omitted from risk-band coverage panels.}
+not the observed binary-loss correlation. Coverage error bars are pointwise 95\% Wilson intervals; recall error bars are mean $\pm 1.96$ MCSE. Vertical scales are shared within each metric and include interval endpoints. Holm is omitted from risk-band coverage panels.}
 \label{fig:sensitivity}
 \end{figure}
 
@@ -584,8 +589,7 @@ half and twice the analytic bound; the half-bound is not asserted valid.
 \end{table}
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{continuous.pdf}
-\caption{One fixed replication of the continuous example. White denotes the true tolerance
-boundary; the dashed gold curve denotes the displayed surface's tolerance contour.}
+\caption{One fixed multiplier replication of the continuous SAR. Green denotes certified points within the analytic safe region; yellow denotes analytically safe but uncertified points, and salmon denotes points above the risk tolerance $\tau=.32$. The solid curve is the analytic boundary $R(e)=\tau$ and the dashed curve is the certified boundary $U(e)=\tau$. The Lipschitz envelope is evaluated directly on a dense mesh; contour interpolation is for display only. Multiplier validity is asymptotic.}
 \label{fig:continuous}
 \end{figure}
 
@@ -616,8 +620,8 @@ observed risk is descriptive. Counts at two tolerances do not establish clinical
 \end{table}
 \begin{figure}[t]
 \centering\includegraphics[width=\linewidth]{wdbc.pdf}
-\caption{Exact Bonferroni risk surfaces for the three models. White and gold contours, where
-present, mark tolerances $.08$ and $.10$. Absence of a contour can mean no grid crossing.}
+\centering\includegraphics[width=\linewidth]{wdbc_upc.pdf}
+\caption{WDBC assurance maps (top) and exact Bonferroni upper-risk plots (bottom) for three models. Green cells certify at $\tau=.08$; yellow cells certify only at $\tau=.10$; salmon cells certify at neither tolerance. Non-certification does not establish unsafe true risk. In the lower plots, markers show observed risk and dashed curves show one-sided 95\% familywise upper confidence bounds; the dotted line is $\tau=.08$. Each curve corresponds to one shift level.}
 \label{fig:wdbc}
 \end{figure}
 
@@ -909,6 +913,26 @@ replication differences. These efficiency comparisons must be read with coverage
 
 \section{Computational Cost and Bootstrap Variability}
 \label{app:runtime}
+\begin{algorithm}[H]
+\caption{SciGuard statistical assurance region}
+\KwIn{Frozen predictive pipeline $g$; candidate environments $\mathcal{E}_n$; assurance sample; tolerance $\tau$; confidence level $1-\alpha$; bootstrap size $B$.}
+
+Evaluate $g$ across all environments and form the paired loss matrix $\mathbf{L} \in \mathbb{R}^{n \times K_n}$\;
+Compute $\widehat{R}_k$ and $\widehat{\sigma}_k$ for all environments\;
+
+\For{$b = 1,\ldots,B$}{
+    Draw Gaussian multipliers $\xi_1^{(b)},\ldots,\xi_n^{(b)}$\;
+    Compute $T_b^* = \max_k(-Z_{kb}^*)$\;
+}
+
+Set $\widehat{c}_{1-\alpha}$ to the empirical $(1-\alpha)$ quantile of $\{T_b^*\}_{b=1}^B$\;
+Compute simultaneous upper bounds $U_k$ from \eqref{eq:multupper}; set $U_k=1$ for zero empirical variance\;
+
+\Return{$\widehat{\mathcal{A}}_{\tau,\alpha}(g) = \{e_k : U_k \le \tau\}$ and the full upper-risk surface}\;
+\end{algorithm}
+
+
+
 The direct multiplier sampler requires $O(BnK)$ operations. Sampling from its conditional
 Gaussian covariance instead costs $O(nK^2+K^3+BK^2)$ and stores a $K\times K$ covariance;
 it can be advantageous for moderate $K$. The code chooses that route when $K\leq\min(n,2000)$

@@ -1,0 +1,41 @@
+% ================= SciGuard figure requirements =================
+% Add these ONCE in the preamble of main.tex, before \begin{document}.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx} % for \resizebox
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,shapes.geometric}
+\pgfplotsset{compat=1.18}
+
+% ---------- SciGuard palette ----------
+\definecolor{navy}{HTML}{123E73}
+\definecolor{blue}{HTML}{2F8BCB}
+\definecolor{blueDark}{HTML}{1F6FAE}
+\definecolor{blueBorder}{HTML}{7DB8E3}
+\definecolor{blueLight}{HTML}{EEF7FD}
+\definecolor{green}{HTML}{56B67A}
+\definecolor{greenDark}{HTML}{2D8B55}
+\definecolor{greenBorder}{HTML}{A2D8B5}
+\definecolor{greenLight}{HTML}{EFF9F2}
+\definecolor{grayText}{HTML}{4E6072}
+\definecolor{yellow}{HTML}{F6D85B}
+\definecolor{red}{HTML}{D9463E}
+\definecolor{redLight}{HTML}{FBE9E8}
+\definecolor{safeGreen}{HTML}{159447}
+
+% ---------- SciGuard TikZ styles ----------
+\tikzset{
+  topPanel/.style={rounded corners=2.5mm, line width=.7pt, inner sep=0pt},
+  topHeader/.style={rounded corners=2.5mm, minimum height=1.25cm, text=white,
+    font=\bfseries\fontsize{9.6}{11}\selectfont, align=center},
+  body/.style={font=\fontsize{8.4}{10}\selectfont, align=center, text=navy},
+  num/.style={circle, minimum size=7.2mm, inner sep=0pt, text=white,
+    font=\bfseries\large, line width=.8pt, draw=white},
+  flow/.style={-{Stealth[length=3.1mm,width=2.7mm]}, line width=1.5pt, blue},
+  note/.style={rounded corners=2mm, align=center, inner sep=5pt,
+    font=\fontsize{7.7}{9.1}\selectfont, text=navy},
+}
+% ===============================================================

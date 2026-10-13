@@ -1,0 +1,265 @@
+% ================================================================
+% SciGuard visual overview -- readable two-row manuscript layout
+% Add to the preamble:
+%   \usepackage{tikz}
+%   \usetikzlibrary{arrows.meta,positioning,calc}
+%
+% Fit the overview to the manuscript text width to avoid margin overflow.
+% ================================================================
+
+\definecolor{sgNavy}{HTML}{174A7E}
+\definecolor{sgBlue}{HTML}{237DB3}
+\definecolor{sgBlueLight}{HTML}{EEF7FC}
+\definecolor{sgBlueBorder}{HTML}{A9D5EC}
+\definecolor{sgGreen}{HTML}{42B883}
+\definecolor{sgGreenDark}{HTML}{23865E}
+\definecolor{sgGreenLight}{HTML}{EFF9F4}
+\definecolor{sgGreenBorder}{HTML}{AADFC8}
+\definecolor{sgYellow}{HTML}{F6D66F}
+\definecolor{sgRed}{HTML}{E97972}
+\definecolor{sgGray}{HTML}{435363}
+
+\begin{figure*}[!t]
+	\centering
+	\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+		font=\small,
+		>=Stealth,
+		panel/.style={
+			draw=#1,
+			fill=white,
+			rounded corners=1.5mm,
+			line width=.65pt,
+			minimum width=5.25cm,
+			minimum height=4.45cm,
+			inner sep=0pt
+		},
+		panelTall/.style={
+			draw=#1,
+			fill=white,
+			rounded corners=1.5mm,
+			line width=.65pt,
+			minimum width=5.25cm,
+			minimum height=5.30cm,
+			inner sep=0pt
+		},
+		header/.style={
+			rounded corners=1.4mm,
+			minimum width=5.25cm,
+			minimum height=.78cm,
+			text=white,
+			font=\bfseries\small,
+			align=center
+		},
+		formulaBlue/.style={
+			draw=sgBlueBorder,
+			fill=sgBlueLight,
+			rounded corners=1mm,
+			inner xsep=3mm,
+			inner ysep=2.2mm,
+			align=center
+		},
+		formulaGreen/.style={
+			draw=sgGreenBorder,
+			fill=sgGreenLight,
+			rounded corners=1mm,
+			inner xsep=3mm,
+			inner ysep=2.2mm,
+			align=center
+		},
+		explanation/.style={
+			text=sgGray,
+			font=\footnotesize,
+			align=center,
+			text width=4.55cm
+		},
+		number/.style={
+			circle,
+			fill=#1,
+			text=white,
+			font=\bfseries\footnotesize,
+			inner sep=1.6pt
+		},
+		flow/.style={
+			-{Stealth[length=2.2mm]},
+			draw=sgNavy,
+			line width=.8pt
+		}
+		]
+		
+		% Overall geometry: three equal-width columns and two rows.
+		\def\PW{5.25cm}
+		\def\PH{4.45cm}
+		\def\DX{5.72cm}
+		\def\DY{5.15cm}
+		
+		\coordinate (P1) at (0,0);
+		\coordinate (P2) at (\DX,0);
+		\coordinate (P3) at (2*\DX,0);
+		\coordinate (P4) at (0,-\DY);
+		\coordinate (P5) at (\DX,-\DY);
+		\coordinate (P6) at (2*\DX,-\DY);
+		
+		% ----------------------------------------------------------------
+		% 1. Training data and model
+		% ----------------------------------------------------------------
+		\node[panel=sgBlueBorder,anchor=north west] (box1) at (P1) {};
+		\node[header,fill=sgNavy,anchor=north west] at (P1)
+		{Training Data and Model};
+		\node[number=sgNavy] at ($(P1)+(2.625cm,.16cm)$) {1};
+		
+		\node[formulaBlue,text width=4.15cm] at ($(P1)+(2.625cm,-1.55cm)$)
+		{$\mathcal D_n=\{(X_i,Y_i)\}_{i=1}^{n}$\\[3pt]
+			$g=\mathcal I\circ f$};
+		\node[explanation] at ($(P1)+(2.625cm,-3.35cm)$)
+		{Fit one prediction pipeline using data from the source population.};
+		
+		% ----------------------------------------------------------------
+		% 2. Deployment environments
+		% ----------------------------------------------------------------
+		\node[panel=sgBlueBorder,anchor=north west] (box2) at (P2) {};
+		\node[header,fill=sgNavy,anchor=north west] at (P2)
+		{Deployment Environments};
+		\node[number=sgNavy] at ($(P2)+(2.625cm,.16cm)$) {2};
+		
+		\node[formulaBlue,text width=4.15cm] at ($(P2)+(2.625cm,-1.48cm)$)
+		{$e=(m,s)\in\mathcal E$};
+		\node[align=left,text=sgGray,font=\footnotesize] at
+		($(P2)+(2.625cm,-2.45cm)$)
+		{$m$: missingness severity\\[3pt]
+			$s$: distribution-shift severity};
+		\node[explanation] at ($(P2)+(2.625cm,-3.65cm)$)
+		{Each point in $\mathcal E$ represents one possible deployment condition.};
+		
+		% ----------------------------------------------------------------
+		% 3. Risk under each environment
+		% ----------------------------------------------------------------
+		\node[panel=sgGreenBorder,anchor=north west] (box3) at (P3) {};
+		\node[header,fill=sgGreen,anchor=north west] at (P3)
+		{Risk Under Each Environment};
+		\node[number=sgGreenDark] at ($(P3)+(2.625cm,.16cm)$) {3};
+		
+		\node[formulaGreen,text width=4.25cm] at ($(P3)+(2.625cm,-1.62cm)$)
+		{$R_g(e)=\mathbb E_{P_e}\!\left[
+			L\{Y,g(X_{\mathrm{obs}},M)\}\right]$};
+		\node[align=center,text=sgGray,font=\footnotesize] at
+		($(P3)+(2.625cm,-2.65cm)$)
+		{For classification:\\[2pt]
+			$L(Y,\widehat Y)=\mathbb I(Y\ne\widehat Y)$.};
+		\node[explanation] at ($(P3)+(2.625cm,-3.70cm)$)
+		{Measure how much predictive error occurs under every deployment condition.};
+		
+		% ----------------------------------------------------------------
+		% 4. Estimated risk and simultaneous uncertainty
+		% ----------------------------------------------------------------
+		\node[panelTall=sgBlueBorder,anchor=north west] (box4) at (P4) {};
+		\node[header,fill=sgBlue,anchor=north west] at (P4)
+		{Risk Estimate \& Upper Band};
+		\node[number=sgNavy] at ($(P4)+(2.625cm,.16cm)$) {4};
+		
+		\node[formulaBlue,text width=4.35cm,font=\scriptsize] at
+		($(P4)+(2.625cm,-1.75cm)$)
+		{$\displaystyle
+			\widehat R_g(e)=\frac{1}{N_e}\sum_{i=1}^{N_e}\ell_{ie}$\\[4pt]
+			$\displaystyle
+			\ell_{ie}=\mathbb I\!\left\{
+			Y_{ie}\ne g(X_{ie,\mathrm{obs}},M_{ie})\right\}$};
+		\node[formulaBlue,text width=4.35cm] at ($(P4)+(2.625cm,-3.45cm)$)
+		{$\displaystyle
+			U_N(e)=\widehat R_g(e)+
+			c_{1-\alpha}\frac{\widehat\sigma(e)}{\sqrt{N_e}}$};
+		\node[explanation] at ($(P4)+(2.6cm,-4.7cm)$)
+		{$c_{1-\alpha}$ comes from the Gaussian multiplier bootstrap, giving simultaneous uncertainty for $\mathcal E$.};
+		
+		% ----------------------------------------------------------------
+		% 5. True and certified assurance regions
+		% ----------------------------------------------------------------
+		\node[panelTall=sgGreenBorder,anchor=north west] (box5) at (P5) {};
+		\node[header,fill=sgGreen,anchor=north west] at (P5)
+		{Statistical Assurance Regions};
+		\node[number=sgGreenDark] at ($(P5)+(2.625cm,.16cm)$) {5};
+		
+		\node[formulaGreen,text width=4.35cm,font=\footnotesize] at ($(P5)+(2.625cm,-1.40cm)$)
+		{True region:\quad
+			$\mathcal A_\tau(g)=\{e:R_g(e)\le\tau\}$};
+		\node[formulaGreen,text width=4.35cm,font=\footnotesize] at ($(P5)+(2.625cm,-2.43cm)$)
+		{Certified region:\quad
+			$\widehat{\mathcal A}_{\tau,\alpha}(g)=
+			\{e:U_N(e)\le\tau\}$};
+		\node[align=center,text=sgGreenDark,font=\footnotesize\bfseries,
+		text width=4.55cm] at ($(P5)+(2.625cm,-3.48cm)$)
+		{$\Pr\!\left\{
+			\widehat{\mathcal A}_{\tau,\alpha}(g)
+			\subseteq\mathcal A_\tau(g)\right\}
+			\ge 1-\alpha+o(1)$};
+		\node[explanation] at ($(P5)+(2.625cm,-4.45cm)$)
+		{Only statistically supported environments are certified.};
+		
+		% ----------------------------------------------------------------
+		% 6. Two-dimensional assurance map
+		% ----------------------------------------------------------------
+		\node[panelTall=sgBlueBorder,anchor=north west] (box6) at (P6) {};
+		\node[header,fill=sgNavy,anchor=north west] at (P6)
+		{2D Assurance Map};
+		\node[number=sgNavy] at ($(P6)+(2.625cm,.16cm)$) {6};
+		
+		\coordinate (O) at ($(P6)+(1.02cm,-3.65cm)$);
+		\def\CW{0.35}
+		\def\CH{0.27}
+		
+		% Discrete cells make the computed grid structure explicit.
+		\foreach \ix in {0,...,9}{
+			\foreach \iy in {0,...,9}{
+				\pgfmathsetmacro{\score}{(\ix+\iy)/18}
+				\pgfmathparse{\score<0.40 ? "sgGreen" :
+					(\score<0.67 ? "sgYellow" : "sgRed")}
+				\edef\cellcolor{\pgfmathresult}
+				\fill[\cellcolor!78]
+				($(O)+(\CW*\ix,\CH*\iy)$)
+				rectangle ++(\CW,\CH);
+			}
+		}
+		
+		% Stylized certification boundary.
+		\draw[sgNavy,dashed,line width=.9pt]
+		($(O)+(.05,2.64)$)
+		.. controls ($(O)+(.62,1.88)$) and ($(O)+(2.30,.84)$)
+		.. ($(O)+(3.45,.08)$);
+		
+		\draw[-{Stealth[length=1.8mm]},sgNavy,line width=.75pt]
+		(O)--($(O)+(3.72,0)$);
+		\draw[-{Stealth[length=1.8mm]},sgNavy,line width=.75pt]
+		(O)--($(O)+(0,2.92)$);
+		
+		\node[font=\scriptsize,text=sgNavy] at ($(O)+(1.75,-.36)$)
+		{Missingness severity $(m)$};
+		\node[font=\scriptsize,text=sgNavy,rotate=90] at ($(O)+(-.48,1.35)$)
+		{Distribution shift $(s)$};
+		
+		\node[font=\scriptsize\bfseries,text=white,align=center]
+		at ($(O)+(.72,.58)$) {Certified\\safe};
+		\node[font=\scriptsize\bfseries,text=sgNavy]
+		at ($(O)+(2.10,1.42)$) {Borderline};
+		\node[font=\scriptsize\bfseries,text=white]
+		at ($(O)+(2.88,2.22)$) {Unsafe};
+		
+		% ----------------------------------------------------------------
+		% Flow arrows. Numbering communicates the transition between rows, avoiding
+		% a long diagonal or a connector that would cross the panels.
+		% ----------------------------------------------------------------
+		\draw[flow] ($(P1)+(5.25cm,-2.22cm)$)--($(P2)+(0cm,-2.22cm)$);
+		\draw[flow] ($(P2)+(5.25cm,-2.22cm)$)--($(P3)+(0cm,-2.22cm)$);
+		\draw[flow] ($(P4)+(5.25cm,-2.22cm)$)--($(P5)+(0cm,-2.22cm)$);
+		\draw[flow] ($(P5)+(5.25cm,-2.22cm)$)--($(P6)+(0cm,-2.22cm)$);
+		
+	\end{tikzpicture}}
+	
+	\caption{SciGuard statistical assurance
+		framework. A predictive pipeline is evaluated over deployment environments
+		indexed by missingness severity $m$ and distribution-shift severity $s$.
+		Environment-specific risks and simultaneous upper confidence bounds are used
+		to construct a conservative certified assurance region. The resulting map
+		is schematic rather than an empirical result and identifies deployment conditions under which the model is statistically
+		supported to satisfy the prespecified risk threshold $\tau$.}
+	\label{fig:sciguard-overview}
+\end{figure*}
